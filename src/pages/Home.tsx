@@ -1,5 +1,14 @@
-import { ArrowRight, CheckCircle, ChevronRight, Shield, Award, Globe2, Users, Wrench, BadgeCheck } from 'lucide-react';
+import { ArrowRight, CheckCircle, ChevronRight, Shield, Award, Globe2, Wrench, BadgeCheck } from 'lucide-react';
+import { useState, useEffect } from 'react';
 import { industries } from '../data/industries';
+
+const heroSlides = [
+  'https://images.pexels.com/photos/1267338/pexels-photo-1267338.jpeg?auto=compress&cs=tinysrgb&w=1920',
+  'https://images.pexels.com/photos/1108101/pexels-photo-1108101.jpeg?auto=compress&cs=tinysrgb&w=1920',
+  'https://images.pexels.com/photos/2058128/pexels-photo-2058128.jpeg?auto=compress&cs=tinysrgb&w=1920',
+  'https://images.pexels.com/photos/1117210/pexels-photo-1117210.jpeg?auto=compress&cs=tinysrgb&w=1920',
+  'https://images.pexels.com/photos/3862132/pexels-photo-3862132.jpeg?auto=compress&cs=tinysrgb&w=1920',
+];
 
 interface HomeProps {
   onNavigate: (page: string, id?: string) => void;
@@ -37,48 +46,85 @@ const trustStats = [
 ];
 
 export default function Home({ onNavigate }: HomeProps) {
+  const [current, setCurrent] = useState(0);
+  const [prev, setPrev] = useState<number | null>(null);
+  const [fading, setFading] = useState(false);
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setFading(true);
+      setTimeout(() => {
+        setPrev(current);
+        setCurrent(c => (c + 1) % heroSlides.length);
+        setFading(false);
+      }, 800);
+    }, 5000);
+    return () => clearInterval(id);
+  }, [current]);
+
   return (
     <div className="bg-brand-dark">
-      {/* ── SECTION 1: What do you do? ── */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* ── SECTION 1: Hero ── */}
+      <section className="relative min-h-screen flex items-end overflow-hidden">
+        {/* Slideshow layers */}
+        {prev !== null && (
+          <div
+            className="absolute inset-0 bg-cover bg-center"
+            style={{ backgroundImage: `url(${heroSlides[prev]})` }}
+          />
+        )}
         <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: 'url(https://images.pexels.com/photos/1267338/pexels-photo-1267338.jpeg?auto=compress&cs=tinysrgb&w=1920)' }}
+          className={`absolute inset-0 bg-cover bg-center transition-opacity duration-[800ms] ${fading ? 'opacity-0' : 'opacity-100'}`}
+          style={{ backgroundImage: `url(${heroSlides[current]})` }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-brand-dark" />
-        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-          <div className="inline-flex items-center gap-2 bg-brand-orange/20 border border-brand-orange/40 px-4 py-1.5 mb-8">
-            <span className="text-brand-orange text-xs font-semibold tracking-widest uppercase">PCP Group — Est. 1967</span>
-          </div>
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white leading-none tracking-tight mb-4">
-            Industrial
-            <span className="block text-brand-orange">Environmental</span>
-            Solutions
+
+        {/* Gradient overlays */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/50 to-black/20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/30" />
+
+        {/* Content */}
+        <div className="relative z-10 w-full px-6 md:px-16 pb-20 pt-40 max-w-3xl">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-black leading-tight mb-8" style={{ color: '#e8621a' }}>
+            Providing Bespoke<br />
+            Sustainable Solutions<br />
+            For Over 50 YEARS
           </h1>
-          <p className="text-xl md:text-2xl text-white/60 font-light mt-6 mb-10 tracking-wide">
-            Control Dust. Eliminate Odour. Improve Air Quality.
+          <p className="text-white font-medium text-base md:text-lg leading-relaxed mb-10 max-w-xl">
+            PCP Group is here to help you solve your industrial dust, odour, and metal problems.
+            Our innovative solutions help protect your people, assets, and reputation while
+            delivering value to your organisation.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4">
+            <button
+              onClick={() => onNavigate('contact')}
+              className="inline-flex items-center gap-2 bg-white text-brand-orange font-bold text-sm py-4 px-8 hover:bg-white/90 transition-colors"
+            >
+              Contact Us <ArrowRight size={16} />
+            </button>
             <button
               onClick={() => {
                 document.getElementById('industries')?.scrollIntoView({ behavior: 'smooth' });
               }}
-              className="btn-primary text-sm py-4 px-8"
+              className="btn-outline text-sm py-4 px-8"
             >
               Find Your Industry <ChevronRight size={16} />
             </button>
-            <button
-              onClick={() => {
-                document.getElementById('problems')?.scrollIntoView({ behavior: 'smooth' });
-              }}
-              className="btn-outline text-sm py-4 px-8"
-            >
-              Describe Your Problem <ChevronRight size={16} />
-            </button>
           </div>
         </div>
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-          <div className="w-px h-12 bg-gradient-to-b from-white/40 to-transparent mx-auto" />
+
+        {/* Slide indicators */}
+        <div className="absolute bottom-8 left-6 md:left-16 z-10 flex gap-2">
+          {heroSlides.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setCurrent(i)}
+              className={`h-0.5 transition-all duration-500 ${i === current ? 'w-8 bg-brand-orange' : 'w-4 bg-white/30 hover:bg-white/60'}`}
+            />
+          ))}
+        </div>
+
+        <div className="absolute bottom-8 right-6 md:right-16 z-10 animate-bounce">
+          <div className="w-px h-10 bg-gradient-to-b from-white/40 to-transparent mx-auto" />
         </div>
       </section>
 
