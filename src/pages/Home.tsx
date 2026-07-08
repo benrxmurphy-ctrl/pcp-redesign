@@ -1,19 +1,5 @@
 import { ArrowRight, CheckCircle, ChevronRight, Shield, Award, Globe2, Wrench, BadgeCheck } from 'lucide-react';
-import { useState, useEffect } from 'react';
 import { industries } from '../data/industries';
-
-const heroSlides = [
-  // Engineer with hard hat reviewing plans on site
-  'https://images.pexels.com/photos/2760241/pexels-photo-2760241.jpeg?auto=compress&cs=tinysrgb&w=1920',
-  // Heavy industrial plant / steel works
-  'https://images.pexels.com/photos/162568/industrial-steel-metal-factory-162568.jpeg?auto=compress&cs=tinysrgb&w=1920',
-  // Quarry / heavy machinery operation
-  'https://images.pexels.com/photos/1108101/pexels-photo-1108101.jpeg?auto=compress&cs=tinysrgb&w=1920',
-  // Industrial processing facility
-  'https://images.pexels.com/photos/2280571/pexels-photo-2280571.jpeg?auto=compress&cs=tinysrgb&w=1920',
-  // Engineering site / construction infrastructure
-  'https://images.pexels.com/photos/1117210/pexels-photo-1117210.jpeg?auto=compress&cs=tinysrgb&w=1920',
-];
 
 interface HomeProps {
   onNavigate: (page: string, id?: string) => void;
@@ -51,36 +37,14 @@ const trustStats = [
 ];
 
 export default function Home({ onNavigate }: HomeProps) {
-  const [current, setCurrent] = useState(0);
-  const [prev, setPrev] = useState<number | null>(null);
-  const [fading, setFading] = useState(false);
-
-  useEffect(() => {
-    const id = setInterval(() => {
-      setFading(true);
-      setTimeout(() => {
-        setPrev(current);
-        setCurrent(c => (c + 1) % heroSlides.length);
-        setFading(false);
-      }, 800);
-    }, 5000);
-    return () => clearInterval(id);
-  }, [current]);
-
   return (
     <div className="bg-brand-dark">
       {/* ── SECTION 1: Hero ── */}
       <section className="relative min-h-screen flex items-end overflow-hidden">
-        {/* Slideshow layers */}
-        {prev !== null && (
-          <div
-            className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: `url(${heroSlides[prev]})` }}
-          />
-        )}
+        {/* Single Ken Burns image */}
         <div
-          className={`absolute inset-0 bg-cover bg-center transition-opacity duration-[800ms] ${fading ? 'opacity-0' : 'opacity-100'}`}
-          style={{ backgroundImage: `url(${heroSlides[current]})` }}
+          className="absolute inset-0 bg-cover bg-center hero-kenburns"
+          style={{ backgroundImage: 'url(https://images.pexels.com/photos/3760529/pexels-photo-3760529.jpeg?auto=compress&cs=tinysrgb&w=1920)' }}
         />
 
         {/* Gradient overlays */}
@@ -115,17 +79,6 @@ export default function Home({ onNavigate }: HomeProps) {
               Find Your Industry <ChevronRight size={16} />
             </button>
           </div>
-        </div>
-
-        {/* Slide indicators */}
-        <div className="absolute bottom-8 left-6 md:left-16 z-10 flex gap-2">
-          {heroSlides.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => setCurrent(i)}
-              className={`h-0.5 transition-all duration-500 ${i === current ? 'w-8 bg-brand-orange' : 'w-4 bg-white/30 hover:bg-white/60'}`}
-            />
-          ))}
         </div>
 
         <div className="absolute bottom-8 right-6 md:right-16 z-10 animate-bounce">
