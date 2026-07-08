@@ -1,4 +1,5 @@
-import { X, CheckCircle, Phone, ArrowRight } from 'lucide-react';
+import { useState } from 'react';
+import { X, CheckCircle, Play, Pause, Volume2, VolumeX, Maximize2 } from 'lucide-react';
 import { VideoGuide } from '../data/videos';
 
 interface VideoModalProps {
@@ -7,7 +8,10 @@ interface VideoModalProps {
   onNavigate: (page: string, id?: string) => void;
 }
 
-export default function VideoModal({ video, onClose, onNavigate }: VideoModalProps) {
+export default function VideoModal({ video, onClose }: VideoModalProps) {
+  const [playing, setPlaying] = useState(false);
+  const [muted, setMuted] = useState(false);
+
   return (
     <div
       className="fixed inset-0 z-[200] flex items-center justify-center p-4"
@@ -26,45 +30,72 @@ export default function VideoModal({ video, onClose, onNavigate }: VideoModalPro
           <X size={16} className="text-white" />
         </button>
 
-        {/* Fake video player */}
-        <div className="relative aspect-video bg-black overflow-hidden">
+        {/* Video player */}
+        <div className="relative aspect-video bg-black overflow-hidden group/player">
+          {/* Poster / thumbnail */}
           <img
             src={`${video.thumbnail}?auto=compress&cs=tinysrgb&w=900`}
             alt={video.title}
-            className="w-full h-full object-cover opacity-50"
+            className={`w-full h-full object-cover transition-opacity duration-300 ${playing ? 'opacity-30' : 'opacity-70'}`}
           />
 
-          {/* Player overlay */}
-          <div className="absolute inset-0 flex flex-col items-center justify-center">
-            {/* Play icon — stylised */}
-            <div className="w-20 h-20 rounded-full bg-brand-orange/90 backdrop-blur-sm flex items-center justify-center mb-6 shadow-2xl">
-              <svg viewBox="0 0 24 24" fill="white" className="w-8 h-8 ml-1">
-                <path d="M8 5v14l11-7z" />
-              </svg>
-            </div>
-
-            {/* Request access box */}
-            <div className="bg-black/80 border border-white/20 px-8 py-5 text-center max-w-sm">
-              <p className="text-white font-bold text-sm mb-2">Video On Demand</p>
-              <p className="text-white/60 text-xs leading-relaxed mb-4">
-                This video guide is available to registered customers and prospects. Contact our team to access the full video library.
-              </p>
-              <button
-                onClick={() => { onClose(); onNavigate('contact'); }}
-                className="bg-brand-orange text-white text-xs font-bold py-2.5 px-5 hover:bg-brand-orange/80 transition-colors inline-flex items-center gap-2"
-              >
-                Request Access <ArrowRight size={12} />
-              </button>
-            </div>
+          {/* Fake progress bar at bottom */}
+          <div className="absolute bottom-0 left-0 right-0 h-1 bg-white/10">
+            <div
+              className={`h-full bg-brand-orange transition-all duration-[60000ms] ease-linear ${playing ? 'w-full' : 'w-0'}`}
+            />
           </div>
 
-          {/* Duration badge */}
-          <div className="absolute bottom-3 right-3 bg-black/80 text-white text-xs px-2 py-1 font-mono">
-            {video.duration}
+          {/* Centre play/pause button */}
+          <button
+            onClick={() => setPlaying(p => !p)}
+            className="absolute inset-0 flex items-center justify-center w-full"
+          >
+            <div className={`w-16 h-16 rounded-full flex items-center justify-center transition-all duration-200 shadow-2xl
+              ${playing ? 'bg-white/20 opacity-0 group-hover/player:opacity-100' : 'bg-brand-orange/90'}
+            `}>
+              {playing
+                ? <Pause size={22} fill="white" className="text-white" />
+                : <Play size={22} fill="white" className="text-white ml-0.5" />
+              }
+            </div>
+          </button>
+
+          {/* Playing label */}
+          {playing && (
+            <div className="absolute top-3 left-3 flex items-center gap-1.5 bg-black/70 px-2.5 py-1">
+              <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse" />
+              <span className="text-white text-xs font-semibold tracking-wide">PLAYING</span>
+            </div>
+          )}
+
+          {/* Controls bar */}
+          <div className="absolute bottom-1 left-0 right-0 flex items-center gap-3 px-3 pb-2 pt-1
+            opacity-0 group-hover/player:opacity-100 transition-opacity"
+          >
+            <button
+              onClick={() => setPlaying(p => !p)}
+              className="text-white hover:text-brand-orange transition-colors"
+            >
+              {playing ? <Pause size={16} /> : <Play size={16} />}
+            </button>
+            <div className="flex-1 h-0.5 bg-white/20 relative cursor-pointer">
+              <div className={`h-full bg-brand-orange transition-all duration-[60000ms] ease-linear ${playing ? 'w-full' : 'w-0'}`} />
+            </div>
+            <span className="text-white/60 text-xs font-mono">{video.duration}</span>
+            <button
+              onClick={() => setMuted(m => !m)}
+              className="text-white hover:text-brand-orange transition-colors"
+            >
+              {muted ? <VolumeX size={15} /> : <Volume2 size={15} />}
+            </button>
+            <button className="text-white hover:text-brand-orange transition-colors">
+              <Maximize2 size={14} />
+            </button>
           </div>
 
           {/* Topic badge */}
-          <div className="absolute top-3 left-3 bg-brand-orange text-white text-xs font-semibold px-2 py-1">
+          <div className="absolute top-3 right-3 bg-brand-orange text-white text-xs font-semibold px-2 py-1">
             {video.topic}
           </div>
         </div>
@@ -84,21 +115,6 @@ export default function VideoModal({ video, onClose, onNavigate }: VideoModalPro
                 </div>
               ))}
             </div>
-          </div>
-
-          <div className="flex flex-wrap gap-3 mt-7 pt-5 border-t border-white/10">
-            <button
-              onClick={() => { onClose(); onNavigate('contact'); }}
-              className="btn-primary text-xs"
-            >
-              Request Video Access <ArrowRight size={13} />
-            </button>
-            <a
-              href="tel:+35345863220"
-              className="btn-outline text-xs inline-flex items-center gap-2"
-            >
-              <Phone size={13} /> +353 45 863220
-            </a>
           </div>
         </div>
       </div>
