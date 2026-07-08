@@ -1,6 +1,14 @@
-import { ChevronRight, FileText, HelpCircle, BookOpen, Download, ArrowRight, Clock } from 'lucide-react';
+import { useState } from 'react';
+import {
+  ChevronRight, FileText, BookOpen, Download,
+  ArrowRight, Clock, Play, Film, FileDown, Shield,
+} from 'lucide-react';
 import { guides } from '../data/guides';
 import { projects } from '../data/projects';
+import { brochures, triggerDownload } from '../data/downloads';
+import { videoGuides } from '../data/videos';
+import VideoModal from '../components/VideoModal';
+import DownloadToast from '../components/DownloadToast';
 
 interface ResourcesPageProps {
   onNavigate: (page: string, id?: string) => void;
@@ -42,9 +50,43 @@ const faqs = [
   },
 ];
 
+const typeColor: Record<string, string> = {
+  'Solution Brochure': 'bg-brand-orange',
+  'Product Datasheet': 'bg-blue-600',
+  'Compliance Guide': 'bg-green-700',
+  'Technical Note': 'bg-zinc-600',
+};
+
+const typeIcon: Record<string, typeof FileText> = {
+  'Solution Brochure': FileText,
+  'Product Datasheet': FileDown,
+  'Compliance Guide': Shield,
+  'Technical Note': BookOpen,
+};
+
 export default function ResourcesPage({ onNavigate }: ResourcesPageProps) {
+  const [activeVideo, setActiveVideo] = useState<(typeof videoGuides)[0] | null>(null);
+  const [toast, setToast] = useState<string | null>(null);
+
+  const handleDownload = (b: (typeof brochures)[0]) => {
+    triggerDownload(b);
+    setToast(b.title);
+  };
+
   return (
     <div className="bg-brand-dark pt-20">
+      {/* Video modal */}
+      {activeVideo && (
+        <VideoModal
+          video={activeVideo}
+          onClose={() => setActiveVideo(null)}
+          onNavigate={onNavigate}
+        />
+      )}
+
+      {/* Toast */}
+      {toast && <DownloadToast title={toast} onDismiss={() => setToast(null)} />}
+
       {/* Hero */}
       <section className="py-20 px-4 bg-brand-dark-2">
         <div className="max-w-7xl mx-auto">
@@ -56,19 +98,19 @@ export default function ResourcesPage({ onNavigate }: ResourcesPageProps) {
           <p className="section-label mb-3">Resources</p>
           <h1 className="text-5xl md:text-6xl font-black text-white mb-6">Knowledge Base</h1>
           <p className="text-xl text-white/60 max-w-2xl">
-            Practical guidance on dust, odour and air quality management for EHS managers, site operators and engineers.
+            Technical guides, video walkthroughs, downloadable datasheets and case studies for site operators and EHS engineers.
           </p>
         </div>
       </section>
 
-      {/* Resource type cards */}
+      {/* Resource type overview */}
       <section className="py-12 px-4">
         <div className="max-w-7xl mx-auto grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-20">
           {[
-            { icon: HelpCircle, title: 'FAQs', desc: 'Common questions about dust and odour control solutions.', count: `${faqs.length} questions` },
-            { icon: BookOpen, title: 'Guides', desc: 'Technical guides on suppression, extraction and monitoring.', count: `${guides.length} guides` },
-            { icon: FileText, title: 'Case Studies', desc: 'Real projects, real results from Irish industry.', count: `${projects.length} case studies` },
-            { icon: Download, title: 'Downloads', desc: 'Product datasheets, brochures and technical documents.', count: 'Available on request' },
+            { icon: Film, title: 'Video Guides', desc: 'Site walkthroughs and technology explanations.', count: `${videoGuides.length} videos` },
+            { icon: BookOpen, title: 'Tech Guides', desc: 'In-depth guides on suppression, extraction and monitoring.', count: `${guides.length} guides` },
+            { icon: FileText, title: 'Case Studies', desc: 'Real projects, measured results from Irish industry.', count: `${projects.length} case studies` },
+            { icon: Download, title: 'Downloads', desc: 'Datasheets, brochures and compliance guides.', count: `${brochures.length} documents` },
           ].map(r => (
             <div key={r.title} className="bg-brand-dark-3 border border-white/5 p-8">
               <r.icon size={28} className="text-brand-orange mb-4" />
@@ -79,12 +121,74 @@ export default function ResourcesPage({ onNavigate }: ResourcesPageProps) {
           ))}
         </div>
 
-        {/* Guides */}
+        {/* ── VIDEO GUIDES ── */}
         <div className="max-w-7xl mx-auto mb-20">
           <div className="flex items-end justify-between gap-4 mb-10">
             <div>
-              <p className="section-label mb-2">Guides</p>
-              <h2 className="section-title">Technical Guides</h2>
+              <p className="section-label mb-2">Video Library</p>
+              <h2 className="section-title flex items-center gap-3">
+                Video Guides
+                <span className="text-white/20 text-base font-normal">|</span>
+                <span className="text-brand-orange text-sm font-semibold">{videoGuides.length} videos</span>
+              </h2>
+            </div>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+            {videoGuides.map(video => (
+              <button
+                key={video.id}
+                onClick={() => setActiveVideo(video)}
+                className="group bg-brand-dark-3 border border-white/5 hover:border-brand-orange/40 transition-all text-left overflow-hidden"
+              >
+                {/* Thumbnail */}
+                <div className="relative h-40 overflow-hidden">
+                  <img
+                    src={`${video.thumbnail}?auto=compress&cs=tinysrgb&w=500`}
+                    alt={video.title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-black/50 group-hover:bg-black/30 transition-colors" />
+
+                  {/* Play button */}
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="w-12 h-12 rounded-full bg-brand-orange/90 flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
+                      <Play size={18} fill="white" className="text-white ml-0.5" />
+                    </div>
+                  </div>
+
+                  {/* Duration */}
+                  <div className="absolute bottom-2 right-2 bg-black/80 text-white text-xs px-1.5 py-0.5 font-mono">
+                    {video.duration}
+                  </div>
+
+                  {/* Topic */}
+                  <div className="absolute top-2 left-2 bg-brand-orange text-white text-xs font-semibold px-2 py-0.5">
+                    {video.topic}
+                  </div>
+                </div>
+
+                {/* Info */}
+                <div className="p-4">
+                  <h3 className="text-white font-semibold text-sm leading-snug group-hover:text-brand-orange transition-colors line-clamp-2">
+                    {video.title}
+                  </h3>
+                  <p className="text-white/40 text-xs mt-2 line-clamp-2 leading-relaxed">{video.description}</p>
+                  <div className="flex items-center gap-1 text-brand-orange text-xs font-semibold mt-3 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <Play size={11} /> Watch Guide
+                  </div>
+                </div>
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* ── WRITTEN GUIDES ── */}
+        <div className="max-w-7xl mx-auto mb-20">
+          <div className="flex items-end justify-between gap-4 mb-10">
+            <div>
+              <p className="section-label mb-2">Technical Reading</p>
+              <h2 className="section-title">Written Guides</h2>
             </div>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -102,7 +206,7 @@ export default function ResourcesPage({ onNavigate }: ResourcesPageProps) {
                     loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
-                  <div className="absolute top-3 left-3 flex gap-2">
+                  <div className="absolute top-3 left-3">
                     <span className="bg-brand-orange text-white text-xs font-semibold px-2 py-1">{g.topic}</span>
                   </div>
                   <div className="absolute top-3 right-3 w-7 h-7 bg-white opacity-0 group-hover:opacity-100 transition-all flex items-center justify-center">
@@ -127,7 +231,7 @@ export default function ResourcesPage({ onNavigate }: ResourcesPageProps) {
           </div>
         </div>
 
-        {/* Case Studies */}
+        {/* ── CASE STUDIES ── */}
         <div className="max-w-7xl mx-auto mb-20">
           <div className="flex items-end justify-between gap-4 mb-10">
             <div>
@@ -142,7 +246,7 @@ export default function ResourcesPage({ onNavigate }: ResourcesPageProps) {
             </button>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {projects.slice(0, 3).map(project => (
+            {projects.slice(0, 6).map(project => (
               <button
                 key={project.id}
                 onClick={() => onNavigate('project', project.id)}
@@ -156,15 +260,19 @@ export default function ResourcesPage({ onNavigate }: ResourcesPageProps) {
                     loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
-                  <div className="absolute top-3 left-3">
+                  <div className="absolute top-3 left-3 flex gap-1.5">
                     <span className="bg-brand-orange text-white text-xs font-semibold px-2 py-1">{project.industry}</span>
+                    <span className="bg-black/60 text-white/80 text-xs px-2 py-1">{project.year}</span>
+                  </div>
+                  <div className="absolute top-3 right-3 w-7 h-7 bg-white opacity-0 group-hover:opacity-100 transition-all flex items-center justify-center">
+                    <ArrowRight size={13} className="text-brand-orange" />
                   </div>
                 </div>
                 <div className="p-5">
                   <h3 className="text-white font-bold text-sm leading-snug mb-2 group-hover:text-brand-orange transition-colors">
                     {project.title}
                   </h3>
-                  <p className="text-brand-orange text-xs font-medium">{project.result}</p>
+                  <p className="text-brand-orange text-xs font-medium leading-relaxed">{project.result}</p>
                   <div className="flex items-center gap-1 text-brand-orange text-xs font-semibold mt-4 opacity-0 group-hover:opacity-100 transition-opacity">
                     Read Case Study <ArrowRight size={12} />
                   </div>
@@ -174,7 +282,76 @@ export default function ResourcesPage({ onNavigate }: ResourcesPageProps) {
           </div>
         </div>
 
-        {/* FAQs */}
+        {/* ── DOWNLOADS ── */}
+        <div className="max-w-7xl mx-auto mb-20">
+          <div className="mb-10">
+            <p className="section-label mb-2">Downloads</p>
+            <h2 className="section-title mb-2">Datasheets &amp; Brochures</h2>
+            <p className="text-white/50 text-sm">Click any document to download instantly. All documents are provided in text format for compatibility.</p>
+          </div>
+
+          {/* By type */}
+          {(['Solution Brochure', 'Product Datasheet', 'Compliance Guide', 'Technical Note'] as const).map(type => {
+            const docs = brochures.filter(b => b.type === type);
+            if (docs.length === 0) return null;
+            const Icon = typeIcon[type] ?? FileText;
+            return (
+              <div key={type} className="mb-10">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className={`w-6 h-6 flex items-center justify-center ${typeColor[type]} shrink-0`}>
+                    <Icon size={13} className="text-white" />
+                  </div>
+                  <h3 className="text-white font-bold text-sm uppercase tracking-widest">{type}s</h3>
+                </div>
+                <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
+                  {docs.map(doc => (
+                    <button
+                      key={doc.id}
+                      onClick={() => handleDownload(doc)}
+                      className="group bg-brand-dark-3 border border-white/5 hover:border-brand-orange/50 transition-all text-left overflow-hidden"
+                    >
+                      {/* Thumbnail */}
+                      <div className="relative h-32 overflow-hidden">
+                        <img
+                          src={`${doc.image}?auto=compress&cs=tinysrgb&w=400`}
+                          alt={doc.title}
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 opacity-60"
+                          loading="lazy"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-black/30" />
+                        <div className={`absolute top-2 left-2 text-white text-xs font-semibold px-2 py-0.5 ${typeColor[type]}`}>
+                          {doc.type}
+                        </div>
+                        {/* Download icon on hover */}
+                        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                          <div className="w-10 h-10 bg-brand-orange flex items-center justify-center">
+                            <Download size={18} className="text-white" />
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Info */}
+                      <div className="p-4">
+                        <h4 className="text-white font-semibold text-xs leading-snug group-hover:text-brand-orange transition-colors mb-2">
+                          {doc.title}
+                        </h4>
+                        <p className="text-white/40 text-xs leading-relaxed line-clamp-2">{doc.description}</p>
+                        <div className="flex items-center justify-between mt-3">
+                          <span className="text-white/30 text-xs">{doc.pages} pages · {doc.fileSize}</span>
+                          <span className="text-brand-orange text-xs font-semibold flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                            <Download size={11} /> Download
+                          </span>
+                        </div>
+                      </div>
+                    </button>
+                  ))}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* ── FAQS ── */}
         <div className="max-w-4xl mx-auto">
           <p className="section-label mb-3">FAQs</p>
           <h2 className="section-title mb-10">Frequently Asked Questions</h2>
@@ -195,29 +372,8 @@ export default function ResourcesPage({ onNavigate }: ResourcesPageProps) {
         </div>
       </section>
 
-      {/* Downloads */}
-      <section className="py-12 px-4 bg-brand-dark-2">
-        <div className="max-w-7xl mx-auto">
-          <div className="bg-brand-dark-3 border border-white/10 p-8 flex flex-col md:flex-row items-start md:items-center gap-6">
-            <Download size={36} className="text-brand-orange shrink-0" />
-            <div className="flex-1">
-              <h3 className="text-white font-bold text-xl mb-2">Downloads &amp; Datasheets</h3>
-              <p className="text-white/50 text-sm">
-                Product datasheets, technical brochures and specification documents are available on request. Contact our team and we will send you the documentation you need.
-              </p>
-            </div>
-            <button
-              onClick={() => onNavigate('contact')}
-              className="btn-primary shrink-0"
-            >
-              Request Downloads <ArrowRight size={14} />
-            </button>
-          </div>
-        </div>
-      </section>
-
       {/* CTA */}
-      <section className="bg-brand-orange py-16 px-4">
+      <section className="bg-brand-orange py-16 px-4 mt-16">
         <div className="max-w-5xl mx-auto text-center">
           <h2 className="text-3xl font-black text-white mb-4">Can't find what you need?</h2>
           <p className="text-white/80 mb-8">Talk to one of our engineers directly.</p>
