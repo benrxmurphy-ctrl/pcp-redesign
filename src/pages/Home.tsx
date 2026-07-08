@@ -86,8 +86,20 @@ export default function Home({ onNavigate }: HomeProps) {
         </div>
       </section>
 
+      {/* ── Shared background wrapper: sections 2–5 ── */}
+      <div
+        className="relative"
+        style={{
+          backgroundImage: 'url(/metal-industry-worker-sprays-protective-suit-night-generated-by-ai-scaled.jpg)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundAttachment: 'fixed',
+        }}
+      >
+        <div className="absolute inset-0 bg-black/75 pointer-events-none" />
+
       {/* ── SECTION 2: What problem do you solve? ── */}
-      <section className="py-24 px-4">
+      <section className="py-24 px-4 relative z-10">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <p className="section-label mb-3">What We Solve</p>
@@ -97,7 +109,7 @@ export default function Home({ onNavigate }: HomeProps) {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-white/5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-white/10">
             {[
               {
                 icon: '🌫️',
@@ -127,7 +139,7 @@ export default function Home({ onNavigate }: HomeProps) {
               <button
                 key={item.title}
                 onClick={item.action}
-                className="bg-brand-dark-3 p-8 text-left hover:bg-brand-dark-4 transition-all group"
+                className="bg-white/5 backdrop-blur-sm p-8 text-left hover:bg-white/10 transition-all group"
               >
                 <div className="text-4xl mb-5">{item.icon}</div>
                 <h3 className="text-xl font-bold text-white mb-3 group-hover:text-brand-orange transition-colors">
@@ -144,9 +156,8 @@ export default function Home({ onNavigate }: HomeProps) {
       </section>
 
       {/* ── SECTION 3: Which industry? ── */}
-      <section id="industries" className="py-24 px-4 relative" style={{ backgroundImage: 'url(/metal-industry-worker-sprays-protective-suit-night-generated-by-ai-scaled.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
-        <div className="absolute inset-0 bg-black/70" />
-        <div className="relative z-10 max-w-7xl mx-auto">
+      <section id="industries" className="py-24 px-4 relative z-10">
+        <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <p className="section-label mb-3">Industries We Serve</p>
             <h2 className="section-title mb-6">Which industry are you in?</h2>
@@ -186,7 +197,7 @@ export default function Home({ onNavigate }: HomeProps) {
       </section>
 
       {/* ── SECTION 4: What problem are you having? ── */}
-      <section id="problems" className="py-24 px-4">
+      <section id="problems" className="py-24 px-4 relative z-10">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
@@ -200,7 +211,7 @@ export default function Home({ onNavigate }: HomeProps) {
                   <button
                     key={p.text}
                     onClick={() => onNavigate('solution', p.solution)}
-                    className="group flex items-center gap-4 p-4 bg-brand-dark-3 border border-white/5 hover:border-brand-orange/50 hover:bg-brand-dark-4 transition-all text-left"
+                    className="group flex items-center gap-4 p-4 bg-white/5 backdrop-blur-sm border border-white/10 hover:border-brand-orange/50 hover:bg-white/10 transition-all text-left"
                   >
                     <div className="text-2xl shrink-0">{p.icon}</div>
                     <p className="text-white/70 group-hover:text-white text-sm font-medium transition-colors flex-1">
@@ -239,16 +250,16 @@ export default function Home({ onNavigate }: HomeProps) {
       </section>
 
       {/* ── SECTION 5: Why trust PCP? ── */}
-      <section className="py-24 px-4 bg-brand-dark-2">
+      <section className="py-24 px-4 relative z-10">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <p className="section-label mb-3">Why PCP Group</p>
             <h2 className="section-title mb-6">Trusted by Irish industry since 1967.</h2>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-px bg-white/5 mb-16">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-px bg-white/10 mb-16">
             {trustStats.map(stat => (
-              <div key={stat.label} className="bg-brand-dark-3 p-8 text-center">
+              <div key={stat.label} className="bg-white/5 backdrop-blur-sm p-8 text-center">
                 <div className="stat-number mb-2">
                   {stat.value}<span className="text-brand-orange">{stat.suffix}</span>
                 </div>
@@ -313,6 +324,8 @@ export default function Home({ onNavigate }: HomeProps) {
           </div>
         </div>
       </section>
+
+      </div> {/* end shared background wrapper */}
 
       {/* ── CTA Strip ── */}
       <section className="bg-brand-orange py-16 px-4">
