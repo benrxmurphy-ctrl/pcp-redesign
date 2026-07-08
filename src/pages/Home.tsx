@@ -3,11 +3,16 @@ import { useState, useEffect } from 'react';
 import { industries } from '../data/industries';
 
 const heroSlides = [
-  'https://images.pexels.com/photos/1267338/pexels-photo-1267338.jpeg?auto=compress&cs=tinysrgb&w=1920',
+  // Engineer with hard hat reviewing plans on site
+  'https://images.pexels.com/photos/2760241/pexels-photo-2760241.jpeg?auto=compress&cs=tinysrgb&w=1920',
+  // Heavy industrial plant / steel works
+  'https://images.pexels.com/photos/162568/industrial-steel-metal-factory-162568.jpeg?auto=compress&cs=tinysrgb&w=1920',
+  // Quarry / heavy machinery operation
   'https://images.pexels.com/photos/1108101/pexels-photo-1108101.jpeg?auto=compress&cs=tinysrgb&w=1920',
-  'https://images.pexels.com/photos/2058128/pexels-photo-2058128.jpeg?auto=compress&cs=tinysrgb&w=1920',
+  // Industrial processing facility
+  'https://images.pexels.com/photos/2280571/pexels-photo-2280571.jpeg?auto=compress&cs=tinysrgb&w=1920',
+  // Engineering site / construction infrastructure
   'https://images.pexels.com/photos/1117210/pexels-photo-1117210.jpeg?auto=compress&cs=tinysrgb&w=1920',
-  'https://images.pexels.com/photos/3862132/pexels-photo-3862132.jpeg?auto=compress&cs=tinysrgb&w=1920',
 ];
 
 interface HomeProps {
