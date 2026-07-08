@@ -53,6 +53,27 @@ export default function Home({ onNavigate }: HomeProps) {
 
         {/* Content */}
         <div className="relative z-10 w-full px-6 md:px-16 pb-20 pt-40 max-w-3xl">
+          {/* Quick-nav breadcrumb */}
+          <div className="flex items-center gap-2 flex-wrap mb-6">
+            {[
+              { label: 'Solutions', page: 'solution', id: 'dust' },
+              { label: 'Industries', page: 'industry', id: 'ports' },
+              { label: 'Products', page: 'products' },
+              { label: 'Projects', page: 'projects' },
+              { label: 'Resources', page: 'resources' },
+              { label: 'About', page: 'about' },
+            ].map((item, i, arr) => (
+              <span key={item.label} className="flex items-center gap-2">
+                <button
+                  onClick={() => onNavigate(item.page, item.id)}
+                  className="text-white/60 hover:text-white text-xs font-medium tracking-wide uppercase transition-colors hover:underline underline-offset-4"
+                >
+                  {item.label}
+                </button>
+                {i < arr.length - 1 && <span className="text-white/25 text-xs">/</span>}
+              </span>
+            ))}
+          </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-black leading-tight mb-8" style={{ color: '#e8621a' }}>
             Providing Bespoke<br />
             Sustainable Solutions<br />
