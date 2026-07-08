@@ -1,4 +1,5 @@
 import { ArrowRight, CheckCircle, ChevronRight, Phone } from 'lucide-react';
+import Breadcrumb from '../components/Breadcrumb';
 import { solutionById } from '../data/solutions';
 import { industries } from '../data/industries';
 import { productsBySolution } from '../data/products';
@@ -35,12 +36,11 @@ export default function SolutionPage({ id, onNavigate }: SolutionPageProps) {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/60 to-brand-dark" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 pb-16 w-full">
-          <div className="flex items-center gap-2 text-white/40 text-xs mb-5">
-            <button onClick={() => onNavigate('home')} className="hover:text-white transition-colors">Home</button>
-            <ChevronRight size={12} />
-            <span>Solutions</span>
-            <ChevronRight size={12} />
-            <span className="text-white/80">{solution.title}</span>
+          <div className="mb-5">
+            <Breadcrumb
+              crumbs={[{ label: 'Solutions' }, { label: solution.title }]}
+              onNavigate={onNavigate}
+            />
           </div>
           <p className="section-label mb-3">Solution</p>
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-white leading-none mb-4">

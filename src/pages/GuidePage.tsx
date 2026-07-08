@@ -1,4 +1,5 @@
 import { ArrowRight, ChevronRight, Clock, BookOpen, Phone } from 'lucide-react';
+import Breadcrumb from '../components/Breadcrumb';
 import { guideById, guides } from '../data/guides';
 import { productById } from '../data/products';
 
@@ -36,14 +37,15 @@ export default function GuidePage({ id, onNavigate }: GuidePageProps) {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/65 to-brand-dark" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 pb-16 w-full">
-          <div className="flex items-center gap-2 text-white/40 text-xs mb-5 flex-wrap">
-            <button onClick={() => onNavigate('home')} className="hover:text-white transition-colors">Home</button>
-            <ChevronRight size={12} />
-            <button onClick={() => onNavigate('resources')} className="hover:text-white transition-colors">Resources</button>
-            <ChevronRight size={12} />
-            <span className="hover:text-white transition-colors">Guides</span>
-            <ChevronRight size={12} />
-            <span className="text-white/80 truncate">{guide.title}</span>
+          <div className="mb-5">
+            <Breadcrumb
+              crumbs={[
+                { label: 'Resources', page: 'resources' },
+                { label: 'Guides', page: 'resources', id: 'guides' },
+                { label: guide.title },
+              ]}
+              onNavigate={onNavigate}
+            />
           </div>
           <div className="flex flex-wrap gap-2 mb-4">
             <span className="bg-brand-orange text-white text-xs font-semibold px-3 py-1">{guide.topic}</span>

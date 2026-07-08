@@ -1,4 +1,5 @@
 import { ArrowRight, ChevronRight } from 'lucide-react';
+import Breadcrumb from '../components/Breadcrumb';
 import { products } from '../data/products';
 
 interface ProductsPageProps {
@@ -49,10 +50,8 @@ export default function ProductsPage({ onNavigate }: ProductsPageProps) {
       {/* Hero */}
       <section className="py-20 px-4 bg-brand-dark-2">
         <div className="max-w-7xl mx-auto">
-          <div className="flex items-center gap-2 text-white/40 text-xs mb-6">
-            <button onClick={() => onNavigate('home')} className="hover:text-white transition-colors">Home</button>
-            <ChevronRight size={12} />
-            <span className="text-white/80">Products</span>
+          <div className="mb-6">
+            <Breadcrumb crumbs={[{ label: 'Products' }]} onNavigate={onNavigate} />
           </div>
           <p className="section-label mb-3">Products</p>
           <h1 className="text-5xl md:text-6xl font-black text-white mb-6">Equipment &amp; Systems</h1>

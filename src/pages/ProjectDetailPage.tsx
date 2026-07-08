@@ -1,4 +1,5 @@
 import { ArrowRight, ChevronRight, MapPin, Calendar, CheckCircle, Quote, Phone } from 'lucide-react';
+import Breadcrumb from '../components/Breadcrumb';
 import { projectById } from '../data/projects';
 import { productById } from '../data/products';
 import { solutionById } from '../data/solutions';
@@ -39,12 +40,14 @@ export default function ProjectDetailPage({ id, onNavigate }: ProjectDetailPageP
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/65 to-brand-dark" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 pb-16 w-full">
-          <div className="flex items-center gap-2 text-white/40 text-xs mb-5 flex-wrap">
-            <button onClick={() => onNavigate('home')} className="hover:text-white transition-colors">Home</button>
-            <ChevronRight size={12} />
-            <button onClick={() => onNavigate('projects')} className="hover:text-white transition-colors">Projects</button>
-            <ChevronRight size={12} />
-            <span className="text-white/80 truncate">{project.title}</span>
+          <div className="mb-5">
+            <Breadcrumb
+              crumbs={[
+                { label: 'Projects', page: 'projects' },
+                { label: project.title },
+              ]}
+              onNavigate={onNavigate}
+            />
           </div>
           <div className="flex flex-wrap gap-2 mb-4">
             <span className="bg-brand-orange text-white text-xs font-semibold px-3 py-1">{project.solution}</span>

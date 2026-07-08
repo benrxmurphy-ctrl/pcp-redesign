@@ -1,4 +1,5 @@
 import { ArrowRight, ChevronRight, CheckCircle } from 'lucide-react';
+import Breadcrumb from '../components/Breadcrumb';
 
 interface AboutPageProps {
   onNavigate: (page: string, id?: string) => void;
@@ -15,10 +16,8 @@ export default function AboutPage({ onNavigate }: AboutPageProps) {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-brand-dark/80 to-brand-dark" />
         <div className="relative z-10 max-w-7xl mx-auto">
-          <div className="flex items-center gap-2 text-white/40 text-xs mb-6">
-            <button onClick={() => onNavigate('home')} className="hover:text-white transition-colors">Home</button>
-            <ChevronRight size={12} />
-            <span className="text-white/80">About</span>
+          <div className="mb-6">
+            <Breadcrumb crumbs={[{ label: 'About' }]} onNavigate={onNavigate} />
           </div>
           <p className="section-label mb-3">About PCP Group</p>
           <h1 className="text-5xl md:text-6xl font-black text-white mb-6 max-w-3xl">
