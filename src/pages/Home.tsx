@@ -99,7 +99,7 @@ export default function Home({ onNavigate }: HomeProps) {
 
       {/* ── SECTION 2: What problem do you solve? ── */}
       <section className="py-24 px-4 relative">
-        <div className="absolute inset-0 bg-black/72" />
+        <div className="absolute inset-0 bg-black/80" />
         <div className="relative z-10 max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <p className="section-label mb-3">What We Solve</p>
@@ -199,7 +199,7 @@ export default function Home({ onNavigate }: HomeProps) {
 
       {/* ── SECTION 4: What problem are you having? ── */}
       <section id="problems" className="py-24 px-4 relative">
-        <div className="absolute inset-0 bg-black/72" />
+        <div className="absolute inset-0 bg-black/85" />
         <div className="relative z-10 max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
