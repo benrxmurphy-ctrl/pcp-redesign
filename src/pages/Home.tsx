@@ -258,7 +258,7 @@ export default function Home({ onNavigate }: HomeProps) {
 
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h3 className="text-2xl font-bold text-white mb-6">Why engineers specify PCP Group.</h3>
+              <h3 className="text-2xl font-bold text-white mb-6">Why choose us?</h3>
               <div className="space-y-4">
                 {[
                   'Free site assessment — no obligation to purchase',
