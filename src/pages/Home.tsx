@@ -144,8 +144,9 @@ export default function Home({ onNavigate }: HomeProps) {
       </section>
 
       {/* ── SECTION 3: Which industry? ── */}
-      <section id="industries" className="py-24 px-4 bg-brand-dark-2">
-        <div className="max-w-7xl mx-auto">
+      <section id="industries" className="py-24 px-4 relative" style={{ backgroundImage: 'url(/metal-industry-worker-sprays-protective-suit-night-generated-by-ai-scaled.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+        <div className="absolute inset-0 bg-black/70" />
+        <div className="relative z-10 max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <p className="section-label mb-3">Industries We Serve</p>
             <h2 className="section-title mb-6">Which industry are you in?</h2>
