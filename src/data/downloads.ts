@@ -48,8 +48,7 @@ Biodegradable haul road dust suppressant. Medium-term effectiveness — outlasts
 
 CONTACT
 PCP Group
-Republic of Ireland: +353 45 863220
-Northern Ireland: +44 (0)73 40678343
++353 45 863220
 info@pcpgroup.ie | www.pcpgroup.ie`,
   },
   {
@@ -93,8 +92,7 @@ Concentrated deodorising chemistry for atomiser, fogging and vapour systems. Sce
 
 CONTACT
 PCP Group
-Republic of Ireland: +353 45 863220
-Northern Ireland: +44 (0)73 40678343
++353 45 863220
 info@pcpgroup.ie | www.pcpgroup.ie`,
   },
   {

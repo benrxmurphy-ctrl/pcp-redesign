@@ -46,7 +46,7 @@ const faqs = [
   },
   {
     q: 'Do you cover Northern Ireland?',
-    a: 'Yes. We cover both the Republic of Ireland and Northern Ireland. NI contact: +44 (0)73 40678343.',
+    a: 'Yes. We cover both the Republic of Ireland and Northern Ireland. Get in touch via phone or email and we will arrange a visit.',
   },
 ];
 

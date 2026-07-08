@@ -72,15 +72,6 @@ export default function ContactPage({ onNavigate }: ContactPageProps) {
                     <p className="text-white group-hover:text-brand-orange transition-colors font-medium">+353 (0)45 863220</p>
                   </div>
                 </a>
-                <a href="tel:+447340678343" className="flex items-center gap-4 group">
-                  <div className="w-10 h-10 bg-brand-dark-4 border border-white/10 flex items-center justify-center shrink-0">
-                    <Phone size={16} className="text-white/50" />
-                  </div>
-                  <div>
-                    <p className="text-white/40 text-xs mb-0.5">NI</p>
-                    <p className="text-white group-hover:text-brand-orange transition-colors font-medium">+44 (0)73 40678343</p>
-                  </div>
-                </a>
                 <a href="mailto:info@pcpgroup.ie" className="flex items-center gap-4 group">
                   <div className="w-10 h-10 bg-brand-dark-4 border border-white/10 flex items-center justify-center shrink-0">
                     <Mail size={16} className="text-white/50" />

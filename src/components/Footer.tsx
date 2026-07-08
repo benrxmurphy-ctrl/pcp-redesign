@@ -84,12 +84,6 @@ export default function Footer({ onNavigate }: FooterProps) {
                 </a>
               </li>
               <li>
-                <a href="tel:+447340678343" className="flex items-center gap-3 text-sm text-white/50 hover:text-white transition-colors">
-                  <Phone size={14} className="text-brand-orange shrink-0" />
-                  +44 (0)73 40678343 (NI)
-                </a>
-              </li>
-              <li>
                 <a href="mailto:info@pcpgroup.ie" className="flex items-center gap-3 text-sm text-white/50 hover:text-white transition-colors">
                   <Mail size={14} className="text-brand-orange shrink-0" />
                   info@pcpgroup.ie
