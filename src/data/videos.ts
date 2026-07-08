@@ -5,6 +5,7 @@ export interface VideoGuide {
   duration: string;
   thumbnail: string;
   description: string;
+  youtubeId: string;
   solutionId?: string;
   highlights: string[];
 }
@@ -15,8 +16,9 @@ export const videoGuides: VideoGuide[] = [
     title: 'How the MINIAT Atomiser Works',
     topic: 'Dust Suppression',
     duration: '4:32',
+    youtubeId: '0ZlVVRnWsLc',
     thumbnail: 'https://images.pexels.com/photos/1267338/pexels-photo-1267338.jpeg',
-    description: 'A walkthrough of the MINIAT Mobile rotary atomiser — how it generates fine mist, what happens when it contacts dust particles, and how to deploy it on site in under 30 minutes.',
+    description: 'A walkthrough of a rotary atomiser — how it generates fine mist, what happens when it contacts dust particles, and how to deploy it on site in under 30 minutes.',
     solutionId: 'dust',
     highlights: [
       'Rotary drum atomisation explained',
@@ -30,8 +32,9 @@ export const videoGuides: VideoGuide[] = [
     title: 'Quarry Dust Management — A Site Walkthrough',
     topic: 'Quarrying',
     duration: '7:15',
+    youtubeId: 'P8VzKuiHDmc',
     thumbnail: 'https://images.pexels.com/photos/1108101/pexels-photo-1108101.jpeg',
-    description: 'PCP Group engineers walk through an active quarry site, identifying each dust source and explaining which suppression method is most effective at each point — from crusher face to haul road to stockpile.',
+    description: 'Engineers walk through an active quarry site, identifying each dust source and explaining which suppression method is most effective at each point — from crusher face to haul road to stockpile.',
     solutionId: 'dust',
     highlights: [
       'Crusher face dust — foam vs water comparison',
@@ -45,8 +48,9 @@ export const videoGuides: VideoGuide[] = [
     title: 'EPA Dust Compliance — What Site Operators Need to Know',
     topic: 'Compliance',
     duration: '6:48',
+    youtubeId: 'X8-RLN-p8c0',
     thumbnail: 'https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg',
-    description: 'A concise guide to Irish EPA dust compliance requirements — what licenced sites must demonstrate, what local authority planning conditions typically require, and how to build a defensible monitoring record.',
+    description: 'A concise guide to dust compliance requirements — what licenced sites must demonstrate, what local authority planning conditions typically require, and how to build a defensible monitoring record.',
     highlights: [
       'IEL licence requirements simplified',
       'Planning condition dust management',
@@ -59,6 +63,7 @@ export const videoGuides: VideoGuide[] = [
     title: 'Odour Suppression vs Abatement — Choosing the Right Approach',
     topic: 'Odour Control',
     duration: '5:20',
+    youtubeId: 'jEyBeCihFVI',
     thumbnail: 'https://images.pexels.com/photos/3862132/pexels-photo-3862132.jpeg',
     description: 'When should you use a mist suppression system and when do you need abatement filtration? This video explains the key differences, when to layer both approaches and how to decide which is right for your operation.',
     solutionId: 'odour',
@@ -74,8 +79,9 @@ export const videoGuides: VideoGuide[] = [
     title: 'FilterSense Baghouse Control — System Overview',
     topic: 'Air Filtration',
     duration: '8:05',
+    youtubeId: 'tFJ0EIHtTvY',
     thumbnail: 'https://images.pexels.com/photos/2058128/pexels-photo-2058128.jpeg',
-    description: 'An overview of how FilterSense baghouse management goes beyond differential pressure monitoring to provide continuous bag leak detection, optimised cleaning and real-time emissions data.',
+    description: 'An overview of how baghouse management goes beyond differential pressure monitoring to provide continuous bag leak detection, optimised cleaning and real-time emissions data.',
     solutionId: 'air-filtration',
     highlights: [
       'Why differential pressure alone is not enough',
@@ -89,8 +95,9 @@ export const videoGuides: VideoGuide[] = [
     title: 'H2S Odour Control at Wastewater Treatment Plants',
     topic: 'Water Treatment',
     duration: '9:12',
+    youtubeId: 'DAxQVX-MYL4',
     thumbnail: 'https://images.pexels.com/photos/2058128/pexels-photo-2058128.jpeg',
-    description: 'Where H2S is generated at Irish WWTPs, why standard monitors fail in wet environments, and which treatment approach is most effective for each source type — from primary settlement to pump stations.',
+    description: 'Where H2S is generated at wastewater treatment plants, why standard monitors fail in wet environments, and which treatment approach is most effective for each source type.',
     solutionId: 'odour',
     highlights: [
       'H2S generation at each WWTP process stage',
@@ -104,6 +111,7 @@ export const videoGuides: VideoGuide[] = [
     title: 'Selecting the Right Dust Monitor for Your Site',
     topic: 'Monitoring',
     duration: '5:55',
+    youtubeId: 'Ak33cs8BsEo',
     thumbnail: 'https://images.pexels.com/photos/1267338/pexels-photo-1267338.jpeg',
     description: 'The different types of dust monitor explained — optical particle counters, triboelectric sensors and gravimetric samplers — and how to choose based on what the data will be used for.',
     solutionId: 'monitoring',
@@ -119,6 +127,7 @@ export const videoGuides: VideoGuide[] = [
     title: 'Construction Site Dust Management — Planning Requirements',
     topic: 'Construction',
     duration: '6:30',
+    youtubeId: 'Eaf8pW1Xj08',
     thumbnail: 'https://images.pexels.com/photos/1117210/pexels-photo-1117210.jpeg',
     description: 'What planning authorities require for dust management on Irish construction projects, why hire is the cost-effective choice for contractors, and how to satisfy planning conditions with a monitoring record.',
     solutionId: 'dust',
