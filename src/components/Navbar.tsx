@@ -79,15 +79,13 @@ export default function Navbar({ onNavigate, currentPage }: NavbarProps) {
           {/* Logo */}
           <button
             onClick={() => { onNavigate('home'); setMobileOpen(false); }}
-            className="flex items-center gap-3 group"
+            className="flex items-center group"
           >
-            <div className="w-8 h-8 bg-brand-orange flex items-center justify-center">
-              <span className="text-white font-black text-sm leading-none">PCP</span>
-            </div>
-            <div className="text-left">
-              <div className="text-white font-bold text-sm leading-tight tracking-wide">PCP Group</div>
-              <div className="text-white/50 text-[10px] tracking-widest uppercase leading-tight">Environmental</div>
-            </div>
+            <img
+              src="/image copy.png"
+              alt="PCP Group"
+              className="h-10 lg:h-12 w-auto object-contain mix-blend-screen brightness-125"
+            />
           </button>
 
           {/* Desktop Nav */}
