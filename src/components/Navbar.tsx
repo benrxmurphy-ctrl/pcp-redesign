@@ -82,7 +82,7 @@ export default function Navbar({ onNavigate, currentPage }: NavbarProps) {
             className="flex items-center group"
           >
             <img
-              src="/image copy.png"
+              src="/pcp-logo.png"
               alt="PCP Group"
               className="h-10 lg:h-12 w-auto object-contain mix-blend-screen brightness-125"
             />

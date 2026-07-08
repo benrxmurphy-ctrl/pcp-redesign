@@ -13,14 +13,8 @@ export default function Footer({ onNavigate }: FooterProps) {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-3 mb-5">
-              <div className="w-8 h-8 bg-brand-orange flex items-center justify-center">
-                <span className="text-white font-black text-sm">PCP</span>
-              </div>
-              <div>
-                <div className="text-white font-bold text-sm">PCP Group</div>
-                <div className="text-white/40 text-[10px] tracking-widest uppercase">Environmental</div>
-              </div>
+          <div className="mb-5">
+              <img src="/pcp-logo.png" alt="PCP Group" className="h-12 w-auto object-contain mix-blend-screen brightness-125" />
             </div>
             <p className="text-white/50 text-sm leading-relaxed mb-5">
               Industrial environmental solutions for dust, odour and airborne emissions. Protecting people, assets and reputation since 1967.
