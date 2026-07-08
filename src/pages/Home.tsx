@@ -156,6 +156,7 @@ export default function Home({ onNavigate }: HomeProps) {
       </section>
 
       {/* ── SECTION 3: Which industry? ── */}
+      <hr className="border-t border-white/15 relative z-10 mx-8" />
       <section id="industries" className="py-24 px-4 relative z-10">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
@@ -197,6 +198,7 @@ export default function Home({ onNavigate }: HomeProps) {
       </section>
 
       {/* ── SECTION 4: What problem are you having? ── */}
+      <hr className="border-t border-white/15 relative z-10 mx-8" />
       <section id="problems" className="py-24 px-4 relative z-10">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -250,6 +252,7 @@ export default function Home({ onNavigate }: HomeProps) {
       </section>
 
       {/* ── SECTION 5: Why trust PCP? ── */}
+      <hr className="border-t border-white/15 relative z-10 mx-8" />
       <section className="py-24 px-4 relative z-10">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
@@ -328,7 +331,7 @@ export default function Home({ onNavigate }: HomeProps) {
       </div> {/* end shared background wrapper */}
 
       {/* ── CTA Strip ── */}
-      <section className="bg-brand-orange py-16 px-4">
+      <section className="py-16 px-4" style={{ backgroundColor: 'rgba(232, 98, 26, 0.4)' }}>
         <div className="max-w-5xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-black text-white mb-4">
             Ready to solve your site's dust or odour problem?
