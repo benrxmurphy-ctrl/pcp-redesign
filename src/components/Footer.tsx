@@ -52,11 +52,11 @@ export default function Footer({ onNavigate }: FooterProps) {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           {/* Brand */}
           <div>
-            <div className="mb-5">
+            <div className="mb-8">
               <img src="/image copy copy.png" alt="PCP Group" className="h-12 w-auto object-contain" style={{ mixBlendMode: 'screen', filter: 'contrast(3) brightness(1.2)' }} />
             </div>
-            <div className="mb-5">
-              <p className="text-white/40 text-xs uppercase tracking-widest mb-3">Hours of Operation</p>
+            <div className="mb-8">
+              <p className="text-white/40 text-xs uppercase tracking-widest mb-4">Hours of Operation</p>
               <div className="flex items-center justify-between">
                 <span className="text-white/60 text-sm">Mon – Fri</span>
                 <span className="text-white text-sm font-medium">8:00 am – 5:00 pm</span>
