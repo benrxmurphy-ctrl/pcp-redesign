@@ -94,12 +94,6 @@ export default function Navbar({ onNavigate, currentPage }: NavbarProps) {
       action: () => onNavigate('rental'),
     },
     {
-      label: 'About',
-      key: 'about',
-      items: null,
-      action: () => onNavigate('about'),
-    },
-    {
       label: 'Resources',
       key: 'resources',
       items: [
@@ -129,7 +123,7 @@ export default function Navbar({ onNavigate, currentPage }: NavbarProps) {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="flex items-center justify-between h-16 lg:h-20">
+        <div className="grid grid-cols-[auto_1fr_auto] items-center h-16 lg:h-20">
           {/* Logo */}
           <button
             onClick={() => { onNavigate('home'); setMobileOpen(false); }}
@@ -142,8 +136,8 @@ export default function Navbar({ onNavigate, currentPage }: NavbarProps) {
             />
           </button>
 
-          {/* Desktop Nav */}
-          <div className="hidden lg:flex items-center gap-1">
+          {/* Desktop Nav — centred */}
+          <div className="hidden lg:flex items-center justify-center gap-1">
             {nav.map(item => (
               <div
                 key={item.key}
@@ -208,7 +202,7 @@ export default function Navbar({ onNavigate, currentPage }: NavbarProps) {
           </div>
 
           {/* CTA + Mobile Toggle */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center justify-end gap-3">
             <a
               href="tel:+35345863220"
               className="hidden lg:flex items-center gap-2 text-sm text-white/70 hover:text-white transition-colors"
