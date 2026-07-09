@@ -85,7 +85,7 @@ export default function Navbar({ onNavigate, currentPage }: NavbarProps) {
               src="/image copy copy.png"
               alt="PCP Group"
               className="h-10 lg:h-12 w-auto object-contain"
-              style={{ mixBlendMode: 'screen', filter: 'contrast(3) brightness(1.2)' }}
+              style={{ mixBlendMode: 'lighten' }}
             />
           </button>
 

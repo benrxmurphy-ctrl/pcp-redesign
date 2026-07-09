@@ -53,7 +53,7 @@ export default function Footer({ onNavigate }: FooterProps) {
           {/* Brand */}
           <div>
             <div className="mb-8">
-              <img src="/image copy copy.png" alt="PCP Group" className="h-12 w-auto object-contain" style={{ mixBlendMode: 'screen', filter: 'contrast(3) brightness(1.2)' }} />
+              <img src="/image copy copy.png" alt="PCP Group" className="h-12 w-auto object-contain" style={{ mixBlendMode: 'lighten' }} />
             </div>
             <div className="mb-8">
               <p className="text-white/40 text-xs uppercase tracking-widest mb-4">Hours of Operation</p>
