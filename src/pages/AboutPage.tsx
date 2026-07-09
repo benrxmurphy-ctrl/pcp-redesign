@@ -116,27 +116,17 @@ export default function AboutPage({ onNavigate }: AboutPageProps) {
             {/* Two full sets for seamless loop */}
             {[...Array(2)].map((_, setIdx) => (
               [
-                { src: 'https://dustsolutions.ie/wp-content/uploads/2021/05/NISO-Member-logo-300x300-1.jpg', alt: 'NISO Member', label: 'NISO Member' },
-                { src: 'https://dustsolutions.ie/wp-content/uploads/2022/06/MPA_NI-Logo.jpg', alt: 'MPA NI', label: 'MPA NI Member' },
-                { src: 'https://dustsolutions.ie/wp-content/uploads/2020/07/imqs_logo_update.png', alt: 'IMQS', label: 'IMQS Member' },
-                { src: null, alt: 'Enterprise Ireland', label: 'Enterprise Ireland' },
-                { src: null, alt: 'European Union', label: 'EU Co-Funded' },
+                { src: 'https://dustsolutions.ie/wp-content/uploads/2021/05/NISO-Member-logo-300x300-1.jpg', alt: 'NISO Member' },
+                { src: 'https://dustsolutions.ie/wp-content/uploads/2022/06/MPA_NI-Logo.jpg', alt: 'MPA NI' },
+                { src: 'https://dustsolutions.ie/wp-content/uploads/2020/07/imqs_logo_update.png', alt: 'IMQS' },
               ].map((item, i) => (
-                <div key={`${setIdx}-${i}`} className="flex flex-col items-center gap-2 shrink-0">
-                  {item.src ? (
-                    <div className="h-14 w-28 flex items-center justify-center bg-white/5 border border-white/8 px-3">
-                      <img
-                        src={item.src}
-                        alt={item.alt}
-                        className="max-h-10 max-w-full object-contain filter brightness-90 hover:brightness-110 transition-all"
-                        loading="lazy"
-                      />
-                    </div>
-                  ) : (
-                    <div className="h-14 px-5 flex items-center justify-center bg-white/5 border border-white/8">
-                      <span className="text-white/60 text-xs font-semibold tracking-wide uppercase whitespace-nowrap">{item.alt}</span>
-                    </div>
-                  )}
+                <div key={`${setIdx}-${i}`} className="shrink-0">
+                  <img
+                    src={item.src}
+                    alt={item.alt}
+                    className="h-12 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity"
+                    loading="lazy"
+                  />
                 </div>
               ))
             ))}
