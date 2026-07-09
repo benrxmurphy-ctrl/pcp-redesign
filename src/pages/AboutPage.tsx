@@ -105,6 +105,45 @@ export default function AboutPage({ onNavigate }: AboutPageProps) {
         </div>
       </section>
 
+      {/* Certifications & Memberships Ticker */}
+      <section className="py-10 relative overflow-hidden">
+        <div className="absolute inset-0 bg-brand-dark/90 border-y border-white/5" />
+        <div className="relative z-10 mb-5 text-center">
+          <p className="text-white/30 text-xs uppercase tracking-widest">Certifications &amp; Memberships</p>
+        </div>
+        <div className="relative z-10 overflow-hidden">
+          <div className="ticker-track flex items-center gap-16 w-max">
+            {/* Two full sets for seamless loop */}
+            {[...Array(2)].map((_, setIdx) => (
+              [
+                { src: 'https://dustsolutions.ie/wp-content/uploads/2021/05/NISO-Member-logo-300x300-1.jpg', alt: 'NISO Member', label: 'NISO Member' },
+                { src: 'https://dustsolutions.ie/wp-content/uploads/2022/06/MPA_NI-Logo.jpg', alt: 'MPA NI', label: 'MPA NI Member' },
+                { src: 'https://dustsolutions.ie/wp-content/uploads/2020/07/imqs_logo_update.png', alt: 'IMQS', label: 'IMQS Member' },
+                { src: null, alt: 'Enterprise Ireland', label: 'Enterprise Ireland' },
+                { src: null, alt: 'European Union', label: 'EU Co-Funded' },
+              ].map((item, i) => (
+                <div key={`${setIdx}-${i}`} className="flex flex-col items-center gap-2 shrink-0">
+                  {item.src ? (
+                    <div className="h-14 w-28 flex items-center justify-center bg-white/5 border border-white/8 px-3">
+                      <img
+                        src={item.src}
+                        alt={item.alt}
+                        className="max-h-10 max-w-full object-contain filter brightness-90 hover:brightness-110 transition-all"
+                        loading="lazy"
+                      />
+                    </div>
+                  ) : (
+                    <div className="h-14 px-5 flex items-center justify-center bg-white/5 border border-white/8">
+                      <span className="text-white/60 text-xs font-semibold tracking-wide uppercase whitespace-nowrap">{item.alt}</span>
+                    </div>
+                  )}
+                </div>
+              ))
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Why Choose Us */}
       <section className="py-20 px-4 relative">
         <div className="absolute inset-0 bg-brand-dark/75" />
@@ -144,14 +183,7 @@ export default function AboutPage({ onNavigate }: AboutPageProps) {
                 <p className="text-white/50 text-sm">To remain Ireland's trusted leader in industrial safety and environmental control, known for honest service, solid expertise and innovation that genuinely improves how businesses operate.</p>
               </div>
               <div className="pt-4 border-t border-white/10">
-                <p className="text-white/40 text-xs uppercase tracking-widest mb-3">Certifications &amp; Memberships</p>
-                <div className="flex flex-wrap gap-3">
-                  {['ISO Certified', 'MPA Member', 'NISO Member', 'IMQS', 'Enterprise Ireland'].map(cert => (
-                    <span key={cert} className="px-3 py-1.5 bg-brand-dark-4 border border-white/10 text-white/50 text-xs">
-                      {cert}
-                    </span>
-                  ))}
-                </div>
+                <p className="text-white/40 text-xs uppercase tracking-widest">Founded 1967 &mdash; Ireland&apos;s trusted environmental specialists</p>
               </div>
             </div>
           </div>
