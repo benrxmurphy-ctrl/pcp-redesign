@@ -57,7 +57,7 @@ export default function Footer({ onNavigate }: FooterProps) {
             </div>
             <div className="mb-5">
               <p className="text-white/40 text-xs uppercase tracking-widest mb-3">Hours of Operation</p>
-              <div className="flex items-center justify-between border-t border-white/10 pt-3">
+              <div className="flex items-center justify-between">
                 <span className="text-white/60 text-sm">Mon – Fri</span>
                 <span className="text-white text-sm font-medium">8:00 am – 5:00 pm</span>
               </div>
