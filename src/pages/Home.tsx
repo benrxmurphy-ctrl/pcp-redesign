@@ -309,26 +309,26 @@ export default function Home({ onNavigate }: HomeProps) {
             </div>
             <div className="grid grid-cols-2 gap-3">
               <img
-                src="https://images.pexels.com/photos/1117210/pexels-photo-1117210.jpeg?auto=compress&cs=tinysrgb&w=600"
-                alt="Port operations"
+                src="/images/Dust-Monitoring.webp"
+                alt="Dust monitoring"
                 className="w-full h-48 object-cover"
                 loading="lazy"
               />
               <img
-                src="https://images.pexels.com/photos/3862132/pexels-photo-3862132.jpeg?auto=compress&cs=tinysrgb&w=600"
-                alt="Industrial site"
+                src="/images/IMG_9213_(1).jpeg"
+                alt="PCP Group exhibition"
                 className="w-full h-48 object-cover"
                 loading="lazy"
               />
               <img
-                src="https://images.pexels.com/photos/2058128/pexels-photo-2058128.jpeg?auto=compress&cs=tinysrgb&w=600"
-                alt="Quarry dust suppression"
+                src="/images/Odour-Suppression-with-Minimal-Water.webp"
+                alt="Odour suppression equipment"
                 className="w-full h-48 object-cover"
                 loading="lazy"
               />
               <img
-                src="https://images.pexels.com/photos/1367269/pexels-photo-1367269.jpeg?auto=compress&cs=tinysrgb&w=600"
-                alt="Manufacturing facility"
+                src="/images/sys_media_300.jpg"
+                alt="Dust suppression cannon"
                 className="w-full h-48 object-cover"
                 loading="lazy"
               />
