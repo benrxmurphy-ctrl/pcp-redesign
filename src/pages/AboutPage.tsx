@@ -116,15 +116,18 @@ export default function AboutPage({ onNavigate }: AboutPageProps) {
             {/* Two full sets for seamless loop */}
             {[...Array(2)].map((_, setIdx) => (
               [
-                { src: 'https://dustsolutions.ie/wp-content/uploads/2021/05/NISO-Member-logo-300x300-1.jpg', alt: 'NISO Member' },
-                { src: 'https://dustsolutions.ie/wp-content/uploads/2022/06/MPA_NI-Logo.jpg', alt: 'MPA NI' },
-                { src: 'https://dustsolutions.ie/wp-content/uploads/2020/07/imqs_logo_update.png', alt: 'IMQS' },
+                { src: 'https://pcpgroup.ie/wp-content/uploads/2025/11/niso.webp', alt: 'NISO Member' },
+                { src: 'https://pcpgroup.ie/wp-content/uploads/2025/11/mpa.webp', alt: 'MPA NI' },
+                { src: 'https://pcpgroup.ie/wp-content/uploads/2025/11/imqs.webp', alt: 'IMQS' },
+                { src: 'https://pcpgroup.ie/wp-content/uploads/2025/11/oifig.webp', alt: 'Local Enterprise Office' },
+                { src: 'https://pcpgroup.ie/wp-content/uploads/2025/11/european-union.webp', alt: 'European Union' },
               ].map((item, i) => (
                 <div key={`${setIdx}-${i}`} className="shrink-0">
                   <img
                     src={item.src}
                     alt={item.alt}
-                    className="h-12 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity"
+                    className="h-12 w-auto object-contain opacity-75 hover:opacity-100 transition-opacity"
+                    style={{ mixBlendMode: 'screen' }}
                     loading="lazy"
                   />
                 </div>
