@@ -263,7 +263,7 @@ export default function Home({ onNavigate }: HomeProps) {
             <h2 className="section-title mb-6">Trusted by Irish industry since 1967.</h2>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-px bg-white/10 mb-16">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-white/10 mb-16">
             {trustStats.map(stat => (
               <div key={stat.label} className="bg-white/5 backdrop-blur-sm p-8 text-center">
                 <div className="stat-number mb-2">
@@ -336,7 +336,7 @@ export default function Home({ onNavigate }: HomeProps) {
         <div className="absolute inset-0" style={{ backgroundColor: 'rgba(232, 98, 26, 0.78)' }} />
         <div className="relative z-10 max-w-5xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-black text-white mb-4">
-            Ready to solve your site's dust or odour problem?
+            Experiencing Environmental Issues?
           </h2>
           <p className="text-white/80 text-lg mb-8 max-w-xl mx-auto">
             Our engineers will visit your site, assess the challenge, and recommend the right solution. No obligation.
