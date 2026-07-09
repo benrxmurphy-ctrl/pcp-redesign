@@ -13,8 +13,10 @@ export default function Footer({ onNavigate }: FooterProps) {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           {/* Brand */}
           <div>
-          <div className="mb-5">
-              <img src="/pcp-logo.png" alt="PCP Group" className="h-12 w-auto object-contain mix-blend-screen brightness-125" />
+            <div className="mb-5">
+              <span className="text-white font-bold text-xl tracking-wide">
+                PCP <span className="text-brand-orange">Group</span>
+              </span>
             </div>
             <p className="text-white/50 text-sm leading-relaxed mb-5">
               Industrial environmental solutions for dust, odour and airborne emissions. Protecting people, assets and reputation since 1967.
@@ -31,13 +33,13 @@ export default function Footer({ onNavigate }: FooterProps) {
 
           {/* Solutions */}
           <div>
-            <h4 className="text-white font-semibold text-sm mb-4 tracking-wider uppercase">Solutions</h4>
-            <ul className="space-y-2.5">
-              {solutions.map(s => (
+            <h4 className="text-white text-xs font-bold uppercase tracking-widest mb-5">Solutions</h4>
+            <ul className="space-y-2">
+              {solutions.slice(0, 6).map(s => (
                 <li key={s.id}>
                   <button
                     onClick={() => onNavigate('solution', s.id)}
-                    className="text-white/50 hover:text-brand-orange text-sm transition-colors"
+                    className="text-white/50 text-sm hover:text-white transition-colors text-left"
                   >
                     {s.title}
                   </button>
@@ -48,13 +50,13 @@ export default function Footer({ onNavigate }: FooterProps) {
 
           {/* Industries */}
           <div>
-            <h4 className="text-white font-semibold text-sm mb-4 tracking-wider uppercase">Industries</h4>
-            <ul className="space-y-2.5">
-              {industries.slice(0, 8).map(i => (
+            <h4 className="text-white text-xs font-bold uppercase tracking-widest mb-5">Industries</h4>
+            <ul className="space-y-2">
+              {industries.slice(0, 6).map(i => (
                 <li key={i.id}>
                   <button
                     onClick={() => onNavigate('industry', i.id)}
-                    className="text-white/50 hover:text-brand-orange text-sm transition-colors"
+                    className="text-white/50 text-sm hover:text-white transition-colors text-left"
                   >
                     {i.name}
                   </button>
@@ -65,44 +67,45 @@ export default function Footer({ onNavigate }: FooterProps) {
 
           {/* Contact */}
           <div>
-            <h4 className="text-white font-semibold text-sm mb-4 tracking-wider uppercase">Contact</h4>
+            <h4 className="text-white text-xs font-bold uppercase tracking-widest mb-5">Contact</h4>
             <ul className="space-y-3">
-              <li className="flex items-start gap-3 text-sm text-white/50">
-                <MapPin size={14} className="text-brand-orange mt-0.5 shrink-0" />
-                <span>PCP House, Ballymore Eustace, Co. Kildare, W91W275, Ireland</span>
-              </li>
               <li>
-                <a href="tel:+35345863220" className="flex items-center gap-3 text-sm text-white/50 hover:text-white transition-colors">
-                  <Phone size={14} className="text-brand-orange shrink-0" />
-                  +353 (0)45 863220
+                <a href="tel:+35345863220" className="flex items-start gap-2.5 text-white/50 text-sm hover:text-white transition-colors">
+                  <Phone size={14} className="mt-0.5 shrink-0" />
+                  +353 45 863220
                 </a>
               </li>
               <li>
-                <a href="mailto:info@pcpgroup.ie" className="flex items-center gap-3 text-sm text-white/50 hover:text-white transition-colors">
-                  <Mail size={14} className="text-brand-orange shrink-0" />
+                <a href="mailto:info@pcpgroup.ie" className="flex items-start gap-2.5 text-white/50 text-sm hover:text-white transition-colors">
+                  <Mail size={14} className="mt-0.5 shrink-0" />
                   info@pcpgroup.ie
                 </a>
               </li>
+              <li>
+                <span className="flex items-start gap-2.5 text-white/50 text-sm">
+                  <MapPin size={14} className="mt-0.5 shrink-0" />
+                  Naas, Co. Kildare, Ireland
+                </span>
+              </li>
             </ul>
-            <div className="mt-5 text-white/40 text-xs">
-              <p>Mon – Fri: 8am – 5pm</p>
-            </div>
+            <button
+              onClick={() => onNavigate('contact')}
+              className="mt-6 btn-primary text-xs py-2.5 px-5 w-full justify-center"
+            >
+              Contact an Engineer
+            </button>
           </div>
         </div>
 
-        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+        {/* Bottom bar */}
+        <div className="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-white/30 text-xs">
-            © {new Date().getFullYear()} PCP Group Ltd. All rights reserved. Registered in Ireland.
+            &copy; {new Date().getFullYear()} PCP Group. All rights reserved.
           </p>
-          <div className="flex items-center gap-4">
-            <div className="flex items-center gap-2 text-white/30 text-xs">
-              <span className="w-5 h-5 border border-white/20 flex items-center justify-center text-[9px] font-bold text-white/40">ISO</span>
-              <span>ISO Certified</span>
-            </div>
-            <div className="text-white/30 text-xs">|</div>
-            <div className="text-white/30 text-xs">50+ Years in Business</div>
-            <div className="text-white/30 text-xs">|</div>
-            <div className="text-white/30 text-xs">Founded 1967</div>
+          <div className="flex items-center gap-6">
+            <button onClick={() => onNavigate('about')} className="text-white/30 text-xs hover:text-white/60 transition-colors">About</button>
+            <button onClick={() => onNavigate('contact')} className="text-white/30 text-xs hover:text-white/60 transition-colors">Contact</button>
+            <button onClick={() => onNavigate('resources')} className="text-white/30 text-xs hover:text-white/60 transition-colors">Resources</button>
           </div>
         </div>
       </div>
