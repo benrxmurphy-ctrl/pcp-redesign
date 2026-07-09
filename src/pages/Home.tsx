@@ -1,4 +1,4 @@
-import { ArrowRight, CheckCircle, ChevronRight, Shield, Award, Globe2, Wrench, BadgeCheck } from 'lucide-react';
+import { ArrowRight, CheckCircle, ChevronRight, Award, Globe2, Wrench, BadgeCheck } from 'lucide-react';
 import { industries } from '../data/industries';
 
 interface HomeProps {
@@ -28,12 +28,10 @@ const industryIcons: Record<string, string> = {
 };
 
 const trustStats = [
-  { value: '57', suffix: '+', label: 'Years in Business', icon: Award },
+  { value: '50', suffix: '+', label: 'Years in Business', icon: Award },
   { value: '10', suffix: '+', label: 'Industries Served', icon: Globe2 },
   { value: '1,000', suffix: '+', label: 'Projects Completed', icon: Wrench },
-  { value: '15', suffix: '+', label: 'Countries Supplied', icon: Globe2 },
   { value: 'ISO', suffix: '', label: 'Certified', icon: BadgeCheck },
-  { value: '50', suffix: '+', label: 'Manufacturers Represented', icon: Shield },
 ];
 
 export default function Home({ onNavigate }: HomeProps) {
