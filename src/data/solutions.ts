@@ -14,6 +14,7 @@ export interface Solution {
     name: string;
     description: string;
     image: string;
+    productId?: string;
   }[];
   industries: string[];
   color: string;
@@ -40,12 +41,12 @@ export const solutions: Solution[] = [
       { title: 'Tank & Hopper Dosing', description: 'Targeted treatment routes for tanks, hoppers and known process emission points.' },
     ],
     equipment: [
-      { name: 'MINIAT Mobile Atomiser', description: 'Rotary atomiser providing significant dust suppression for waste recycling facilities and construction sites.', image: 'https://images.pexels.com/photos/1267338/pexels-photo-1267338.jpeg' },
-      { name: 'Dust Cannons (Fog Cannon)', description: 'Large area dust suppression with 30–70 metre coverage for open stockpiles and loading areas.', image: 'https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg' },
-      { name: 'DUSTELIM Foam System', description: 'More effective than water at trapping dust before it becomes airborne. Ideal for crushing and screening plants.', image: 'https://images.pexels.com/photos/1108101/pexels-photo-1108101.jpeg' },
-      { name: 'High Pressure Fogging', description: 'MINIAT Fog nozzle fogging lines — effective fence line dust suppression, also suitable for indoor recycling.', image: 'https://images.pexels.com/photos/1367269/pexels-photo-1367269.jpeg' },
-      { name: 'Rain Guns', description: 'Uniform water droplet distribution for dust suppression over larger areas, haul roads and stockpiles.', image: 'https://images.pexels.com/photos/2058128/pexels-photo-2058128.jpeg' },
-      { name: 'Industrial Vacuums', description: 'Heavy-duty industrial vacuum systems for site clean-down. Available to purchase or hire.', image: 'https://images.pexels.com/photos/3862132/pexels-photo-3862132.jpeg' },
+      { name: 'MINIAT Mobile Atomiser', productId: 'miniat-mobile-atomiser', description: 'Rotary atomiser providing significant dust suppression for waste recycling facilities and construction sites.', image: 'https://images.pexels.com/photos/1267338/pexels-photo-1267338.jpeg' },
+      { name: 'Dust Cannons (Fog Cannon)', productId: 'fog-cannon', description: 'Large area dust suppression with 30–70 metre coverage for open stockpiles and loading areas.', image: 'https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg' },
+      { name: 'DUSTELIM Foam System', productId: 'dustelim-foam', description: 'More effective than water at trapping dust before it becomes airborne. Ideal for crushing and screening plants.', image: 'https://images.pexels.com/photos/1108101/pexels-photo-1108101.jpeg' },
+      { name: 'High Pressure Fogging', productId: 'fogging-lines-dust', description: 'MINIAT Fog nozzle fogging lines — effective fence line dust suppression, also suitable for indoor recycling.', image: 'https://images.pexels.com/photos/1367269/pexels-photo-1367269.jpeg' },
+      { name: 'Rain Guns', productId: 'rain-guns', description: 'Uniform water droplet distribution for dust suppression over larger areas, haul roads and stockpiles.', image: 'https://images.pexels.com/photos/2058128/pexels-photo-2058128.jpeg' },
+      { name: 'Industrial Vacuums', productId: 'industrial-vacuums', description: 'Heavy-duty industrial vacuum systems for site clean-down. Available to purchase or hire.', image: 'https://images.pexels.com/photos/3862132/pexels-photo-3862132.jpeg' },
     ],
     industries: ['Ports', 'Quarrying', 'Recycling', 'Waste', 'Construction', 'Manufacturing'],
     color: '#E8621A',
@@ -70,12 +71,12 @@ export const solutions: Solution[] = [
       { title: 'Compliance Logging', description: 'All detection events are recorded and exportable for HACCP, BRC, ISO22000 and EPA audit requirements.' },
     ],
     equipment: [
-      { name: 'Eriez X8 Metal Detectors', description: 'High-sensitivity conveyor metal detectors for ferrous and non-ferrous detection across industrial and food-grade applications.', image: 'https://images.pexels.com/photos/1267338/pexels-photo-1267338.jpeg' },
-      { name: 'Metal Detectors', description: 'Inline detectors designed for mixed waste, recycling, mining and food processing lines. Integrates with PLC/E-stop.', image: 'https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg' },
-      { name: 'Magnetic Humps', description: 'Installed over conveyor belts to continuously extract ferrous tramp metal from fast-moving material streams.', image: 'https://images.pexels.com/photos/1108101/pexels-photo-1108101.jpeg' },
-      { name: 'Trap Magnets', description: 'Positioned at chutes and drop points to capture ferrous contamination before it enters downstream equipment.', image: 'https://images.pexels.com/photos/1367269/pexels-photo-1367269.jpeg' },
-      { name: 'Grate Magnets', description: 'Grid-style magnets for hoppers, gravity chutes and bin outlets — removes fine ferrous particles from bulk flows.', image: 'https://images.pexels.com/photos/2058128/pexels-photo-2058128.jpeg' },
-      { name: 'Gravity Separators', description: 'Separates tramp metal from free-flowing granular or powder materials in gravity-fed processing lines.', image: 'https://images.pexels.com/photos/3862132/pexels-photo-3862132.jpeg' },
+      { name: 'Eriez X8 Metal Detectors', productId: 'eriez-x8-metal-detector', description: 'High-sensitivity conveyor metal detectors for ferrous and non-ferrous detection across industrial and food-grade applications.', image: 'https://images.pexels.com/photos/1267338/pexels-photo-1267338.jpeg' },
+      { name: 'Metal Detectors', productId: 'inline-metal-detector', description: 'Inline detectors designed for mixed waste, recycling, mining and food processing lines. Integrates with PLC/E-stop.', image: 'https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg' },
+      { name: 'Magnetic Humps', productId: 'magnetic-hump', description: 'Installed over conveyor belts to continuously extract ferrous tramp metal from fast-moving material streams.', image: 'https://images.pexels.com/photos/1108101/pexels-photo-1108101.jpeg' },
+      { name: 'Trap Magnets', productId: 'trap-magnet', description: 'Positioned at chutes and drop points to capture ferrous contamination before it enters downstream equipment.', image: 'https://images.pexels.com/photos/1367269/pexels-photo-1367269.jpeg' },
+      { name: 'Grate Magnets', productId: 'grate-magnet', description: 'Grid-style magnets for hoppers, gravity chutes and bin outlets — removes fine ferrous particles from bulk flows.', image: 'https://images.pexels.com/photos/2058128/pexels-photo-2058128.jpeg' },
+      { name: 'Gravity Separators', productId: 'gravity-separator', description: 'Separates tramp metal from free-flowing granular or powder materials in gravity-fed processing lines.', image: 'https://images.pexels.com/photos/3862132/pexels-photo-3862132.jpeg' },
     ],
     industries: ['Recycling', 'Food Processing', 'Pharmaceutical', 'Mining & Minerals', 'Manufacturing', 'Animal Feed', 'Wood Processing', 'Packaging'],
     color: '#E8621A',
@@ -100,12 +101,12 @@ export const solutions: Solution[] = [
       { title: 'ZC Filtration', description: 'Up to 99.9% H2S removal through adsorption, absorption and conversion of gaseous compounds.' },
     ],
     equipment: [
-      { name: 'MINIAT Mobile Atomiser', description: 'Rapid deployment odour suppression for leaks, spillages, waste and water treatment facilities.', image: 'https://images.pexels.com/photos/1267338/pexels-photo-1267338.jpeg' },
-      { name: 'Fogging Line Systems', description: 'High pressure fogging lines for boundary lines and tight indoor locations where coverage needs to be precise.', image: 'https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg' },
-      { name: 'Vapour Deodorising', description: 'Dry vapour deodorising for indoor and outdoor use. Active chemistry ensures maximum treatment contact time.', image: 'https://images.pexels.com/photos/1108101/pexels-photo-1108101.jpeg' },
-      { name: 'Vent Odour Filters', description: 'Passive or wind-assisted fan filters requiring no water or power. Fits most venting situations.', image: 'https://images.pexels.com/photos/1367269/pexels-photo-1367269.jpeg' },
-      { name: 'ZC Odour Filtration', description: '99.9% H2S gas removal through adsorption, absorption and conversion. Passive or active extraction.', image: 'https://images.pexels.com/photos/2058128/pexels-photo-2058128.jpeg' },
-      { name: 'Deodorising Liquids', description: 'Complete range of scented and unscented vaporising and suppression liquids to complement any system.', image: 'https://images.pexels.com/photos/3862132/pexels-photo-3862132.jpeg' },
+      { name: 'MINIAT Mobile Atomiser', productId: 'miniat-odour-atomiser', description: 'Rapid deployment odour suppression for leaks, spillages, waste and water treatment facilities.', image: 'https://images.pexels.com/photos/1267338/pexels-photo-1267338.jpeg' },
+      { name: 'Fogging Line Systems', productId: 'fogging-lines-odour', description: 'High pressure fogging lines for boundary lines and tight indoor locations where coverage needs to be precise.', image: 'https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg' },
+      { name: 'Vapour Deodorising', productId: 'vapour-deodorising', description: 'Dry vapour deodorising for indoor and outdoor use. Active chemistry ensures maximum treatment contact time.', image: 'https://images.pexels.com/photos/1108101/pexels-photo-1108101.jpeg' },
+      { name: 'Vent Odour Filters', productId: 'vent-filters', description: 'Passive or wind-assisted fan filters requiring no water or power. Fits most venting situations.', image: 'https://images.pexels.com/photos/1367269/pexels-photo-1367269.jpeg' },
+      { name: 'ZC Odour Filtration', productId: 'zc-filtration', description: '99.9% H2S gas removal through adsorption, absorption and conversion. Passive or active extraction.', image: 'https://images.pexels.com/photos/2058128/pexels-photo-2058128.jpeg' },
+      { name: 'Deodorising Liquids', productId: 'oda-liquids', description: 'Complete range of scented and unscented vaporising and suppression liquids to complement any system.', image: 'https://images.pexels.com/photos/3862132/pexels-photo-3862132.jpeg' },
     ],
     industries: ['Waste', 'Water Treatment', 'Recycling', 'Food Processing', 'Ports', 'Manufacturing'],
     color: '#E8621A',
@@ -130,9 +131,9 @@ export const solutions: Solution[] = [
       { title: 'Personnel Protection', description: 'JetBlack Safety clean-down booths and stations for workers exiting hazardous zones.' },
     ],
     equipment: [
-      { name: 'Baghouse Filter Control', description: 'FilterSense — #1 OEM choice for baghouse management, employee health, plant safety and EPA/OSHA compliance.', image: 'https://images.pexels.com/photos/1267338/pexels-photo-1267338.jpeg' },
-      { name: 'Stack Particulate Monitors', description: 'Dynacharge monitors with Bluetooth data download for environmental results directly at the stack.', image: 'https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg' },
-      { name: 'Personnel De-Dusting', description: 'JetBlack Safety cleaning booths and stations — limit exposure to hazardous dust when leaving site.', image: 'https://images.pexels.com/photos/1108101/pexels-photo-1108101.jpeg' },
+      { name: 'Baghouse Filter Control', productId: 'baghouse-filterSense', description: 'FilterSense — #1 OEM choice for baghouse management, employee health, plant safety and EPA/OSHA compliance.', image: 'https://images.pexels.com/photos/1267338/pexels-photo-1267338.jpeg' },
+      { name: 'Stack Particulate Monitors', productId: 'stack-monitors', description: 'Dynacharge monitors with Bluetooth data download for environmental results directly at the stack.', image: 'https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg' },
+      { name: 'Personnel De-Dusting', productId: 'jetblack-dedusting', description: 'JetBlack Safety cleaning booths and stations — limit exposure to hazardous dust when leaving site.', image: 'https://images.pexels.com/photos/1108101/pexels-photo-1108101.jpeg' },
     ],
     industries: ['Manufacturing', 'Quarrying', 'Recycling', 'Food Processing', 'Energy', 'Biomass'],
     color: '#E8621A',
@@ -157,9 +158,9 @@ export const solutions: Solution[] = [
       { title: 'Data Reporting', description: 'Bluetooth and remote data download for environmental reporting without site access.' },
     ],
     equipment: [
-      { name: 'Dust Monitoring Systems', description: 'Particulate monitoring to ensure health, safety and compliance. Data for informed suppression decisions.', image: 'https://images.pexels.com/photos/1267338/pexels-photo-1267338.jpeg' },
-      { name: 'Acrulog H2S Monitoring', description: 'Dedicated odour and gas monitoring for utilities overcoming harsh monitoring environment challenges.', image: 'https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg' },
-      { name: 'Stack Emission Monitors', description: 'Dynacharge particulate monitors with Bluetooth download for direct stack emissions compliance data.', image: 'https://images.pexels.com/photos/1108101/pexels-photo-1108101.jpeg' },
+      { name: 'Dust Monitoring Systems', productId: 'dust-monitoring', description: 'Particulate monitoring to ensure health, safety and compliance. Data for informed suppression decisions.', image: 'https://images.pexels.com/photos/1267338/pexels-photo-1267338.jpeg' },
+      { name: 'Acrulog H2S Monitoring', productId: 'acrulog-h2s', description: 'Dedicated odour and gas monitoring for utilities overcoming harsh monitoring environment challenges.', image: 'https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg' },
+      { name: 'Stack Emission Monitors', productId: 'stack-monitors', description: 'Dynacharge particulate monitors with Bluetooth download for direct stack emissions compliance data.', image: 'https://images.pexels.com/photos/1108101/pexels-photo-1108101.jpeg' },
     ],
     industries: ['Water Treatment', 'Manufacturing', 'Ports', 'Quarrying', 'Waste', 'Energy'],
     color: '#E8621A',
@@ -184,9 +185,9 @@ export const solutions: Solution[] = [
       { title: 'Portable Units', description: 'Mobile extraction units for areas requiring flexible deployment across changing operations.' },
     ],
     equipment: [
-      { name: 'Industrial Vacuum Systems', description: 'Heavy-duty vacuums for site clean-down and extraction. Available to purchase or hire.', image: 'https://images.pexels.com/photos/1267338/pexels-photo-1267338.jpeg' },
-      { name: 'DUSTELIM Foam', description: 'Traps dust at source before it becomes airborne — more effective than water at crusher and screen points.', image: 'https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg' },
-      { name: 'Baghouse Filter Systems', description: 'FilterSense control systems for baghouse productivity, employee health and compliance management.', image: 'https://images.pexels.com/photos/1108101/pexels-photo-1108101.jpeg' },
+      { name: 'Industrial Vacuum Systems', productId: 'industrial-vacuums', description: 'Heavy-duty vacuums for site clean-down and extraction. Available to purchase or hire.', image: 'https://images.pexels.com/photos/1267338/pexels-photo-1267338.jpeg' },
+      { name: 'DUSTELIM Foam', productId: 'dustelim-foam', description: 'Traps dust at source before it becomes airborne — more effective than water at crusher and screen points.', image: 'https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg' },
+      { name: 'Baghouse Filter Systems', productId: 'baghouse-filterSense', description: 'FilterSense control systems for baghouse productivity, employee health and compliance management.', image: 'https://images.pexels.com/photos/1108101/pexels-photo-1108101.jpeg' },
     ],
     industries: ['Quarrying', 'Recycling', 'Construction', 'Manufacturing', 'Ports', 'Biomass'],
     color: '#E8621A',

@@ -71,9 +71,21 @@ export default function SolutionPage({ id, onNavigate }: SolutionPageProps) {
               <h3 className="text-white font-bold text-sm uppercase tracking-widest mb-5">Related Products &amp; Services</h3>
               <ul className="space-y-2">
                 {solution.equipment.slice(0, 5).map(e => (
-                  <li key={e.name} className="flex items-center gap-3 text-white/80 text-sm">
-                    <div className="w-1.5 h-1.5 bg-white rounded-full shrink-0" />
-                    {e.name}
+                  <li key={e.name}>
+                    {e.productId ? (
+                      <button
+                        onClick={() => onNavigate('product', e.productId)}
+                        className="flex items-center gap-3 text-white/80 text-sm hover:text-white transition-colors group w-full text-left"
+                      >
+                        <div className="w-1.5 h-1.5 bg-white rounded-full shrink-0" />
+                        <span className="group-hover:underline underline-offset-2">{e.name}</span>
+                      </button>
+                    ) : (
+                      <span className="flex items-center gap-3 text-white/80 text-sm">
+                        <div className="w-1.5 h-1.5 bg-white rounded-full shrink-0" />
+                        {e.name}
+                      </span>
+                    )}
                   </li>
                 ))}
               </ul>
