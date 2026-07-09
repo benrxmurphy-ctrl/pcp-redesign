@@ -98,7 +98,6 @@ export default function Navbar({ onNavigate, currentPage }: NavbarProps) {
       key: 'resources',
       items: [
         { label: 'Case Studies', action: () => onNavigate('resources', 'case-studies') },
-        { label: 'FAQs', action: () => onNavigate('resources', 'faqs') },
         { label: 'Guides', action: () => onNavigate('resources', 'guides') },
         { label: 'Downloads', action: () => onNavigate('resources', 'downloads') },
         { label: 'About Us', action: () => onNavigate('about') },

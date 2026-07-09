@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import {
-  ChevronRight, FileText, BookOpen, Download,
+  FileText, BookOpen, Download,
   ArrowRight, Clock, Play, Film, FileDown, Shield,
 } from 'lucide-react';
 import Breadcrumb from '../components/Breadcrumb';
@@ -15,41 +15,6 @@ interface ResourcesPageProps {
   onNavigate: (page: string, id?: string) => void;
   section?: string;
 }
-
-const faqs = [
-  {
-    q: 'How quickly can you respond to a dust or odour complaint situation?',
-    a: 'We can typically arrange a site visit within 48 hours. For urgent situations involving enforcement or imminent complaints, we prioritise rapid response. Call us directly on +353 45 863220.',
-  },
-  {
-    q: 'Do you offer equipment hire as well as purchase?',
-    a: 'Yes. We offer hire of mobile atomisers, industrial vacuums and temporary suppression systems. This is particularly useful for construction projects, urgent complaint response or trialling equipment before committing to purchase.',
-  },
-  {
-    q: 'What is involved in a site assessment?',
-    a: 'A free site visit where our engineer reviews your operations, identifies the source of the dust or odour, assesses site conditions (wind direction, proximity to boundaries, process layout) and recommends the most appropriate solution. No charge, no obligation.',
-  },
-  {
-    q: 'Will your solutions meet EPA and local authority requirements?',
-    a: 'Our solutions are designed around Irish EPA requirements and local authority environmental licence conditions. We have successfully supported customers through EPA audits, local authority enforcement responses and environmental permit applications.',
-  },
-  {
-    q: 'Do you install the equipment or just supply it?',
-    a: 'We supply, install, commission and maintain all equipment. One point of contact from initial assessment through to ongoing service. We also train your team on system operation.',
-  },
-  {
-    q: 'How do I know which dust suppression method is right for my site?',
-    a: 'That is exactly what our free site assessment is designed to answer. The right solution depends on dust particle size, source location, site layout, climate and your budget. We will assess and recommend — you do not need to know the answer before contacting us.',
-  },
-  {
-    q: 'Can you provide ongoing maintenance and servicing?',
-    a: 'Yes. We provide planned preventative maintenance, emergency callout, consumable supply (chemistry, nozzles, filters) and remote monitoring support for all systems we install.',
-  },
-  {
-    q: 'Do you cover Northern Ireland?',
-    a: 'Yes. We cover both the Republic of Ireland and Northern Ireland. Get in touch via phone or email and we will arrange a visit.',
-  },
-];
 
 const typeColor: Record<string, string> = {
   'Solution Brochure': 'bg-brand-orange',
@@ -354,25 +319,6 @@ export default function ResourcesPage({ onNavigate }: ResourcesPageProps) {
           })}
         </div>
 
-        {/* ── FAQS ── */}
-        <div className="max-w-4xl mx-auto">
-          <p className="section-label mb-3">FAQs</p>
-          <h2 className="section-title mb-10">Frequently Asked Questions</h2>
-          <div className="space-y-3">
-            {faqs.map((faq, i) => (
-              <details key={i} className="group bg-brand-dark-3 border border-white/5 hover:border-brand-orange/20 transition-all">
-                <summary className="flex items-start justify-between gap-4 p-5 cursor-pointer list-none">
-                  <span className="text-white font-medium text-sm leading-relaxed">{faq.q}</span>
-                  <ChevronRight size={16} className="text-brand-orange shrink-0 mt-0.5 group-open:rotate-90 transition-transform" />
-                </summary>
-                <div className="px-5 pb-5 pt-0">
-                  <div className="w-full h-px bg-white/10 mb-4" />
-                  <p className="text-white/60 text-sm leading-relaxed">{faq.a}</p>
-                </div>
-              </details>
-            ))}
-          </div>
-        </div>
       </section>
 
       {/* CTA */}

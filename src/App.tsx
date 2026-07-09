@@ -52,9 +52,21 @@ function App() {
   const [current, setCurrent] = useState<PageState>({ page: 'home' });
 
   const navigate = (page: string, id?: string) => {
-    setCurrent({ page: page as PageKey, id });
+    const state: PageState = { page: page as PageKey, id };
+    window.history.pushState(state, '', id ? `/${page}/${id}` : `/${page === 'home' ? '' : page}`);
+    setCurrent(state);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
+
+  useEffect(() => {
+    const onPop = (e: PopStateEvent) => {
+      const state: PageState = e.state ?? { page: 'home' };
+      setCurrent(state);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+    window.addEventListener('popstate', onPop);
+    return () => window.removeEventListener('popstate', onPop);
+  }, []);
 
   useEffect(() => {
     document.title = pageTitles[current.page] ?? 'PCP Group';
