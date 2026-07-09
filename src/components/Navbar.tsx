@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Menu, X, ChevronDown, Phone } from 'lucide-react';
 import { solutions } from '../data/solutions';
 import { industries } from '../data/industries';
@@ -32,6 +32,16 @@ export default function Navbar({ onNavigate, currentPage }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const openDropdown = (key: string) => {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+    setActiveDropdown(key);
+  };
+
+  const scheduleClose = () => {
+    closeTimer.current = setTimeout(() => setActiveDropdown(null), 200);
+  };
 
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 40);
@@ -132,8 +142,8 @@ export default function Navbar({ onNavigate, currentPage }: NavbarProps) {
               <div
                 key={item.key}
                 className="relative"
-                onMouseEnter={() => hasDropdown(item) && setActiveDropdown(item.key)}
-                onMouseLeave={() => setActiveDropdown(null)}
+                onMouseEnter={() => hasDropdown(item) && openDropdown(item.key)}
+                onMouseLeave={() => hasDropdown(item) && scheduleClose()}
               >
                 <button
                   onClick={item.action}
@@ -150,7 +160,11 @@ export default function Navbar({ onNavigate, currentPage }: NavbarProps) {
                 </button>
 
                 {activeDropdown === item.key && (
-                  <div className="absolute top-full left-0 mt-1 bg-brand-dark-2 border border-white/10 min-w-[220px] shadow-2xl">
+                  <div
+                    className="absolute top-full left-0 mt-1 bg-brand-dark-2 border border-white/10 min-w-[220px] shadow-2xl"
+                    onMouseEnter={() => { if (closeTimer.current) clearTimeout(closeTimer.current); }}
+                    onMouseLeave={scheduleClose}
+                  >
                     {/* Grouped dropdown (Solutions) */}
                     {item.groups && item.groups.map((group, gi) => (
                       <div key={gi}>
