@@ -52,7 +52,7 @@ export const solutions: Solution[] = [
   },
   {
     id: 'metal',
-    title: 'Tramp Metal',
+    title: 'Tramp Metal Solutions',
     tagline: 'Protect your operations. Contamination stops here.',
     heroStatement: 'Stop tramp metal before it damages your equipment, contaminates your product or halts your operation.',
     heroImage: '/metal-industry-worker-sprays-protective-suit-night-generated-by-ai-scaled.jpg',
