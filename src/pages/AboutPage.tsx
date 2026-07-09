@@ -22,7 +22,7 @@ export default function AboutPage({ onNavigate }: AboutPageProps) {
         <div className="relative z-10 max-w-7xl mx-auto">
           <p className="section-label mb-3">About PCP Group</p>
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 max-w-3xl">
-            Ireland's industrial environmental specialists since 1967.
+            Ireland's Industrial Environmental Specialists Since 1967.
           </h1>
           <p className="text-xl text-white/60 max-w-2xl">
             Founded by Raymond Murphy to bring cutting-edge technologies from leading international manufacturers to Irish industry. Over 50 years later, we remain Ireland's trusted leader in dust, odour and environmental control.
@@ -40,7 +40,7 @@ export default function AboutPage({ onNavigate }: AboutPageProps) {
       {/* Stats */}
       <section className="py-6 px-4 relative overflow-hidden">
         <div className="absolute inset-0" style={{ backgroundColor: 'rgba(232, 98, 26, 0.85)' }} />
-        <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-px bg-white/20">
+        <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4">
           {[
             { value: '1967', label: 'Year Founded' },
             { value: '50+', label: 'Years Experience' },
