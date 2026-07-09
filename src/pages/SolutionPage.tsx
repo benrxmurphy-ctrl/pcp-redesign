@@ -39,7 +39,7 @@ export default function SolutionPage({ id, onNavigate }: SolutionPageProps) {
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/60 to-brand-dark" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 pb-16 w-full">
           <p className="section-label mb-3">Solution</p>
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-white leading-none mb-4">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-none mb-4">
             {solution.title}
           </h1>
           <p className="text-xl md:text-2xl text-white/60 max-w-2xl">

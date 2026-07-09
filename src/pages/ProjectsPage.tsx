@@ -15,7 +15,7 @@ export default function ProjectsPage({ onNavigate }: ProjectsPageProps) {
       <section className="py-20 px-4 bg-brand-dark-2">
         <div className="max-w-7xl mx-auto">
           <p className="section-label mb-3">Case Studies</p>
-          <h1 className="text-5xl md:text-6xl font-black text-white mb-6">Projects</h1>
+          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">Projects</h1>
           <p className="text-xl text-white/60 max-w-2xl">
             Real solutions. Measurable results. Click any project to read the full case study.
           </p>

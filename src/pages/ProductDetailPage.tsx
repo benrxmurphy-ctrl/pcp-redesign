@@ -45,7 +45,7 @@ export default function ProductDetailPage({ id, onNavigate }: ProductDetailPageP
             <Package size={12} className="text-white" />
             <span className="text-white text-xs font-semibold uppercase tracking-widest">{product.category}</span>
           </div>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-none mb-4 max-w-3xl">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-none mb-4 max-w-3xl">
             {product.name}
           </h1>
           <p className="text-xl text-white/60 max-w-2xl mb-8">{product.tagline}</p>

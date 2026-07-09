@@ -45,7 +45,7 @@ export default function ProjectDetailPage({ id, onNavigate }: ProjectDetailPageP
             <span className="bg-white/10 text-white/80 text-xs px-3 py-1">{project.industry}</span>
             <span className="bg-white/10 text-white/80 text-xs px-3 py-1">{project.year}</span>
           </div>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight mb-4 max-w-4xl">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-4 max-w-4xl">
             {project.title}
           </h1>
           <div className="flex flex-wrap items-center gap-4 text-white/50 text-sm">
