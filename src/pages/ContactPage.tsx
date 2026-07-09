@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Phone, Mail, MapPin, Clock, ChevronRight, CheckCircle } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, CheckCircle } from 'lucide-react';
 import Breadcrumb from '../components/Breadcrumb';
 
 interface ContactPageProps {
@@ -21,13 +21,16 @@ const enquiryTypes = [
   'Air quality monitoring',
   'Equipment hire',
   'General enquiry',
+  'Other',
 ];
 
 export default function ContactPage({ onNavigate }: ContactPageProps) {
   const [submitted, setSubmitted] = useState(false);
   const [form, setForm] = useState({
     name: '', company: '', email: '', phone: '',
-    industry: '', enquiry: '', message: '',
+    industry: '', industryOther: '',
+    enquiry: '', enquiryOther: '',
+    message: '',
   });
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -40,13 +43,12 @@ export default function ContactPage({ onNavigate }: ContactPageProps) {
       {/* Header */}
       <section className="py-20 px-4 bg-brand-dark-2">
         <div className="max-w-7xl mx-auto">
-          <p className="section-label mb-3">Contact an Engineer</p>
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
             Talk to us about<br />
             <span className="text-brand-orange">your site.</span>
           </h1>
           <p className="text-xl text-white/60 max-w-2xl">
-            Free site assessment. No obligation. Our engineers understand industrial operations and will recommend the right solution for your specific challenge.
+            Free site assessment. No obligation. Our team understands industrial operations and will recommend the right solution for your specific challenge.
           </p>
         </div>
       </section>
@@ -71,7 +73,7 @@ export default function ContactPage({ onNavigate }: ContactPageProps) {
                     <Phone size={16} className="text-white" />
                   </div>
                   <div>
-                    <p className="text-white/40 text-xs mb-0.5">ROI</p>
+                    <p className="text-white/40 text-xs mb-0.5">Phone</p>
                     <p className="text-white group-hover:text-brand-orange transition-colors font-medium">+353 (0)45 863220</p>
                   </div>
                 </a>
@@ -109,7 +111,7 @@ export default function ContactPage({ onNavigate }: ContactPageProps) {
               <h4 className="text-white font-semibold mb-4">What Happens Next</h4>
               <div className="space-y-3">
                 {[
-                  'We contact you within 1 business day',
+                  'We contact you within 2 business days*',
                   'We arrange a free site visit',
                   'We assess your specific challenge',
                   'We recommend the right solution',
@@ -135,7 +137,7 @@ export default function ContactPage({ onNavigate }: ContactPageProps) {
                 </div>
                 <h3 className="text-white font-bold text-2xl mb-3">Enquiry Received</h3>
                 <p className="text-white/60 max-w-md">
-                  Thank you for contacting PCP Group. One of our engineers will be in touch within 1 business day to discuss your requirements.
+                  Thank you for contacting PCP Group. A member of our team will be in touch within 2 business days to discuss your requirements.
                 </p>
                 <button
                   onClick={() => { setSubmitted(false); onNavigate('home'); }}
@@ -197,23 +199,41 @@ export default function ContactPage({ onNavigate }: ContactPageProps) {
                   <label className="block text-white/60 text-xs uppercase tracking-widest mb-2">Industry</label>
                   <select
                     value={form.industry}
-                    onChange={e => setForm(f => ({ ...f, industry: e.target.value }))}
+                    onChange={e => setForm(f => ({ ...f, industry: e.target.value, industryOther: '' }))}
                     className="w-full bg-brand-dark-4 border border-white/10 text-white px-4 py-3 text-sm focus:border-brand-orange focus:outline-none transition-colors appearance-none"
                   >
                     <option value="">Select your industry</option>
                     {industries.map(i => <option key={i} value={i}>{i}</option>)}
                   </select>
+                  {form.industry === 'Other' && (
+                    <input
+                      type="text"
+                      value={form.industryOther}
+                      onChange={e => setForm(f => ({ ...f, industryOther: e.target.value }))}
+                      className="w-full mt-3 bg-brand-dark-4 border border-white/10 text-white px-4 py-3 text-sm focus:border-brand-orange focus:outline-none transition-colors"
+                      placeholder="Please specify your industry"
+                    />
+                  )}
                 </div>
                 <div>
                   <label className="block text-white/60 text-xs uppercase tracking-widest mb-2">What Best Describes Your Problem?</label>
                   <select
                     value={form.enquiry}
-                    onChange={e => setForm(f => ({ ...f, enquiry: e.target.value }))}
+                    onChange={e => setForm(f => ({ ...f, enquiry: e.target.value, enquiryOther: '' }))}
                     className="w-full bg-brand-dark-4 border border-white/10 text-white px-4 py-3 text-sm focus:border-brand-orange focus:outline-none transition-colors appearance-none"
                   >
                     <option value="">Select enquiry type</option>
                     {enquiryTypes.map(t => <option key={t} value={t}>{t}</option>)}
                   </select>
+                  {form.enquiry === 'Other' && (
+                    <input
+                      type="text"
+                      value={form.enquiryOther}
+                      onChange={e => setForm(f => ({ ...f, enquiryOther: e.target.value }))}
+                      className="w-full mt-3 bg-brand-dark-4 border border-white/10 text-white px-4 py-3 text-sm focus:border-brand-orange focus:outline-none transition-colors"
+                      placeholder="Please describe your problem"
+                    />
+                  )}
                 </div>
                 <div>
                   <label className="block text-white/60 text-xs uppercase tracking-widest mb-2">Tell Us More</label>
@@ -226,11 +246,8 @@ export default function ContactPage({ onNavigate }: ContactPageProps) {
                   />
                 </div>
                 <button type="submit" className="btn-primary w-full justify-center py-4">
-                  Send Enquiry — We'll Respond Within 1 Business Day
+                  Send Enquiry
                 </button>
-                <p className="text-white/30 text-xs text-center">
-                  Free site assessment. No obligation. No hard selling.
-                </p>
               </form>
             )}
           </div>
