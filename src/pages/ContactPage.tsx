@@ -41,8 +41,17 @@ export default function ContactPage({ onNavigate }: ContactPageProps) {
   return (
     <div className="bg-brand-dark pt-20">
       {/* Header */}
-      <section className="py-20 px-4 bg-brand-dark-2">
-        <div className="max-w-7xl mx-auto">
+      <section
+        className="py-20 px-4 relative overflow-hidden"
+        style={{
+          backgroundImage: 'url(/images/spencer-davis-8DQz9z99GjU-unsplash.jpg)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundAttachment: 'fixed',
+        }}
+      >
+        <div className="absolute inset-0 bg-brand-dark/80" />
+        <div className="max-w-7xl mx-auto relative z-10">
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
             Talk to us about<br />
             <span className="text-brand-orange">your site.</span>
@@ -92,7 +101,7 @@ export default function ContactPage({ onNavigate }: ContactPageProps) {
                   </div>
                   <div>
                     <p className="text-white/40 text-xs mb-0.5">Address</p>
-                    <p className="text-white/70 text-sm">PCP House<br />Ballymore Eustace<br />Co. Kildare, W91W275<br />Ireland</p>
+                    <p className="text-white/70 text-sm">PCP House<br />Main Street<br />Ballymore Eustace<br />Co. Kildare, W91W275<br />Ireland</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
@@ -111,7 +120,7 @@ export default function ContactPage({ onNavigate }: ContactPageProps) {
               <h4 className="text-white font-semibold mb-4">What Happens Next</h4>
               <div className="space-y-3">
                 {[
-                  'We contact you within 2 business days*',
+                  'We contact you within 2 business days',
                   'We arrange a free site visit',
                   'We assess your specific challenge',
                   'We recommend the right solution',
