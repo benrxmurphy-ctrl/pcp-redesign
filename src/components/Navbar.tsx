@@ -54,24 +54,23 @@ export default function Navbar({ onNavigate, currentPage }: NavbarProps) {
           heading: 'Other',
           items: otherSolutions.map(s => ({ label: s.title, action: () => onNavigate('solution', s.id) })),
         },
+        {
+          heading: 'Product Ranges',
+          items: [
+            { label: 'Dust Suppression', action: () => onNavigate('products', 'dust-suppression') },
+            { label: 'Dust Extraction', action: () => onNavigate('products', 'dust-extraction') },
+            { label: 'Odour Control', action: () => onNavigate('products', 'odour') },
+            { label: 'Air Filtration', action: () => onNavigate('products', 'air-filtration') },
+            { label: 'Monitoring Systems', action: () => onNavigate('products', 'monitoring') },
+            { label: 'Spare Parts', action: () => onNavigate('products', 'spare-parts') },
+          ],
+        },
       ],
     },
     {
       label: 'Industries',
       key: 'industries',
       items: industries.map(i => ({ label: i.name, action: () => onNavigate('industry', i.id) })),
-    },
-    {
-      label: 'Products',
-      key: 'products',
-      items: [
-        { label: 'Dust Suppression', action: () => onNavigate('products', 'dust-suppression') },
-        { label: 'Dust Extraction', action: () => onNavigate('products', 'dust-extraction') },
-        { label: 'Odour Control', action: () => onNavigate('products', 'odour') },
-        { label: 'Air Filtration', action: () => onNavigate('products', 'air-filtration') },
-        { label: 'Monitoring Systems', action: () => onNavigate('products', 'monitoring') },
-        { label: 'Spare Parts', action: () => onNavigate('products', 'spare-parts') },
-      ],
     },
     {
       label: 'Projects',
