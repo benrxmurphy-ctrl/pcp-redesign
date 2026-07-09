@@ -129,7 +129,7 @@ export default function Navbar({ onNavigate, currentPage }: NavbarProps) {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="grid grid-cols-[auto_1fr_auto] items-center h-16 lg:h-20">
+        <div className="relative flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <button
             onClick={() => { onNavigate('home'); setMobileOpen(false); }}
@@ -142,8 +142,8 @@ export default function Navbar({ onNavigate, currentPage }: NavbarProps) {
             />
           </button>
 
-          {/* Desktop Nav — centred */}
-          <div className="hidden lg:flex items-center justify-center gap-1">
+          {/* Desktop Nav — absolutely centred so CTA stays close */}
+          <div className="hidden lg:flex absolute left-1/2 -translate-x-1/2 items-center gap-1">
             {nav.map(item => (
               <div
                 key={item.key}
