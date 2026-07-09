@@ -11,6 +11,21 @@ export interface Industry {
 
 export const industries: Industry[] = [
   {
+    id: 'ports',
+    name: 'Ports',
+    tagline: 'Keep bulk handling operations within environmental limits.',
+    heroImage: 'https://images.pexels.com/photos/1117210/pexels-photo-1117210.jpeg',
+    overview: 'Port operations involving bulk cargo loading, unloading and storage generate significant dust and odour that can affect neighbouring communities, shipping lanes and environmental permit conditions.',
+    challenges: [
+      'Dust from bulk commodity loading, unloading and stockpile management',
+      'Odour from organic cargo — fertilisers, wood chips, biomass, animal feed',
+      'Boundary complaints from nearby residential and commercial areas',
+      'Environmental permit compliance for dust and emissions',
+    ],
+    solutions: ['dust', 'odour', 'monitoring'],
+    stats: [{ value: '50+', label: 'Port projects delivered' }, { value: '30m', label: 'Cannon throw distance' }, { value: '24/7', label: 'System uptime capability' }],
+  },
+  {
     id: 'waste-recycling',
     name: 'Waste Recycling',
     tagline: 'Control dust and odour across tipping, sorting and processing.',
@@ -41,11 +56,11 @@ export const industries: Industry[] = [
     stats: [{ value: '99.9%', label: 'H2S removal achievable' }, { value: '75+', label: 'Water utility projects' }, { value: 'Real-time', label: 'H2S monitoring available' }],
   },
   {
-    id: 'quarry',
-    name: 'Quarry',
+    id: 'aggregates',
+    name: 'Aggregates',
     tagline: 'Suppress dust at crushing, screening and haulage points.',
     heroImage: 'https://images.pexels.com/photos/1108101/pexels-photo-1108101.jpeg',
-    overview: 'Quarrying operations generate dust at every stage — blasting, crushing, screening, stockpiling and haulage. Without active suppression, dust drifts beyond site boundaries creating complaints and regulatory risk.',
+    overview: 'Aggregate and quarrying operations generate dust at every stage — blasting, crushing, screening, stockpiling and haulage. Without active suppression, dust drifts beyond site boundaries creating complaints and regulatory risk.',
     challenges: [
       'Crusher and screen operations generating high volumes of fine dust',
       'Haul road dust visible from public roads and nearby properties',
@@ -53,7 +68,7 @@ export const industries: Industry[] = [
       'Changing weather conditions making dust suppression unpredictable',
     ],
     solutions: ['dust', 'extraction', 'monitoring'],
-    stats: [{ value: '70m', label: 'Maximum cannon coverage' }, { value: '95%', label: 'Dust reduction achievable' }, { value: '50+', label: 'Years in quarry dust control' }],
+    stats: [{ value: '70m', label: 'Maximum cannon coverage' }, { value: '95%', label: 'Dust reduction achievable' }, { value: '50+', label: 'Years in aggregate dust control' }],
   },
   {
     id: 'construction',
@@ -146,6 +161,21 @@ export const industries: Industry[] = [
     stats: [{ value: '99%', label: 'Odour removal achievable' }, { value: '50+', label: 'AD plant projects' }, { value: 'Real-time', label: 'Monitoring available' }],
   },
   {
+    id: 'composting',
+    name: 'Composting',
+    tagline: 'Manage boundary odour from open windrow and in-vessel operations.',
+    heroImage: 'https://images.pexels.com/photos/1267338/pexels-photo-1267338.jpeg',
+    overview: 'Composting operations generate complex odour from the biological breakdown of organic material across turning, active composting and maturation phases. Robust odour control is essential for planning compliance and neighbour relations.',
+    challenges: [
+      'Windrow turning generating intense short-term odour emissions',
+      'Active composting phase producing ammonia, H2S and VOC compounds',
+      'Leachate and liquor run-off causing persistent ground-level odour',
+      'Planning permit compliance requiring documented odour management',
+    ],
+    solutions: ['odour', 'monitoring'],
+    stats: [{ value: '99%', label: 'Odour compound removal' }, { value: '60+', label: 'Composting site projects' }, { value: 'EA', label: 'Permit compliance supported' }],
+  },
+  {
     id: 'animal-feed',
     name: 'Animal Feed',
     tagline: 'Control dust and odour from ingredient handling to finished product.',
@@ -177,7 +207,7 @@ export const industries: Industry[] = [
   },
   {
     id: 'concrete-cement',
-    name: 'Concrete & Cement Production',
+    name: 'Concrete & Cement',
     tagline: 'Suppress cement dust and protect plant boundaries and workers.',
     heroImage: 'https://images.pexels.com/photos/1117210/pexels-photo-1117210.jpeg',
     overview: 'Cement and concrete production generates fine alkaline dust at every stage — from raw material handling and kiln operations to finish grinding and dispatch. Worker protection and environmental compliance demand reliable dust control.',
@@ -189,6 +219,21 @@ export const industries: Industry[] = [
     ],
     solutions: ['dust', 'extraction', 'monitoring'],
     stats: [{ value: '95%', label: 'Dust suppression achieved' }, { value: '50+', label: 'Cement sector projects' }, { value: '24/7', label: 'Monitoring capability' }],
+  },
+  {
+    id: 'utilities',
+    name: 'Utilities',
+    tagline: 'Control emissions and odour across energy and utility infrastructure.',
+    heroImage: 'https://images.pexels.com/photos/1367269/pexels-photo-1367269.jpeg',
+    overview: 'Utility operators managing gas, electricity, water and energy infrastructure face odour and dust challenges across a wide range of assets. Environmental compliance, community relations and worker safety all require active management.',
+    challenges: [
+      'Odour from sewer networks, pumping stations and treatment assets',
+      'Dust from fuel handling, ash management and maintenance activities',
+      'Stack and process emissions requiring continuous environmental monitoring',
+      'Regulatory reporting obligations across multiple site types and permits',
+    ],
+    solutions: ['odour', 'dust', 'monitoring'],
+    stats: [{ value: '100+', label: 'Utility sector projects' }, { value: '24/7', label: 'Monitoring capability' }, { value: '50+', label: 'Years serving utilities' }],
   },
 ];
 
