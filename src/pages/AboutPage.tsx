@@ -83,6 +83,7 @@ export default function AboutPage({ onNavigate }: AboutPageProps) {
       <section className="py-20 px-4 relative">
         <div className="absolute inset-0 bg-brand-dark-2/88" />
         <div className="relative z-10 max-w-7xl mx-auto">
+          <div className="bg-black/40 border border-white/8 backdrop-blur-sm px-8 py-10 md:px-12 md:py-14">
           <div className="text-center mb-12">
             <p className="section-label mb-3">Our Values</p>
             <h2 className="section-title mb-4">What drives us.</h2>
@@ -102,6 +103,7 @@ export default function AboutPage({ onNavigate }: AboutPageProps) {
                 <p className="text-white/50 text-sm leading-relaxed">{v.body}</p>
               </div>
             ))}
+          </div>
           </div>
         </div>
       </section>
