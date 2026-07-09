@@ -13,6 +13,7 @@ import ProductDetailPage from './pages/ProductDetailPage';
 import ResourcesPage from './pages/ResourcesPage';
 import GuidePage from './pages/GuidePage';
 import RentalPage from './pages/RentalPage';
+import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
 
 type PageKey =
   | 'home'
@@ -26,7 +27,8 @@ type PageKey =
   | 'product'
   | 'resources'
   | 'guide'
-  | 'rental';
+  | 'rental'
+  | 'privacy';
 
 interface PageState {
   page: PageKey;
@@ -46,6 +48,7 @@ const pageTitles: Record<PageKey, string> = {
   resources: 'Resources — PCP Group',
   guide: 'Guide — PCP Group',
   rental: 'Equipment Hire — PCP Group',
+  privacy: 'Terms & Conditions — PCP Group',
 };
 
 function App() {
@@ -98,6 +101,8 @@ function App() {
         return <GuidePage id={current.id ?? ''} onNavigate={navigate} />;
       case 'rental':
         return <RentalPage onNavigate={navigate} />;
+      case 'privacy':
+        return <PrivacyPolicyPage onNavigate={navigate} />;
       default:
         return <Home onNavigate={navigate} />;
     }

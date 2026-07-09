@@ -1,4 +1,4 @@
-import { Phone, Mail, MapPin } from 'lucide-react';
+import { Phone, Mail, MapPin, ArrowUp } from 'lucide-react';
 import { solutions } from '../data/solutions';
 import { industries } from '../data/industries';
 
@@ -152,7 +152,15 @@ export default function Footer({ onNavigate }: FooterProps) {
             <button onClick={() => onNavigate('about')} className="text-white/30 text-xs hover:text-white/60 transition-colors">About</button>
             <button onClick={() => onNavigate('contact')} className="text-white/30 text-xs hover:text-white/60 transition-colors">Contact</button>
             <button onClick={() => onNavigate('resources')} className="text-white/30 text-xs hover:text-white/60 transition-colors">Resources</button>
+            <button onClick={() => onNavigate('privacy')} className="text-white/30 text-xs hover:text-white/60 transition-colors">Terms &amp; Conditions</button>
           </div>
+          <button
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            aria-label="Back to top"
+            className="w-9 h-9 border border-white/20 hover:border-brand-orange hover:text-brand-orange text-white/40 flex items-center justify-center transition-colors"
+          >
+            <ArrowUp size={14} />
+          </button>
         </div>
       </div>
     </footer>
