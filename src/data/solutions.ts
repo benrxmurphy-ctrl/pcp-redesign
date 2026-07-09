@@ -52,7 +52,7 @@ export const solutions: Solution[] = [
   },
   {
     id: 'metal',
-    title: 'Metal Solutions',
+    title: 'Tramp Metal',
     tagline: 'Control fume, dust and emissions from metal processing.',
     heroStatement: 'Protect workers and meet compliance standards across welding, cutting, grinding and metal handling operations.',
     heroImage: '/metal-industry-worker-sprays-protective-suit-night-generated-by-ai-scaled.jpg',
