@@ -43,7 +43,7 @@ export default function GuidePage({ id, onNavigate }: GuidePageProps) {
               <Clock size={11} /> {guide.readTime}
             </span>
           </div>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight mb-4 max-w-4xl">
+          <h1 className="text-6xl md:text-7xl lg:text-8xl font-black text-white leading-none mb-4 max-w-4xl">
             {guide.title}
           </h1>
         </div>
