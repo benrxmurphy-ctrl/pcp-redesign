@@ -62,7 +62,6 @@ export default function Navbar({ onNavigate, currentPage }: NavbarProps) {
             { label: 'Odour Control', action: () => onNavigate('products', 'odour') },
             { label: 'Air Filtration', action: () => onNavigate('products', 'air-filtration') },
             { label: 'Monitoring Systems', action: () => onNavigate('products', 'monitoring') },
-            { label: 'Spare Parts', action: () => onNavigate('products', 'spare-parts') },
           ],
         },
       ],

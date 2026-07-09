@@ -125,27 +125,6 @@ export default function ProductsPage({ onNavigate }: ProductsPageProps) {
         </div>
       </section>
 
-      {/* Spare Parts */}
-      <section className="py-12 px-4 bg-brand-dark-2">
-        <div className="max-w-7xl mx-auto">
-          <div className="bg-brand-dark-3 border border-white/10 p-8 flex flex-col md:flex-row items-start md:items-center gap-6">
-            <div className="flex-1">
-              <div className="w-6 h-0.5 bg-brand-orange mb-3" />
-              <h3 className="text-white font-bold text-xl mb-2">Spare Parts &amp; Consumables</h3>
-              <p className="text-white/50 text-sm">
-                Genuine nozzles, hoses, chemistry, filter media and consumables for all PCP Group systems. Fast supply, expert advice.
-              </p>
-            </div>
-            <button
-              onClick={() => onNavigate('contact')}
-              className="btn-primary shrink-0"
-            >
-              Enquire About Parts <ArrowRight size={14} />
-            </button>
-          </div>
-        </div>
-      </section>
-
       {/* CTA */}
       <section className="bg-brand-orange py-16 px-4">
         <div className="max-w-5xl mx-auto text-center">
