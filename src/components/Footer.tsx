@@ -91,7 +91,7 @@ export default function Footer({ onNavigate }: FooterProps) {
               </li>
               <li>
                 <a
-                  href="https://maps.google.com/?q=Ballymore+Eustace,+Co.+Kildare,+Ireland"
+                  href="https://www.google.com/maps/place/PCP+GROUP/@53.1339053,-6.6185107,17z/data=!3m1!4b1!4m6!3m5!1s0x486783df90160a4b:0xe5299cbcddf6eceb!8m2!3d53.1339021!4d-6.6159358!16s%2Fg%2F11r9gg02yx?entry=ttu&g_ep=EgoyMDI2MDcwNy4wIKXMDSoASAFQAw%3D%3D"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-start gap-2.5 text-white/50 text-sm hover:text-white transition-colors"
