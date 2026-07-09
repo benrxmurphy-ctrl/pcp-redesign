@@ -147,7 +147,7 @@ export default function Navbar({ onNavigate, currentPage }: NavbarProps) {
               >
                 <button
                   onClick={item.action}
-                  className={`flex items-center gap-1 px-4 py-2 text-sm font-medium transition-colors ${
+                  className={`flex items-center gap-1 px-3 py-2 text-sm font-medium transition-colors ${
                     currentPage === item.key
                       ? 'text-brand-orange'
                       : 'text-white/80 hover:text-white'
