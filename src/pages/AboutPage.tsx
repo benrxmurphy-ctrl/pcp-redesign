@@ -38,7 +38,7 @@ export default function AboutPage({ onNavigate }: AboutPageProps) {
         <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-px bg-white/20">
           {[
             { value: '1967', label: 'Year Founded' },
-            { value: '57+', label: 'Years Experience' },
+            { value: '50+', label: 'Years Experience' },
             { value: '1,000+', label: 'Projects Completed' },
             { value: '10+', label: 'Industries Served' },
           ].map(s => (

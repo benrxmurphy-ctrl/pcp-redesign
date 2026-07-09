@@ -332,13 +332,13 @@ export default function Home({ onNavigate }: HomeProps) {
       </section>
 
       {/* ── CTA Strip ── */}
-      <section className="py-16 px-4 relative">
+      <section className="py-24 px-4 relative">
         <div className="absolute inset-0" style={{ backgroundColor: 'rgba(232, 98, 26, 0.78)' }} />
         <div className="relative z-10 max-w-5xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-black text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-black text-white mb-6">
             Experiencing Environmental Issues?
           </h2>
-          <p className="text-white/80 text-lg mb-8 max-w-xl mx-auto">
+          <p className="text-white/80 text-lg mb-10 max-w-xl mx-auto">
             Our engineers will visit your site, assess the challenge, and recommend the right solution. No obligation.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

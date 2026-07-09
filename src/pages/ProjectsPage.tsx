@@ -35,7 +35,7 @@ export default function ProjectsPage({ onNavigate }: ProjectsPageProps) {
           {[
             { value: '1,000+', label: 'Projects Completed' },
             { value: '10+', label: 'Industries Served' },
-            { value: '57+', label: 'Years Experience' },
+            { value: '50+', label: 'Years Experience' },
             { value: '15+', label: 'Countries Supplied' },
           ].map(s => (
             <div key={s.label} className="bg-brand-orange p-6 text-center">
