@@ -55,9 +55,13 @@ export default function Footer({ onNavigate }: FooterProps) {
             <div className="mb-5">
               <img src="/image copy copy.png" alt="PCP Group" className="h-12 w-auto object-contain" style={{ mixBlendMode: 'screen', filter: 'contrast(3) brightness(1.2)' }} />
             </div>
-            <p className="text-white/50 text-sm leading-relaxed mb-5">
-              Industrial environmental solutions for dust, odour and airborne emissions. Protecting people, assets and reputation since 1967.
-            </p>
+            <div className="mb-5">
+              <p className="text-white/40 text-xs uppercase tracking-widest mb-3">Hours of Operation</p>
+              <div className="flex items-center justify-between border-t border-white/10 pt-3">
+                <span className="text-white/60 text-sm">Mon – Fri</span>
+                <span className="text-white text-sm font-medium">8:00 am – 5:00 pm</span>
+              </div>
+            </div>
             <div className="flex gap-2.5">
               {socialLinks.map(({ href, label, icon }) => (
                 <a key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={label}
