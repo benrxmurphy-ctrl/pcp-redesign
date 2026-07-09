@@ -56,7 +56,7 @@ export default function Home({ onNavigate }: HomeProps) {
               Trusted Since 1968
             </span>
           </div>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] mb-8 text-brand-orange">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-black leading-[1.1] mb-8 text-brand-orange">
             Providing Bespoke<br />
             Sustainable Solutions<br />
             For Over 50 Years
