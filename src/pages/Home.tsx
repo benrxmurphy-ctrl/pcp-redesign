@@ -53,7 +53,7 @@ export default function Home({ onNavigate }: HomeProps) {
         <div className="relative z-10 w-full px-6 md:px-16 pb-20 pt-40 max-w-3xl">
           <div className="mb-3">
             <span className="inline-block text-xs font-semibold uppercase tracking-[0.2em] text-brand-orange border border-brand-orange/40 px-3 py-1">
-              Trusted Since 1968
+              Trusted Since 1967
             </span>
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] mb-8 text-brand-orange">
