@@ -14,9 +14,7 @@ export default function Footer({ onNavigate }: FooterProps) {
           {/* Brand */}
           <div>
             <div className="mb-5">
-              <span className="text-white font-bold text-xl tracking-wide">
-                PCP <span className="text-brand-orange">Group</span>
-              </span>
+              <img src="/image copy copy.png" alt="PCP Group" className="h-12 w-auto object-contain" />
             </div>
             <p className="text-white/50 text-sm leading-relaxed mb-5">
               Industrial environmental solutions for dust, odour and airborne emissions. Protecting people, assets and reputation since 1967.

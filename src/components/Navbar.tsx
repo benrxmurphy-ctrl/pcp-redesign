@@ -81,9 +81,11 @@ export default function Navbar({ onNavigate, currentPage }: NavbarProps) {
             onClick={() => { onNavigate('home'); setMobileOpen(false); }}
             className="flex items-center group"
           >
-            <span className="text-white font-bold text-lg tracking-wide group-hover:text-brand-orange transition-colors">
-              PCP <span className="text-brand-orange">Group</span>
-            </span>
+            <img
+              src="/image copy copy.png"
+              alt="PCP Group"
+              className="h-10 lg:h-12 w-auto object-contain"
+            />
           </button>
 
           {/* Desktop Nav */}
