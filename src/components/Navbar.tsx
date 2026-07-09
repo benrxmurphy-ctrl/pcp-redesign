@@ -56,13 +56,8 @@ export default function Navbar({ onNavigate, currentPage }: NavbarProps) {
         { label: 'FAQs', action: () => onNavigate('resources', 'faqs') },
         { label: 'Guides', action: () => onNavigate('resources', 'guides') },
         { label: 'Downloads', action: () => onNavigate('resources', 'downloads') },
+        { label: 'About Us', action: () => onNavigate('about') },
       ],
-    },
-    {
-      label: 'About',
-      key: 'about',
-      items: null,
-      action: () => onNavigate('about'),
     },
   ];
 
