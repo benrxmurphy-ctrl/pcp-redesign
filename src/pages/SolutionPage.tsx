@@ -1,4 +1,5 @@
-import { ArrowRight, CheckCircle, ChevronRight, Phone } from 'lucide-react';
+import { useState } from 'react';
+import { ArrowRight, CheckCircle, ChevronDown, Phone } from 'lucide-react';
 import Breadcrumb from '../components/Breadcrumb';
 import { solutionById } from '../data/solutions';
 import { industries } from '../data/industries';
@@ -12,6 +13,7 @@ interface SolutionPageProps {
 
 export default function SolutionPage({ id, onNavigate }: SolutionPageProps) {
   const solution = solutionById(id);
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   if (!solution) {
     return (
@@ -303,6 +305,46 @@ export default function SolutionPage({ id, onNavigate }: SolutionPageProps) {
           </section>
         );
       })()}
+
+      {/* FAQ */}
+      {solution.faqs && solution.faqs.length > 0 && (
+        <section className="py-20 px-4 bg-brand-dark">
+          <div className="max-w-3xl mx-auto">
+            <div className="text-center mb-12">
+              <p className="section-label mb-3">FAQ</p>
+              <h2 className="section-title mb-4">Frequently Asked Questions</h2>
+              <p className="text-white/50 max-w-lg mx-auto">
+                Common questions from site managers and engineers about {solution.title.toLowerCase()}.
+              </p>
+            </div>
+            <div className="space-y-px">
+              {solution.faqs.map((faq, i) => (
+                <div key={i} className="bg-brand-dark-2 border border-white/5 overflow-hidden">
+                  <button
+                    onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                    className="w-full flex items-center justify-between gap-4 px-6 py-5 text-left group"
+                  >
+                    <span className={`text-sm font-semibold leading-snug transition-colors ${openFaq === i ? 'text-brand-orange' : 'text-white group-hover:text-brand-orange'}`}>
+                      {faq.q}
+                    </span>
+                    <ChevronDown
+                      size={16}
+                      className={`text-brand-orange shrink-0 transition-transform duration-300 ${openFaq === i ? 'rotate-180' : ''}`}
+                    />
+                  </button>
+                  <div
+                    className={`overflow-hidden transition-all duration-300 ${openFaq === i ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}
+                  >
+                    <p className="px-6 pb-5 text-white/60 text-sm leading-relaxed border-t border-white/5 pt-4">
+                      {faq.a}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Contact CTA */}
       <section className="py-20 px-4 bg-brand-dark-3">

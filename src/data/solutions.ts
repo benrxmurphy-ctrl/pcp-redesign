@@ -18,6 +18,7 @@ export interface Solution {
   }[];
   industries: string[];
   color: string;
+  faqs?: { q: string; a: string }[];
 }
 
 export const solutions: Solution[] = [
@@ -50,6 +51,16 @@ export const solutions: Solution[] = [
     ],
     industries: ['Ports', 'Quarrying', 'Recycling', 'Waste', 'Construction', 'Manufacturing'],
     color: '#E8621A',
+    faqs: [
+      { q: 'Will dust suppression affect production speed or material quality?', a: 'No. Our systems treat material at conveyors, crushers, shredders and transfer points without reducing throughput or over-wetting materials.' },
+      { q: 'How much water do your systems use?', a: 'Up to 90% less than traditional water spraying methods, thanks to fine mist and foam technology that bonds to dust particles rather than flooding the area.' },
+      { q: 'Can dust suppression be automated?', a: 'Yes — systems can activate via conveyor start/stop signals, dust sensors, timers, or full PLC/SCADA integration, removing the need for manual operation.' },
+      { q: 'Are your dust suppression agents environmentally safe?', a: 'All additives are biodegradable, non-toxic and safe for soil, water, marine and public environments.' },
+      { q: 'Can one system cover multiple work areas?', a: 'Yes. Mobile cannons, trailer units and zoned fogging lines can serve multiple loading points, berths or production zones from a single installation.' },
+      { q: 'Can you provide monitoring data for EPA audits and inspections?', a: 'Yes — we supply real-time particulate monitoring with cloud-based reporting to support EPA audits, ISO14001 frameworks and Environmental Management Plans.' },
+      { q: 'Can systems run without mains water or power?', a: 'Yes. Self-contained units with integrated water tanks and generators are available for remote or temporary sites.' },
+      { q: 'What is the typical return on investment?', a: 'Most sites recover costs within 12–24 months through reduced downtime, lower maintenance spend, fewer regulatory incidents and significantly reduced water consumption.' },
+    ],
   },
   {
     id: 'metal',
@@ -80,6 +91,16 @@ export const solutions: Solution[] = [
     ],
     industries: ['Recycling', 'Food Processing', 'Pharmaceutical', 'Mining & Minerals', 'Manufacturing', 'Animal Feed', 'Wood Processing', 'Packaging'],
     color: '#E8621A',
+    faqs: [
+      { q: 'Will tramp metal detection slow down throughput?', a: 'No — detectors run seamlessly inline, stopping the conveyor only when metal is actually detected. When no metal is present, production continues uninterrupted.' },
+      { q: 'Can detectors integrate with our existing E-stop or PLC system?', a: 'Yes. Integration into PLC, SCADA and E-stop systems is standard. No separate operator intervention is required once configured.' },
+      { q: 'Are detectors reliable in dusty or harsh environments like cement plants?', a: 'Yes — detectors are ruggedised and purpose-built for harsh industrial conditions including dust, heat, moisture and vibration.' },
+      { q: 'How quickly can a system be deployed?', a: 'A temporary metal detection system can be deployed at short notice while a permanent bespoke solution is designed and manufactured for your specific application.' },
+      { q: 'Do tramp metal detectors meet HACCP and BRC food safety standards?', a: 'Yes — PCP systems are designed for full compliance with HACCP, BRC and ISO22000, with validation documentation supplied for auditors.' },
+      { q: 'Can detection events be logged for compliance audits?', a: 'Yes — all detection events are automatically recorded and can be exported for HACCP, BRC, ISO22000 and EPA audit requirements.' },
+      { q: 'Are the systems high-maintenance?', a: 'No. Only simple calibration and visual checks are required, typically once per year. We also provide training for your in-house team.' },
+      { q: 'What is the ROI on tramp metal detection?', a: 'Preventing a single catastrophic failure on a shredder, baler or crusher can save weeks of unplanned downtime. In food and pharma, avoiding one contamination recall can save far more.' },
+    ],
   },
   {
     id: 'odour',
@@ -110,6 +131,16 @@ export const solutions: Solution[] = [
     ],
     industries: ['Waste', 'Water Treatment', 'Recycling', 'Food Processing', 'Ports', 'Manufacturing'],
     color: '#E8621A',
+    faqs: [
+      { q: 'Are your odour-neutralising agents safe for the environment?', a: 'Yes — all products are fully biodegradable, non-toxic and safe for use around water, soil and sensitive biological processes like anaerobic digestion.' },
+      { q: 'Will installing a system help me meet regulatory requirements?', a: 'Yes — our solutions keep odour complaints to a minimum and provide documented evidence to satisfy local authority and EPA requirements.' },
+      { q: 'Can odour suppression work alongside existing biofilters or scrubbers?', a: 'Yes — fogging and dosing systems complement existing odour treatment infrastructure, providing an extra layer of control during high-load periods.' },
+      { q: 'Do suppression systems work effectively in enclosed halls?', a: 'Yes — our systems produce droplets sized to neutralise odours without saturating the air or wetting floor surfaces, making them ideal for tipping halls and transfer buildings.' },
+      { q: 'Can the systems run automatically without operator input?', a: 'Yes — units can be sensor-triggered, timer-based and door-activated to match site activity, running entirely in the background.' },
+      { q: 'Can you provide data and reporting to support compliance audits?', a: 'Absolutely — we provide equipment monitoring, control data and can recommend accredited labs for odour reporting to support EPA inspections and licence renewals.' },
+      { q: 'Do you offer rental or emergency units for peak odour periods?', a: 'Yes — mobile trailer units are available for rapid deployment during high-odour events or while a permanent solution is being installed.' },
+      { q: 'How will I know if my filtration system is starting to fail?', a: "PCP's Acrulog CEMS unit measures before and after performance on any filtration equipment, providing early warning of failing equipment before neighbourhood complaints arise." },
+    ],
   },
   {
     id: 'air-filtration',
