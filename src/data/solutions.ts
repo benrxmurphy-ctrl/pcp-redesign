@@ -22,7 +22,7 @@ export interface Solution {
 export const solutions: Solution[] = [
   {
     id: 'dust',
-    title: 'Dust Suppression',
+    title: 'Dust Solutions',
     tagline: 'Keep dust below site limits.',
     heroStatement: 'Reduce airborne dust before it spreads across your site.',
     heroImage: 'https://images.pexels.com/photos/1267338/pexels-photo-1267338.jpeg',
@@ -51,8 +51,36 @@ export const solutions: Solution[] = [
     color: '#E8621A',
   },
   {
+    id: 'metal',
+    title: 'Metal Solutions',
+    tagline: 'Control fume, dust and emissions from metal processing.',
+    heroStatement: 'Protect workers and meet compliance standards across welding, cutting, grinding and metal handling operations.',
+    heroImage: '/metal-industry-worker-sprays-protective-suit-night-generated-by-ai-scaled.jpg',
+    overview: 'Metal processing generates hazardous fume, fine particulate and heat-generated emissions that require targeted extraction and filtration at source. PCP Group provides engineered solutions for welding bays, cutting tables, grinding stations and metal handling areas.',
+    challenges: [
+      'Welding fume and cutting emissions creating health and compliance risks for workers',
+      'Fine metallic particulate settling on surfaces and re-entering the breathing zone',
+      'High-temperature emissions from furnaces, casting and heat treatment operations',
+      'Regulatory pressure to meet occupational exposure limits for metal fume',
+    ],
+    approaches: [
+      { title: 'Welding Fume Extraction', description: 'At-source capture of welding and cutting fume before it disperses into the work area.' },
+      { title: 'Grinding Dust Collection', description: 'Extraction systems designed for abrasive metalworking operations with spark management.' },
+      { title: 'Ambient Air Filtration', description: 'Recirculating filtration for large bays and halls where point extraction is not practical.' },
+      { title: 'Personnel Protection', description: 'JetBlack clean-down stations for workers exiting metal processing zones.' },
+    ],
+    equipment: [
+      { name: 'Welding Fume Extractors', description: 'Portable and fixed extraction arms for welding bays — capture fume before it enters the breathing zone.', image: 'https://images.pexels.com/photos/1108101/pexels-photo-1108101.jpeg' },
+      { name: 'Baghouse Filter Control', description: 'FilterSense systems for managing baghouse performance across metal dust collection applications.', image: 'https://images.pexels.com/photos/1267338/pexels-photo-1267338.jpeg' },
+      { name: 'Industrial Vacuum Systems', description: 'Heavy-duty vacuums for metallic dust clean-down and extraction across processing areas.', image: 'https://images.pexels.com/photos/3862132/pexels-photo-3862132.jpeg' },
+      { name: 'Personnel De-Dusting', description: 'JetBlack Safety cleaning booths — limit worker exposure to metallic dust when leaving hazardous zones.', image: 'https://images.pexels.com/photos/1367269/pexels-photo-1367269.jpeg' },
+    ],
+    industries: ['Manufacturing', 'Steel & Metal', 'Automotive', 'Foundries', 'Fabrication'],
+    color: '#E8621A',
+  },
+  {
     id: 'odour',
-    title: 'Odour Control',
+    title: 'Odour Solutions',
     tagline: 'Remove nuisance odours before they leave your site.',
     heroStatement: 'Treat nuisance odours at source before they spread across the wider site.',
     heroImage: 'https://images.pexels.com/photos/3862132/pexels-photo-3862132.jpeg',

@@ -3,10 +3,30 @@ import { Menu, X, ChevronDown, Phone } from 'lucide-react';
 import { solutions } from '../data/solutions';
 import { industries } from '../data/industries';
 
+interface NavItem {
+  label: string;
+  action: () => void;
+}
+
+interface NavGroup {
+  heading?: string;
+  items: NavItem[];
+}
+
+interface NavEntry {
+  label: string;
+  key: string;
+  items?: NavItem[] | null;
+  groups?: NavGroup[] | null;
+  action?: () => void;
+}
+
 interface NavbarProps {
   onNavigate: (page: string, id?: string) => void;
   currentPage: string;
 }
+
+const PRIMARY_SOLUTION_IDS = ['dust', 'metal', 'odour'];
 
 export default function Navbar({ onNavigate, currentPage }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false);
@@ -19,11 +39,22 @@ export default function Navbar({ onNavigate, currentPage }: NavbarProps) {
     return () => window.removeEventListener('scroll', handler);
   }, []);
 
-  const nav = [
+  const primarySolutions = solutions.filter(s => PRIMARY_SOLUTION_IDS.includes(s.id));
+  const otherSolutions = solutions.filter(s => !PRIMARY_SOLUTION_IDS.includes(s.id));
+
+  const nav: NavEntry[] = [
     {
       label: 'Solutions',
       key: 'solutions',
-      items: solutions.map(s => ({ label: s.title, action: () => onNavigate('solution', s.id) })),
+      groups: [
+        {
+          items: primarySolutions.map(s => ({ label: s.title, action: () => onNavigate('solution', s.id) })),
+        },
+        {
+          heading: 'Other',
+          items: otherSolutions.map(s => ({ label: s.title, action: () => onNavigate('solution', s.id) })),
+        },
+      ],
     },
     {
       label: 'Industries',
@@ -61,6 +92,14 @@ export default function Navbar({ onNavigate, currentPage }: NavbarProps) {
     },
   ];
 
+  const hasDropdown = (item: NavEntry) => !!(item.items || item.groups);
+
+  const closeAndRun = (action: () => void) => {
+    action();
+    setActiveDropdown(null);
+    setMobileOpen(false);
+  };
+
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -89,7 +128,7 @@ export default function Navbar({ onNavigate, currentPage }: NavbarProps) {
               <div
                 key={item.key}
                 className="relative"
-                onMouseEnter={() => item.items && setActiveDropdown(item.key)}
+                onMouseEnter={() => hasDropdown(item) && setActiveDropdown(item.key)}
                 onMouseLeave={() => setActiveDropdown(null)}
               >
                 <button
@@ -101,15 +140,38 @@ export default function Navbar({ onNavigate, currentPage }: NavbarProps) {
                   }`}
                 >
                   {item.label}
-                  {item.items && <ChevronDown size={14} className={`transition-transform ${activeDropdown === item.key ? 'rotate-180' : ''}`} />}
+                  {hasDropdown(item) && (
+                    <ChevronDown size={14} className={`transition-transform ${activeDropdown === item.key ? 'rotate-180' : ''}`} />
+                  )}
                 </button>
 
-                {item.items && activeDropdown === item.key && (
-                  <div className="absolute top-full left-0 mt-1 bg-brand-dark-2 border border-white/10 min-w-[200px] shadow-2xl">
-                    {item.items.map(sub => (
+                {activeDropdown === item.key && (
+                  <div className="absolute top-full left-0 mt-1 bg-brand-dark-2 border border-white/10 min-w-[220px] shadow-2xl">
+                    {/* Grouped dropdown (Solutions) */}
+                    {item.groups && item.groups.map((group, gi) => (
+                      <div key={gi}>
+                        {gi > 0 && <div className="border-t border-white/10 mx-2" />}
+                        {group.heading && (
+                          <p className="px-4 pt-3 pb-1 text-xs font-semibold uppercase tracking-widest text-white/30">
+                            {group.heading}
+                          </p>
+                        )}
+                        {group.items.map(sub => (
+                          <button
+                            key={sub.label}
+                            onClick={() => closeAndRun(sub.action)}
+                            className="block w-full text-left px-4 py-3 text-sm text-white/70 hover:text-white hover:bg-brand-dark-4 transition-colors border-b border-white/5 last:border-0"
+                          >
+                            {sub.label}
+                          </button>
+                        ))}
+                      </div>
+                    ))}
+                    {/* Flat dropdown */}
+                    {item.items && item.items.map(sub => (
                       <button
                         key={sub.label}
-                        onClick={() => { sub.action(); setActiveDropdown(null); }}
+                        onClick={() => closeAndRun(sub.action)}
                         className="block w-full text-left px-4 py-3 text-sm text-white/70 hover:text-white hover:bg-brand-dark-4 transition-colors border-b border-white/5 last:border-0"
                       >
                         {sub.label}
@@ -153,18 +215,40 @@ export default function Navbar({ onNavigate, currentPage }: NavbarProps) {
             <div key={item.key} className="border-b border-white/5">
               <button
                 onClick={() => {
-                  if (!item.items && item.action) { item.action(); setMobileOpen(false); }
+                  if (!hasDropdown(item) && item.action) { item.action(); setMobileOpen(false); }
                 }}
                 className="flex items-center justify-between w-full px-5 py-4 text-sm font-semibold text-white"
               >
                 {item.label}
               </button>
+              {item.groups && (
+                <div className="bg-brand-dark-3 pb-2">
+                  {item.groups.map((group, gi) => (
+                    <div key={gi}>
+                      {group.heading && (
+                        <p className="px-8 pt-3 pb-1 text-xs font-semibold uppercase tracking-widest text-white/30">
+                          {group.heading}
+                        </p>
+                      )}
+                      {group.items.map(sub => (
+                        <button
+                          key={sub.label}
+                          onClick={() => closeAndRun(sub.action)}
+                          className="block w-full text-left px-8 py-2.5 text-sm text-white/60 hover:text-white transition-colors"
+                        >
+                          {sub.label}
+                        </button>
+                      ))}
+                    </div>
+                  ))}
+                </div>
+              )}
               {item.items && (
                 <div className="bg-brand-dark-3 pb-2">
                   {item.items.map(sub => (
                     <button
                       key={sub.label}
-                      onClick={() => { sub.action(); setMobileOpen(false); }}
+                      onClick={() => closeAndRun(sub.action)}
                       className="block w-full text-left px-8 py-2.5 text-sm text-white/60 hover:text-white transition-colors"
                     >
                       {sub.label}
