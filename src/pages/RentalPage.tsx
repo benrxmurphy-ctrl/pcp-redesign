@@ -145,7 +145,7 @@ const included = [
 
 export default function RentalPage({ onNavigate }: RentalPageProps) {
   return (
-    <div>
+    <div className="bg-brand-dark">
 
       {/* Hero */}
       <section className="relative min-h-[65vh] flex items-end overflow-hidden pt-20">
@@ -174,7 +174,7 @@ export default function RentalPage({ onNavigate }: RentalPageProps) {
       </section>
 
       {/* Breadcrumb */}
-      <div className="px-4 py-3 bg-black/80 border-b border-white/5">
+      <div className="px-4 py-3 bg-brand-dark-2 border-b border-white/5">
         <div className="max-w-7xl mx-auto">
           <Breadcrumb crumbs={[{ label: 'Rental' }]} onNavigate={onNavigate} />
         </div>
@@ -203,7 +203,7 @@ export default function RentalPage({ onNavigate }: RentalPageProps) {
 
       {/* Rental Fleet */}
       {rentalFleet.map((cat, ci) => (
-        <section key={ci} className={`py-20 px-4 ${ci % 2 === 1 ? 'bg-black/80' : 'bg-black/85'}`}>
+        <section key={ci} className={`py-20 px-4 ${ci % 2 === 1 ? 'bg-brand-dark-2' : 'bg-brand-dark'}`}>
           <div className="max-w-7xl mx-auto">
             <div className="mb-10">
               <p className="section-label mb-3">Available for Hire</p>
@@ -251,7 +251,7 @@ export default function RentalPage({ onNavigate }: RentalPageProps) {
       ))}
 
       {/* Tagline banner */}
-      <section className="py-20 px-4 bg-black/75">
+      <section className="py-20 px-4 bg-brand-dark-3">
         <div className="max-w-5xl mx-auto text-center">
           <div className="flex flex-wrap justify-center gap-4 md:gap-12 mb-8">
             {['Fast.', 'Flexible.', 'Fully Supported.'].map(word => (
@@ -267,7 +267,7 @@ export default function RentalPage({ onNavigate }: RentalPageProps) {
       </section>
 
       {/* What's Included */}
-      <section className="py-20 px-4 bg-black/80">
+      <section className="py-20 px-4 bg-brand-dark-2">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <p className="section-label mb-3">Every Hire Includes</p>
@@ -288,7 +288,7 @@ export default function RentalPage({ onNavigate }: RentalPageProps) {
       </section>
 
       {/* How Hire Works */}
-      <section className="py-20 px-4 bg-black/85">
+      <section className="py-20 px-4 bg-brand-dark">
         <div className="max-w-5xl mx-auto text-center">
           <p className="section-label mb-3">Process</p>
           <h2 className="section-title mb-12">How Hire Works</h2>
@@ -315,7 +315,7 @@ export default function RentalPage({ onNavigate }: RentalPageProps) {
       </section>
 
       {/* CTA */}
-      <section className="py-20 px-4 bg-black/75">
+      <section className="py-20 px-4 bg-brand-dark-3">
         <div className="max-w-4xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>

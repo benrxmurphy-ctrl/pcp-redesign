@@ -32,7 +32,7 @@ export default function ProductDetailPage({ id, onNavigate }: ProductDetailPageP
   const relatedIndustries = industries.filter(i => product.industries.includes(i.name));
 
   return (
-    <div>
+    <div className="bg-brand-dark">
       {/* Hero */}
       <section className="relative min-h-[60vh] flex items-end overflow-hidden pt-20">
         <div
@@ -66,7 +66,7 @@ export default function ProductDetailPage({ id, onNavigate }: ProductDetailPageP
       </section>
 
       {/* Breadcrumb */}
-      <div className="px-4 py-3 bg-black/80 border-b border-white/5">
+      <div className="px-4 py-3 bg-brand-dark-2 border-b border-white/5">
         <div className="max-w-7xl mx-auto">
           <Breadcrumb
             crumbs={[
@@ -133,7 +133,7 @@ export default function ProductDetailPage({ id, onNavigate }: ProductDetailPageP
       </section>
 
       {/* Key Benefits */}
-      <section className="py-20 px-4 bg-black/80">
+      <section className="py-20 px-4 bg-brand-dark-2">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
@@ -184,7 +184,7 @@ export default function ProductDetailPage({ id, onNavigate }: ProductDetailPageP
 
       {/* Industries */}
       {relatedIndustries.length > 0 && (
-        <section className="py-20 px-4 bg-black/80">
+        <section className="py-20 px-4 bg-brand-dark-2">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-12">
               <p className="section-label mb-3">Industries</p>

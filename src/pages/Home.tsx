@@ -36,7 +36,7 @@ const trustStats = [
 
 export default function Home({ onNavigate }: HomeProps) {
   return (
-    <div>
+    <div className="bg-brand-dark">
       {/* ── SECTION 1: Hero ── */}
       <section className="relative min-h-screen flex items-end overflow-hidden">
         {/* Single Ken Burns image */}

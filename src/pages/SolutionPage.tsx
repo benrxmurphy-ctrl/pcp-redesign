@@ -30,7 +30,7 @@ export default function SolutionPage({ id, onNavigate }: SolutionPageProps) {
   const relatedIndustries = industries.filter(i => solution.industries.includes(i.name));
 
   return (
-    <div>
+    <div className="bg-brand-dark">
       {/* Hero */}
       <section className="relative min-h-[60vh] flex items-end overflow-hidden pt-20">
         <div
@@ -50,7 +50,7 @@ export default function SolutionPage({ id, onNavigate }: SolutionPageProps) {
       </section>
 
       {/* Breadcrumb */}
-      <div className="px-4 py-3 bg-black/80 border-b border-white/5">
+      <div className="px-4 py-3 bg-brand-dark-2 border-b border-white/5">
         <div className="max-w-7xl mx-auto">
           <Breadcrumb
             crumbs={[{ label: 'Solutions' }, { label: solution.title }]}
@@ -98,7 +98,7 @@ export default function SolutionPage({ id, onNavigate }: SolutionPageProps) {
       </section>
 
       {/* Challenges */}
-      <section className="py-20 px-4 bg-black/80">
+      <section className="py-20 px-4 bg-brand-dark-2">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16">
             <div>
@@ -188,7 +188,7 @@ export default function SolutionPage({ id, onNavigate }: SolutionPageProps) {
       </section>
 
       {/* Customer Journey */}
-      <section className="py-20 px-4 bg-black/80">
+      <section className="py-20 px-4 bg-brand-dark-2">
         <div className="max-w-5xl mx-auto text-center">
           <p className="section-label mb-3">Process</p>
           <h2 className="section-title mb-12">How We Deliver Results</h2>
@@ -267,7 +267,7 @@ export default function SolutionPage({ id, onNavigate }: SolutionPageProps) {
         const solutionProjects = projects.filter(p => p.solutionId === solution.id).slice(0, 3);
         if (solutionProjects.length === 0) return null;
         return (
-          <section className="py-20 px-4 bg-black/80">
+          <section className="py-20 px-4 bg-brand-dark-2">
             <div className="max-w-7xl mx-auto">
               <div className="text-center mb-12">
                 <p className="section-label mb-3">Case Studies</p>
@@ -312,7 +312,7 @@ export default function SolutionPage({ id, onNavigate }: SolutionPageProps) {
         const currentCategory = activeCategory ?? solution.faqs![0].category;
         const activeFaqs = solution.faqs!.find(f => f.category === currentCategory)?.questions ?? [];
         return (
-          <section className="py-20 px-4 bg-black/85">
+          <section className="py-20 px-4 bg-brand-dark">
             <div className="max-w-3xl mx-auto">
               <div className="text-center mb-10">
                 <p className="section-label mb-3">FAQ</p>
@@ -374,7 +374,7 @@ export default function SolutionPage({ id, onNavigate }: SolutionPageProps) {
       })()}
 
       {/* Contact CTA */}
-      <section className="py-20 px-4 bg-black/75">
+      <section className="py-20 px-4 bg-brand-dark-3">
         <div className="max-w-4xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>

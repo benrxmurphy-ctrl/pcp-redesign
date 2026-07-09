@@ -31,7 +31,7 @@ export default function ProjectDetailPage({ id, onNavigate }: ProjectDetailPageP
   const industry = industryById(project.industryId);
 
   return (
-    <div>
+    <div className="bg-brand-dark">
       {/* Hero */}
       <section className="relative min-h-[55vh] flex items-end overflow-hidden pt-20">
         <div
@@ -62,7 +62,7 @@ export default function ProjectDetailPage({ id, onNavigate }: ProjectDetailPageP
       </section>
 
       {/* Breadcrumb */}
-      <div className="px-4 py-3 bg-black/80 border-b border-white/5">
+      <div className="px-4 py-3 bg-brand-dark-2 border-b border-white/5">
         <div className="max-w-7xl mx-auto">
           <Breadcrumb
             crumbs={[
@@ -104,7 +104,7 @@ export default function ProjectDetailPage({ id, onNavigate }: ProjectDetailPageP
       </section>
 
       {/* Outcomes */}
-      <section className="py-20 px-4 bg-black/80">
+      <section className="py-20 px-4 bg-brand-dark-2">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
           <div>
             <p className="section-label mb-3">Outcomes</p>
@@ -134,7 +134,7 @@ export default function ProjectDetailPage({ id, onNavigate }: ProjectDetailPageP
 
       {/* Quote */}
       {project.quote && (
-        <section className="py-16 px-4 bg-black/75">
+        <section className="py-16 px-4 bg-brand-dark-3">
           <div className="max-w-4xl mx-auto text-center">
             <Quote size={36} className="text-brand-orange mx-auto mb-6 opacity-60" />
             <blockquote className="text-xl md:text-2xl text-white font-medium leading-relaxed mb-6 italic">
@@ -193,7 +193,7 @@ export default function ProjectDetailPage({ id, onNavigate }: ProjectDetailPageP
       )}
 
       {/* Related Solution + Industry */}
-      <section className="py-20 px-4 bg-black/80">
+      <section className="py-20 px-4 bg-brand-dark-2">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-6">
           {solution && (
             <button

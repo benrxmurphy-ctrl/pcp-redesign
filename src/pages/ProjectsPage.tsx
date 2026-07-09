@@ -10,9 +10,9 @@ const solutionFilters = ['All', 'Dust Suppression', 'Odour Control', 'Dust Extra
 
 export default function ProjectsPage({ onNavigate }: ProjectsPageProps) {
   return (
-    <div className="pt-20">
+    <div className="bg-brand-dark pt-20">
       {/* Hero */}
-      <section className="py-20 px-4 bg-black/80">
+      <section className="py-20 px-4 bg-brand-dark-2">
         <div className="max-w-7xl mx-auto">
           <p className="section-label mb-3">Case Studies</p>
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">Projects</h1>
@@ -23,7 +23,7 @@ export default function ProjectsPage({ onNavigate }: ProjectsPageProps) {
       </section>
 
       {/* Breadcrumb */}
-      <div className="px-4 py-3 bg-black/80 border-b border-white/5">
+      <div className="px-4 py-3 bg-brand-dark-2 border-b border-white/5">
         <div className="max-w-7xl mx-auto">
           <Breadcrumb crumbs={[{ label: 'Projects' }]} onNavigate={onNavigate} />
         </div>
@@ -101,7 +101,7 @@ export default function ProjectsPage({ onNavigate }: ProjectsPageProps) {
       </section>
 
       {/* Solution cross-links */}
-      <section className="py-16 px-4 bg-black/80">
+      <section className="py-16 px-4 bg-brand-dark-2">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-10">
             <p className="section-label mb-2">Explore by Solution</p>
