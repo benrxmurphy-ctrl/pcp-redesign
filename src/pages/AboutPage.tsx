@@ -84,8 +84,7 @@ export default function AboutPage({ onNavigate }: AboutPageProps) {
         <div className="absolute inset-0 bg-brand-dark-2/88" />
         <div className="relative z-10 max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <p className="section-label mb-3 inline-block bg-black/50 backdrop-blur-sm border border-white/10 px-4 py-1">Our Values</p>
-            <h2 className="section-title mb-4">What drives us.</h2>
+            <p className="section-label inline-block bg-black/50 backdrop-blur-sm border border-white/10 px-4 py-1">Our Values</p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
