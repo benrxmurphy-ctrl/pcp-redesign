@@ -39,7 +39,7 @@ export default function AboutPage({ onNavigate }: AboutPageProps) {
 
       {/* Stats */}
       <section className="py-6 px-4 relative overflow-hidden">
-        <div className="absolute inset-0" style={{ backgroundColor: 'rgba(232, 98, 26, 0.82)' }} />
+        <div className="absolute inset-0" style={{ backgroundColor: 'rgba(232, 98, 26, 0.85)' }} />
         <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-px bg-white/20">
           {[
             { value: '1967', label: 'Year Founded' },
