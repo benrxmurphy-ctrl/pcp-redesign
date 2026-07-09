@@ -7,27 +7,31 @@ interface AboutPageProps {
 
 export default function AboutPage({ onNavigate }: AboutPageProps) {
   return (
-    <div className="bg-brand-dark pt-20">
+    <div
+      className="pt-20"
+      style={{
+        backgroundImage: "url('/images/spencer-davis-8DQz9z99GjU-unsplash.jpg')",
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed',
+      }}
+    >
       {/* Hero */}
       <section className="relative py-24 px-4 overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center opacity-20"
-          style={{ backgroundImage: 'url(https://images.pexels.com/photos/1108101/pexels-photo-1108101.jpeg?auto=compress&cs=tinysrgb&w=1920)' }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-brand-dark/80 to-brand-dark" />
+        <div className="absolute inset-0 bg-brand-dark/80" />
         <div className="relative z-10 max-w-7xl mx-auto">
           <p className="section-label mb-3">About PCP Group</p>
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 max-w-3xl">
             Ireland's industrial environmental specialists since 1967.
           </h1>
           <p className="text-xl text-white/60 max-w-2xl">
-            Founded by Raymond Murphy to bring cutting-edge technologies from leading international manufacturers to Irish industry. Over 57 years later, we remain Ireland's trusted leader in dust, odour and environmental control.
+            Founded by Raymond Murphy to bring cutting-edge technologies from leading international manufacturers to Irish industry. Over 50 years later, we remain Ireland's trusted leader in dust, odour and environmental control.
           </p>
         </div>
       </section>
 
       {/* Breadcrumb */}
-      <div className="px-4 py-3 bg-brand-dark-2 border-b border-white/5">
+      <div className="px-4 py-3 bg-brand-dark-2/90 border-b border-white/5 relative z-10">
         <div className="max-w-7xl mx-auto">
           <Breadcrumb crumbs={[{ label: 'About' }]} onNavigate={onNavigate} />
         </div>
@@ -35,10 +39,6 @@ export default function AboutPage({ onNavigate }: AboutPageProps) {
 
       {/* Stats */}
       <section className="py-6 px-4 relative overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: "url('/images/spencer-davis-8DQz9z99GjU-unsplash.jpg')" }}
-        />
         <div className="absolute inset-0" style={{ backgroundColor: 'rgba(232, 98, 26, 0.82)' }} />
         <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-px bg-white/20">
           {[
@@ -56,8 +56,9 @@ export default function AboutPage({ onNavigate }: AboutPageProps) {
       </section>
 
       {/* Story */}
-      <section className="py-20 px-4">
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+      <section className="py-20 px-4 relative">
+        <div className="absolute inset-0 bg-brand-dark/75" />
+        <div className="relative z-10 max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
           <div>
             <p className="section-label mb-3">Our Story</p>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
@@ -79,8 +80,9 @@ export default function AboutPage({ onNavigate }: AboutPageProps) {
       </section>
 
       {/* Values */}
-      <section className="py-20 px-4 bg-brand-dark-2">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-20 px-4 relative">
+        <div className="absolute inset-0 bg-brand-dark-2/88" />
+        <div className="relative z-10 max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <p className="section-label mb-3">Our Values</p>
             <h2 className="section-title mb-4">What drives us.</h2>
@@ -105,8 +107,9 @@ export default function AboutPage({ onNavigate }: AboutPageProps) {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-20 px-4">
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+      <section className="py-20 px-4 relative">
+        <div className="absolute inset-0 bg-brand-dark/75" />
+        <div className="relative z-10 max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
           <div>
             <p className="section-label mb-3">Why PCP Group</p>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">Why industry chooses us.</h2>
@@ -157,8 +160,9 @@ export default function AboutPage({ onNavigate }: AboutPageProps) {
       </section>
 
       {/* CTA */}
-      <section className="bg-brand-orange py-16 px-4">
-        <div className="max-w-5xl mx-auto text-center">
+      <section className="py-16 px-4 relative">
+        <div className="absolute inset-0" style={{ backgroundColor: 'rgba(232, 98, 26, 0.85)' }} />
+        <div className="relative z-10 max-w-5xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-black text-white mb-4">
             Ready to work with Ireland's leading environmental specialists?
           </h2>
