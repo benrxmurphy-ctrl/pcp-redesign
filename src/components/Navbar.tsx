@@ -140,7 +140,7 @@ export default function Navbar({ onNavigate, currentPage }: NavbarProps) {
               onClick={() => onNavigate('contact')}
               className="hidden lg:block btn-primary text-xs py-2 px-4"
             >
-              Contact Engineer
+              Get in touch
             </button>
             <button
               className="lg:hidden text-white p-1"
@@ -185,7 +185,7 @@ export default function Navbar({ onNavigate, currentPage }: NavbarProps) {
               <Phone size={14} /> +353 45 863220
             </a>
             <button onClick={() => { onNavigate('contact'); setMobileOpen(false); }} className="btn-primary justify-center">
-              Contact Engineer
+              Get in touch
             </button>
           </div>
         </div>

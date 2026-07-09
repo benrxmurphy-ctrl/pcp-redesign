@@ -90,7 +90,7 @@ export default function Footer({ onNavigate }: FooterProps) {
               onClick={() => onNavigate('contact')}
               className="mt-6 btn-primary text-xs py-2.5 px-5 w-full justify-center"
             >
-              Contact an Engineer
+              Get in touch
             </button>
           </div>
         </div>
