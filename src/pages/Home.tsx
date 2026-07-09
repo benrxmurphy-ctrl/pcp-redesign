@@ -172,7 +172,7 @@ export default function Home({ onNavigate }: HomeProps) {
             <p className="section-label mb-3">Industries We Serve</p>
             <h2 className="section-title mb-6">Which industry are you in?</h2>
             <p className="text-white/50 max-w-xl mx-auto text-lg">
-              Every industry has its own dust, odour and air quality challenges. Select yours for tailored solutions.
+              Every industry has its own dust, odour and metal challenges. Select yours for tailored solutions.
             </p>
           </div>
 
