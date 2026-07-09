@@ -76,7 +76,7 @@ export default function Footer({ onNavigate }: FooterProps) {
           <div>
             <h4 className="text-white text-xs font-bold uppercase tracking-widest mb-5">Solutions</h4>
             <ul className="space-y-2">
-              {solutions.slice(0, 6).map(s => (
+              {solutions.slice(0, 3).map(s => (
                 <li key={s.id}>
                   <button
                     onClick={() => onNavigate('solution', s.id)}
