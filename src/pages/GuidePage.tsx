@@ -28,7 +28,7 @@ export default function GuidePage({ id, onNavigate }: GuidePageProps) {
   const relatedGuidesList = guide.relatedGuides.map(gid => guides.find(g => g.id === gid)).filter(Boolean);
 
   return (
-    <div className="bg-brand-dark">
+    <div>
       {/* Hero */}
       <section className="relative min-h-[50vh] flex items-end overflow-hidden pt-20">
         <div
@@ -50,7 +50,7 @@ export default function GuidePage({ id, onNavigate }: GuidePageProps) {
       </section>
 
       {/* Breadcrumb */}
-      <div className="px-4 py-3 bg-brand-dark-2 border-b border-white/5">
+      <div className="px-4 py-3 bg-black/80 border-b border-white/5">
         <div className="max-w-7xl mx-auto">
           <Breadcrumb
             crumbs={[

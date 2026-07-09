@@ -36,7 +36,7 @@ const trustStats = [
 
 export default function Home({ onNavigate }: HomeProps) {
   return (
-    <div className="bg-brand-dark">
+    <div>
       {/* ── SECTION 1: Hero ── */}
       <section className="relative min-h-screen flex items-end overflow-hidden">
         {/* Single Ken Burns image */}
@@ -89,16 +89,8 @@ export default function Home({ onNavigate }: HomeProps) {
         </div>
       </section>
 
-      {/* ── Shared background wrapper: sections 2–5 + CTA ── */}
-      <div
-        className="relative"
-        style={{
-          backgroundImage: 'url(/metal-industry-worker-sprays-protective-suit-night-generated-by-ai-scaled.jpg)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundAttachment: 'fixed',
-        }}
-      >
+      {/* ── Sections 2–5 + CTA ── */}
+      <div className="relative">
 
       {/* ── SECTION 2: What problem do you solve? ── */}
       <section className="py-24 px-4 relative">

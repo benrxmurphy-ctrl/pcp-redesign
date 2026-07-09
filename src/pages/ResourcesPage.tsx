@@ -40,7 +40,7 @@ export default function ResourcesPage({ onNavigate }: ResourcesPageProps) {
   };
 
   return (
-    <div className="bg-brand-dark pt-20">
+    <div className="pt-20">
       {/* Video modal */}
       {activeVideo && (
         <VideoModal
@@ -54,7 +54,7 @@ export default function ResourcesPage({ onNavigate }: ResourcesPageProps) {
       {toast && <DownloadToast title={toast} onDismiss={() => setToast(null)} />}
 
       {/* Hero */}
-      <section className="py-20 px-4 bg-brand-dark-2">
+      <section className="py-20 px-4 bg-black/80">
         <div className="max-w-7xl mx-auto">
           <p className="section-label mb-3">Resources</p>
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">Knowledge Base</h1>
@@ -65,7 +65,7 @@ export default function ResourcesPage({ onNavigate }: ResourcesPageProps) {
       </section>
 
       {/* Breadcrumb */}
-      <div className="px-4 py-3 bg-brand-dark-2 border-b border-white/5">
+      <div className="px-4 py-3 bg-black/80 border-b border-white/5">
         <div className="max-w-7xl mx-auto">
           <Breadcrumb crumbs={[{ label: 'Resources' }]} onNavigate={onNavigate} />
         </div>

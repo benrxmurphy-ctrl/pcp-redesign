@@ -104,7 +104,15 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-brand-dark flex flex-col">
+    <div
+      className="min-h-screen flex flex-col"
+      style={{
+        backgroundImage: 'url(/metal-industry-worker-sprays-protective-suit-night-generated-by-ai-scaled.jpg)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'scroll',
+      }}
+    >
       <Navbar onNavigate={navigate} currentPage={current.page} />
       <main className="flex-1">
         {renderPage()}

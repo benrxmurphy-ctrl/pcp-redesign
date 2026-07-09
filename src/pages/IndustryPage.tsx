@@ -26,7 +26,7 @@ export default function IndustryPage({ id, onNavigate }: IndustryPageProps) {
   const relatedSolutions = solutions.filter(s => industry.solutions.includes(s.id));
 
   return (
-    <div className="bg-brand-dark">
+    <div>
       {/* Hero */}
       <section className="relative min-h-[60vh] flex items-end overflow-hidden pt-20">
         <div
@@ -46,7 +46,7 @@ export default function IndustryPage({ id, onNavigate }: IndustryPageProps) {
       </section>
 
       {/* Breadcrumb */}
-      <div className="px-4 py-3 bg-brand-dark-2 border-b border-white/5">
+      <div className="px-4 py-3 bg-black/80 border-b border-white/5">
         <div className="max-w-7xl mx-auto">
           <Breadcrumb
             crumbs={[{ label: 'Industries' }, { label: industry.name }]}
@@ -82,7 +82,7 @@ export default function IndustryPage({ id, onNavigate }: IndustryPageProps) {
       </section>
 
       {/* Challenges */}
-      <section className="py-20 px-4 bg-brand-dark-2">
+      <section className="py-20 px-4 bg-black/80">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16">
             <div>
@@ -160,7 +160,7 @@ export default function IndustryPage({ id, onNavigate }: IndustryPageProps) {
       </section>
 
       {/* Customer Journey */}
-      <section className="py-20 px-4 bg-brand-dark-2">
+      <section className="py-20 px-4 bg-black/80">
         <div className="max-w-5xl mx-auto text-center">
           <p className="section-label mb-3">Process</p>
           <h2 className="section-title mb-12">Your Journey With PCP Group</h2>
