@@ -224,7 +224,7 @@ export const industries: Industry[] = [
     id: 'utilities',
     name: 'Utilities',
     tagline: 'Control emissions and odour across energy and utility infrastructure.',
-    heroImage: '/images/industries/wu-yi-dnA-z8MBJ6Y-unsplash.jpg',
+    heroImage: '/images/industries/alexandru-boicu-h0z0ptvGVR8-unsplash.jpg',
     overview: 'Utility operators managing gas, electricity, water and energy infrastructure face odour and dust challenges across a wide range of assets. Environmental compliance, community relations and worker safety all require active management.',
     challenges: [
       'Odour from sewer networks, pumping stations and treatment assets',
