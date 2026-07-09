@@ -9,8 +9,8 @@ const problems = [
   { text: 'We are getting dust complaints from neighbours.', solution: 'dust', icon: '💨' },
   { text: 'Our site smells and we are facing odour enforcement.', solution: 'odour', icon: '🏭' },
   { text: 'We fail environmental inspections.', solution: 'monitoring', icon: '📋' },
-  { text: 'Our conveyors and crushers produce visible dust.', solution: 'extraction', icon: '⚙️' },
-  { text: 'Our hoppers and tipping areas generate emissions.', solution: 'dust', icon: '🔧' },
+  { text: 'Tramp metal is damaging our equipment and machinery.', solution: 'metal', icon: '🧲' },
+  { text: 'Metal contaminants are getting into our product.', solution: 'metal', icon: '⚙️' },
   { text: 'Our shredder or waste processing creates odour.', solution: 'odour', icon: '🗂️' },
 ];
 
