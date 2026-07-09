@@ -34,15 +34,20 @@ export default function AboutPage({ onNavigate }: AboutPageProps) {
       </div>
 
       {/* Stats */}
-      <section className="py-6 px-4 bg-brand-orange">
-        <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-px bg-white/20">
+      <section className="py-6 px-4 relative overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: "url('/images/spencer-davis-8DQz9z99GjU-unsplash.jpg')" }}
+        />
+        <div className="absolute inset-0" style={{ backgroundColor: 'rgba(232, 98, 26, 0.82)' }} />
+        <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-px bg-white/20">
           {[
             { value: '1967', label: 'Year Founded' },
             { value: '50+', label: 'Years Experience' },
             { value: '1,000+', label: 'Projects Completed' },
             { value: '10+', label: 'Industries Served' },
           ].map(s => (
-            <div key={s.label} className="bg-brand-orange p-8 text-center">
+            <div key={s.label} className="bg-transparent p-8 text-center">
               <div className="text-4xl font-black text-white mb-1">{s.value}</div>
               <div className="text-white/70 text-xs uppercase tracking-widest">{s.label}</div>
             </div>
