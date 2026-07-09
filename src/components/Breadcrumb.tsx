@@ -26,17 +26,21 @@ export default function Breadcrumb({ crumbs, onNavigate }: BreadcrumbProps) {
         return (
           <span key={i} className="flex items-center gap-1.5">
             <ChevronRight size={11} className="text-white/25 shrink-0" />
-            {isLast || !crumb.page ? (
+            {isLast ? (
               <span className="text-brand-orange text-xs font-semibold truncate max-w-[220px]">
                 {crumb.label}
               </span>
-            ) : (
+            ) : crumb.page ? (
               <button
                 onClick={() => onNavigate(crumb.page!, crumb.id)}
                 className="text-white/40 text-xs hover:text-white transition-colors whitespace-nowrap"
               >
                 {crumb.label}
               </button>
+            ) : (
+              <span className="text-white/40 text-xs whitespace-nowrap">
+                {crumb.label}
+              </span>
             )}
           </span>
         );
