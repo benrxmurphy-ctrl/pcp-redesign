@@ -42,7 +42,7 @@ export default function Home({ onNavigate }: HomeProps) {
         {/* Single Ken Burns image */}
         <div
           className="absolute inset-0 bg-cover bg-center hero-kenburns"
-          style={{ backgroundImage: 'url(/metal-industry-worker-sprays-protective-suit-night-generated-by-ai-scaled.jpg)' }}
+          style={{ backgroundImage: 'url(https://images.pexels.com/photos/3760529/pexels-photo-3760529.jpeg?auto=compress&cs=tinysrgb&w=1920)' }}
         />
 
         {/* Gradient overlays */}
