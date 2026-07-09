@@ -15,16 +15,18 @@ const problems = [
 ];
 
 const industryIcons: Record<string, string> = {
-  ports: '⚓',
-  quarrying: '⛏️',
-  recycling: '♻️',
-  waste: '🗑️',
-  manufacturing: '🏗️',
-  'food-processing': '🌾',
-  'water-treatment': '💧',
-  energy: '⚡',
-  construction: '🏢',
+  'waste-recycling': '♻️',
+  'wastewater-treatment': '💧',
+  quarry: '⛏️',
+  construction: '🏗️',
+  manufacturing: '⚙️',
+  pharmaceutical: '🔬',
+  'wood-processing': '🪵',
   biomass: '🌿',
+  'ad-plants': '⚗️',
+  'animal-feed': '🌾',
+  'meat-production': '🥩',
+  'concrete-cement': '🏛️',
 };
 
 const trustStats = [
