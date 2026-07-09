@@ -14,6 +14,7 @@ interface SolutionPageProps {
 export default function SolutionPage({ id, onNavigate }: SolutionPageProps) {
   const solution = solutionById(id);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [activeCategory, setActiveCategory] = useState<string | null>(null);
 
   if (!solution) {
     return (
@@ -307,44 +308,70 @@ export default function SolutionPage({ id, onNavigate }: SolutionPageProps) {
       })()}
 
       {/* FAQ */}
-      {solution.faqs && solution.faqs.length > 0 && (
-        <section className="py-20 px-4 bg-brand-dark">
-          <div className="max-w-3xl mx-auto">
-            <div className="text-center mb-12">
-              <p className="section-label mb-3">FAQ</p>
-              <h2 className="section-title mb-4">Frequently Asked Questions</h2>
-              <p className="text-white/50 max-w-lg mx-auto">
-                Common questions from site managers and engineers about {solution.title.toLowerCase()}.
-              </p>
-            </div>
-            <div className="space-y-px">
-              {solution.faqs.map((faq, i) => (
-                <div key={i} className="bg-brand-dark-2 border border-white/5 overflow-hidden">
+      {solution.faqs && solution.faqs.length > 0 && (() => {
+        const currentCategory = activeCategory ?? solution.faqs![0].category;
+        const activeFaqs = solution.faqs!.find(f => f.category === currentCategory)?.questions ?? [];
+        return (
+          <section className="py-20 px-4 bg-brand-dark">
+            <div className="max-w-3xl mx-auto">
+              <div className="text-center mb-10">
+                <p className="section-label mb-3">FAQ</p>
+                <h2 className="section-title mb-4">Your Questions Answered</h2>
+                <p className="text-white/50 max-w-lg mx-auto">
+                  Select your sector below to see the most relevant questions.
+                </p>
+              </div>
+
+              {/* Category tabs */}
+              <div className="flex flex-wrap gap-2 justify-center mb-10">
+                {solution.faqs!.map(group => (
                   <button
-                    onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                    className="w-full flex items-center justify-between gap-4 px-6 py-5 text-left group"
+                    key={group.category}
+                    onClick={() => {
+                      setActiveCategory(group.category);
+                      setOpenFaq(null);
+                    }}
+                    className={`px-5 py-2 text-sm font-semibold border transition-all ${
+                      group.category === currentCategory
+                        ? 'bg-brand-orange border-brand-orange text-white'
+                        : 'bg-transparent border-white/15 text-white/60 hover:border-brand-orange/60 hover:text-white'
+                    }`}
                   >
-                    <span className={`text-sm font-semibold leading-snug transition-colors ${openFaq === i ? 'text-brand-orange' : 'text-white group-hover:text-brand-orange'}`}>
-                      {faq.q}
-                    </span>
-                    <ChevronDown
-                      size={16}
-                      className={`text-brand-orange shrink-0 transition-transform duration-300 ${openFaq === i ? 'rotate-180' : ''}`}
-                    />
+                    {group.category}
                   </button>
-                  <div
-                    className={`overflow-hidden transition-all duration-300 ${openFaq === i ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}
-                  >
-                    <p className="px-6 pb-5 text-white/60 text-sm leading-relaxed border-t border-white/5 pt-4">
-                      {faq.a}
-                    </p>
+                ))}
+              </div>
+
+              {/* Accordion */}
+              <div className="space-y-px">
+                {activeFaqs.map((faq, i) => (
+                  <div key={i} className="bg-brand-dark-2 border border-white/5 overflow-hidden">
+                    <button
+                      onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                      className="w-full flex items-center justify-between gap-4 px-6 py-5 text-left group"
+                    >
+                      <span className={`text-sm font-semibold leading-snug transition-colors ${openFaq === i ? 'text-brand-orange' : 'text-white group-hover:text-brand-orange'}`}>
+                        {faq.q}
+                      </span>
+                      <ChevronDown
+                        size={16}
+                        className={`text-brand-orange shrink-0 transition-transform duration-300 ${openFaq === i ? 'rotate-180' : ''}`}
+                      />
+                    </button>
+                    <div
+                      className={`overflow-hidden transition-all duration-300 ${openFaq === i ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}
+                    >
+                      <p className="px-6 pb-5 text-white/60 text-sm leading-relaxed border-t border-white/5 pt-4">
+                        {faq.a}
+                      </p>
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
-          </div>
-        </section>
-      )}
+          </section>
+        );
+      })()}
 
       {/* Contact CTA */}
       <section className="py-20 px-4 bg-brand-dark-3">

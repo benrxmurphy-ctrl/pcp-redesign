@@ -18,7 +18,7 @@ export interface Solution {
   }[];
   industries: string[];
   color: string;
-  faqs?: { q: string; a: string }[];
+  faqs?: { category: string; questions: { q: string; a: string }[] }[];
 }
 
 export const solutions: Solution[] = [
@@ -52,14 +52,42 @@ export const solutions: Solution[] = [
     industries: ['Ports', 'Quarrying', 'Recycling', 'Waste', 'Construction', 'Manufacturing'],
     color: '#E8621A',
     faqs: [
-      { q: 'Will dust suppression affect production speed or material quality?', a: 'No. Our systems treat material at conveyors, crushers, shredders and transfer points without reducing throughput or over-wetting materials.' },
-      { q: 'How much water do your systems use?', a: 'Up to 90% less than traditional water spraying methods, thanks to fine mist and foam technology that bonds to dust particles rather than flooding the area.' },
-      { q: 'Can dust suppression be automated?', a: 'Yes — systems can activate via conveyor start/stop signals, dust sensors, timers, or full PLC/SCADA integration, removing the need for manual operation.' },
-      { q: 'Are your dust suppression agents environmentally safe?', a: 'All additives are biodegradable, non-toxic and safe for soil, water, marine and public environments.' },
-      { q: 'Can one system cover multiple work areas?', a: 'Yes. Mobile cannons, trailer units and zoned fogging lines can serve multiple loading points, berths or production zones from a single installation.' },
-      { q: 'Can you provide monitoring data for EPA audits and inspections?', a: 'Yes — we supply real-time particulate monitoring with cloud-based reporting to support EPA audits, ISO14001 frameworks and Environmental Management Plans.' },
-      { q: 'Can systems run without mains water or power?', a: 'Yes. Self-contained units with integrated water tanks and generators are available for remote or temporary sites.' },
-      { q: 'What is the typical return on investment?', a: 'Most sites recover costs within 12–24 months through reduced downtime, lower maintenance spend, fewer regulatory incidents and significantly reduced water consumption.' },
+      {
+        category: 'Quarrying & Aggregates',
+        questions: [
+          { q: 'Will dust suppression affect throughput at crushers and screens?', a: 'No — systems install at transfer points and crusher heads without affecting production rates or over-wetting material.' },
+          { q: 'Can systems handle high dust loads from blasting or primary crushing?', a: 'Yes — fog cannons and atomisers are rated for high-volume dust events including blasting zones and active crusher faces.' },
+          { q: 'Can you provide monitoring data for EPA aggregate licence conditions?', a: 'Yes — real-time particulate monitors with cloud reporting support EPA licence conditions, site-specific limits and inspection evidence.' },
+          { q: 'Can equipment run unattended during quarry operations?', a: 'Yes — systems integrate with conveyor start/stop signals or wind-triggered sensors for fully automatic operation.' },
+        ],
+      },
+      {
+        category: 'Waste & Recycling',
+        questions: [
+          { q: 'Will dust suppression affect material quality in our shredder or MRF?', a: 'No — fine mist and foam technology bonds to dust particles without over-wetting, keeping material quality and downstream processing intact.' },
+          { q: 'Can one system cover multiple loading bays or processing lines?', a: 'Yes — mobile cannons, trailer units and zoned fogging systems can serve multiple areas from a single installation.' },
+          { q: 'Can systems run automatically without operator input?', a: 'Yes — units activate via conveyor signals, dust sensors or timers with no manual intervention required.' },
+          { q: 'Can you provide compliance data for our waste facility permit?', a: 'Yes — monitoring systems log particulate data in real time, exportable for EPA, ISO14001 and Environmental Management Plans.' },
+        ],
+      },
+      {
+        category: 'Ports & Bulk Handling',
+        questions: [
+          { q: 'Can dust suppression handle open, exposed berths and large stockpile areas?', a: 'Yes — fog cannons deliver 30–70 metre throw for wide coverage across berths, stockpiles and open loading zones.' },
+          { q: 'Will suppression affect cargo quality at import or export terminals?', a: 'No — mist droplets are sized to bind dust particles without over-wetting bulk cargo, grain or aggregate quality.' },
+          { q: 'Can systems run in coastal conditions with wind and salt exposure?', a: 'Yes — housings are rated for marine environments and systems can be triggered automatically by wind sensors.' },
+          { q: 'How much water does suppression use at a busy terminal?', a: 'Up to 90% less than traditional water spraying — fine mist bonds to dust particles rather than flooding the area or cargo.' },
+        ],
+      },
+      {
+        category: 'Construction',
+        questions: [
+          { q: 'Are your systems suitable for demolition and excavation dust?', a: 'Yes — mobile atomisers and trailer units deploy quickly to dust events from breaking, excavation and demolition activity.' },
+          { q: 'Can self-contained units work without a mains water supply?', a: 'Yes — units with integrated water tanks and generators are available for remote sites without utilities.' },
+          { q: 'Can I hire rather than purchase equipment for a short project?', a: 'Yes — mobile dust suppression units are available on short-term hire for construction projects and temporary sites.' },
+          { q: 'Are your dust suppression agents safe around the public?', a: 'Yes — all additives are biodegradable, non-toxic and safe for use around water, soil and public environments.' },
+        ],
+      },
     ],
   },
   {
@@ -92,14 +120,42 @@ export const solutions: Solution[] = [
     industries: ['Recycling', 'Food Processing', 'Pharmaceutical', 'Mining & Minerals', 'Manufacturing', 'Animal Feed', 'Wood Processing', 'Packaging'],
     color: '#E8621A',
     faqs: [
-      { q: 'Will tramp metal detection slow down throughput?', a: 'No — detectors run seamlessly inline, stopping the conveyor only when metal is actually detected. When no metal is present, production continues uninterrupted.' },
-      { q: 'Can detectors integrate with our existing E-stop or PLC system?', a: 'Yes. Integration into PLC, SCADA and E-stop systems is standard. No separate operator intervention is required once configured.' },
-      { q: 'Are detectors reliable in dusty or harsh environments like cement plants?', a: 'Yes — detectors are ruggedised and purpose-built for harsh industrial conditions including dust, heat, moisture and vibration.' },
-      { q: 'How quickly can a system be deployed?', a: 'A temporary metal detection system can be deployed at short notice while a permanent bespoke solution is designed and manufactured for your specific application.' },
-      { q: 'Do tramp metal detectors meet HACCP and BRC food safety standards?', a: 'Yes — PCP systems are designed for full compliance with HACCP, BRC and ISO22000, with validation documentation supplied for auditors.' },
-      { q: 'Can detection events be logged for compliance audits?', a: 'Yes — all detection events are automatically recorded and can be exported for HACCP, BRC, ISO22000 and EPA audit requirements.' },
-      { q: 'Are the systems high-maintenance?', a: 'No. Only simple calibration and visual checks are required, typically once per year. We also provide training for your in-house team.' },
-      { q: 'What is the ROI on tramp metal detection?', a: 'Preventing a single catastrophic failure on a shredder, baler or crusher can save weeks of unplanned downtime. In food and pharma, avoiding one contamination recall can save far more.' },
+      {
+        category: 'Recycling & Waste',
+        questions: [
+          { q: 'How can tramp metal detection protect our shredders and balers?', a: 'PCP detectors stop conveyor belts instantly before damaging metal reaches shredders, balers or downstream processing equipment — preventing costly unplanned breakdowns.' },
+          { q: 'Can one detector cover multiple conveyors?', a: 'No — metal detectors are calibrated to the specific requirements of each individual processing line to ensure reliable performance.' },
+          { q: 'How quickly can a system be deployed for urgent protection?', a: 'A temporary detector can be on site at short notice while a permanent bespoke solution is designed and manufactured for your application.' },
+          { q: 'Can systems be hired for short-term or emergency use?', a: 'Yes — PCP can supply rental detection units for temporary deployment while a permanent solution is being specified and installed.' },
+        ],
+      },
+      {
+        category: 'Food & Pharma',
+        questions: [
+          { q: 'Do tramp metal detectors meet HACCP and BRC food safety standards?', a: 'Yes — PCP systems are designed for full compliance with HACCP, BRC and ISO22000, with validation documentation supplied for food safety auditors.' },
+          { q: 'Can all detection events be logged for compliance audits?', a: 'Yes — all events are automatically recorded and exportable for HACCP, BRC, ISO22000 and EPA audit requirements.' },
+          { q: 'Are detectors safe and non-intrusive in food-grade environments?', a: 'Yes — detectors are fully non-intrusive, food-safe and available in hygienic formats for pharmaceutical and food-grade processing lines.' },
+          { q: 'What is the ROI for food and pharma operations?', a: 'Preventing one contamination recall can save far more than the cost of the system — plus avoiding regulatory penalties, production shutdowns and reputational damage.' },
+        ],
+      },
+      {
+        category: 'Mining & Minerals',
+        questions: [
+          { q: 'Where should detectors be installed in a mining operation?', a: 'Before crushers, screens and mills — the most vulnerable and costly equipment in the processing chain.' },
+          { q: 'Are detectors suitable for extremely high-tonnage conveyors?', a: 'Yes — systems are built for heavy-duty, continuous high-volume mining operations with ruggedised housings for harsh conditions.' },
+          { q: 'Can detectors operate in remote or off-grid mining areas?', a: 'Yes — systems run on 24V or generator power, making them fully suitable for remote site operations.' },
+          { q: 'How often do systems need calibration on a mine?', a: 'Typically once per year depending on site conditions. PCP trains your maintenance crews for in-house calibration and basic servicing.' },
+        ],
+      },
+      {
+        category: 'Manufacturing',
+        questions: [
+          { q: 'Can detectors integrate with our existing plant PLC or E-stop system?', a: 'Yes — integration into PLC, SCADA and E-stop systems is standard and requires no separate operator intervention once configured.' },
+          { q: 'Are systems prone to false alarms in dusty or vibration-prone plants?', a: 'No — sensitivity is tuned specifically to your process conditions and material flow to eliminate nuisance trips.' },
+          { q: 'Do you stock spares locally for fast response?', a: 'Yes — coils, sensors and key spares are stocked in Ireland for rapid supply when you need them.' },
+          { q: 'Do you offer service contracts for long-term reliability?', a: 'Yes — PCP provides SLAs, maintenance contracts and full lifecycle support across all installed systems.' },
+        ],
+      },
     ],
   },
   {
@@ -132,14 +188,42 @@ export const solutions: Solution[] = [
     industries: ['Waste', 'Water Treatment', 'Recycling', 'Food Processing', 'Ports', 'Manufacturing'],
     color: '#E8621A',
     faqs: [
-      { q: 'Are your odour-neutralising agents safe for the environment?', a: 'Yes — all products are fully biodegradable, non-toxic and safe for use around water, soil and sensitive biological processes like anaerobic digestion.' },
-      { q: 'Will installing a system help me meet regulatory requirements?', a: 'Yes — our solutions keep odour complaints to a minimum and provide documented evidence to satisfy local authority and EPA requirements.' },
-      { q: 'Can odour suppression work alongside existing biofilters or scrubbers?', a: 'Yes — fogging and dosing systems complement existing odour treatment infrastructure, providing an extra layer of control during high-load periods.' },
-      { q: 'Do suppression systems work effectively in enclosed halls?', a: 'Yes — our systems produce droplets sized to neutralise odours without saturating the air or wetting floor surfaces, making them ideal for tipping halls and transfer buildings.' },
-      { q: 'Can the systems run automatically without operator input?', a: 'Yes — units can be sensor-triggered, timer-based and door-activated to match site activity, running entirely in the background.' },
-      { q: 'Can you provide data and reporting to support compliance audits?', a: 'Absolutely — we provide equipment monitoring, control data and can recommend accredited labs for odour reporting to support EPA inspections and licence renewals.' },
-      { q: 'Do you offer rental or emergency units for peak odour periods?', a: 'Yes — mobile trailer units are available for rapid deployment during high-odour events or while a permanent solution is being installed.' },
-      { q: 'How will I know if my filtration system is starting to fail?', a: "PCP's Acrulog CEMS unit measures before and after performance on any filtration equipment, providing early warning of failing equipment before neighbourhood complaints arise." },
+      {
+        category: 'Waste & Landfill',
+        questions: [
+          { q: 'Can systems handle high-intensity odour during peak tipping loads?', a: 'Yes — high-pressure fogging lines and vapour deodorising systems are designed specifically for enclosed tipping halls and transfer buildings during peak activity.' },
+          { q: 'Will suppression activate automatically during wind events that carry odour to the boundary?', a: 'Yes — systems activate via wind sensors, triggering increased treatment automatically when boundary impact risk is highest.' },
+          { q: 'Can odour agents cope with the variety of odours from mixed waste?', a: 'Yes — our deodorising chemistry is formulated for complex mixed-waste odour profiles, not just single-compound sources.' },
+          { q: 'Can you provide data to support our EPA waste facility licence renewal?', a: 'Yes — control data, equipment monitoring records and inspection documentation are supplied to support EPA conditions and licence renewals.' },
+        ],
+      },
+      {
+        category: 'Water Treatment',
+        questions: [
+          { q: 'Are your odour agents safe for use near biological treatment processes?', a: 'Yes — all products are fully biodegradable and non-toxic, safe for use around anaerobic digestion, activated sludge and biological treatment processes.' },
+          { q: 'Can systems target H2S specifically in wastewater environments?', a: 'Yes — ZC filtration achieves up to 99.9% H2S removal through adsorption, absorption and conversion of gaseous sulphur compounds.' },
+          { q: 'Can Acrulog monitoring provide early warning of odour exceedances?', a: 'Yes — Acrulog CEMS continuously measures H2S and odour levels before and after treatment, flagging performance drops before neighbourhood complaints arise.' },
+          { q: 'Can systems activate automatically during high-load periods?', a: 'Yes — sensor-triggered activation responds to H2S or odour concentration thresholds without any operator intervention required.' },
+        ],
+      },
+      {
+        category: 'Food Processing',
+        questions: [
+          { q: 'Are your odour-neutralising agents food-safe?', a: 'Yes — all products are biodegradable, non-toxic and approved for use in food processing, cold store and refrigerated environments.' },
+          { q: 'Can systems run in refrigerated or temperature-controlled areas?', a: 'Yes — fogging and vapour systems operate across wide temperature ranges including cold stores and chill rooms without affecting process conditions.' },
+          { q: 'Can systems run automatically without disrupting production?', a: 'Yes — units activate via timers, door sensors or production line signals, running completely in the background without operator input.' },
+          { q: 'Can you provide documentation for audits or environmental management plans?', a: 'Yes — monitoring data, equipment records and compliance documentation are supplied as standard with every installation.' },
+        ],
+      },
+      {
+        category: 'Ports & Logistics',
+        questions: [
+          { q: 'Can fog cannons cover large open berth and cargo areas effectively?', a: 'Yes — fog cannons deliver 30–70 metre throw for wide odour treatment across open loading zones, berths and stockpile areas.' },
+          { q: 'Can systems cope with salt, wind and coastal exposure at ports?', a: 'Yes — housings are built for marine and coastal environments and sensors can trigger automatic response when wind direction changes.' },
+          { q: 'Can mobile units be deployed quickly for temporary odour events?', a: 'Yes — trailer-mounted atomiser units are available for rapid deployment during peak cargo events or emergency situations.' },
+          { q: 'Are systems effective for fish meal, animal feed or organic cargo odour?', a: 'Yes — our deodorising chemistry addresses the wide range of organic odour compounds common in food, agricultural and bulk cargo operations.' },
+        ],
+      },
     ],
   },
   {
