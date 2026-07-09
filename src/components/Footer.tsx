@@ -22,19 +22,19 @@ export default function Footer({ onNavigate }: FooterProps) {
             <div className="flex gap-2.5">
               <a href="https://twitter.com/pcpgroupie" target="_blank" rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full border border-white/20 hover:border-brand-orange flex items-center justify-center transition-colors group">
-                <Twitter size={16} className="text-brand-orange" />
+                <Twitter size={16} className="text-white" />
               </a>
               <a href="https://facebook.com/pcpgroup" target="_blank" rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full border border-white/20 hover:border-brand-orange flex items-center justify-center transition-colors group">
-                <Facebook size={16} className="text-brand-orange" />
+                <Facebook size={16} className="text-white" />
               </a>
               <a href="https://instagram.com/pcpgroup" target="_blank" rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full border border-white/20 hover:border-brand-orange flex items-center justify-center transition-colors group">
-                <Instagram size={16} className="text-brand-orange" />
+                <Instagram size={16} className="text-white" />
               </a>
               <a href="https://linkedin.com/company/pcpgroup" target="_blank" rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full border border-white/20 hover:border-brand-orange flex items-center justify-center transition-colors group">
-                <Linkedin size={16} className="text-brand-orange" />
+                <Linkedin size={16} className="text-white" />
               </a>
             </div>
           </div>
@@ -90,10 +90,15 @@ export default function Footer({ onNavigate }: FooterProps) {
                 </a>
               </li>
               <li>
-                <span className="flex items-start gap-2.5 text-white/50 text-sm">
+                <a
+                  href="https://maps.google.com/?q=Ballymore+Eustace,+Co.+Kildare,+Ireland"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-start gap-2.5 text-white/50 text-sm hover:text-white transition-colors"
+                >
                   <MapPin size={14} className="mt-0.5 shrink-0" />
-                  Naas, Co. Kildare, Ireland
-                </span>
+                  Ballymore Eustace, Co. Kildare, Ireland
+                </a>
               </li>
             </ul>
             <button
