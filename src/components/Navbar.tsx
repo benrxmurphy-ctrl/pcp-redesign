@@ -104,6 +104,12 @@ export default function Navbar({ onNavigate, currentPage }: NavbarProps) {
         { label: 'About Us', action: () => onNavigate('about') },
       ],
     },
+    {
+      label: 'About',
+      key: 'about',
+      items: null,
+      action: () => onNavigate('about'),
+    },
   ];
 
   const hasDropdown = (item: NavEntry) => !!(item.items || item.groups);
