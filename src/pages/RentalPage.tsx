@@ -156,7 +156,7 @@ export default function RentalPage({ onNavigate }: RentalPageProps) {
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/60 to-brand-dark" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 pb-16 w-full">
           <p className="section-label mb-3">Equipment Hire</p>
-          <h1 className="text-6xl md:text-7xl lg:text-8xl font-black text-white leading-none mb-5 max-w-3xl">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-white leading-none mb-5 max-w-3xl">
             The right equipment.<br />Right when you need it.
           </h1>
           <p className="text-xl md:text-2xl text-white/60 max-w-2xl mb-8">

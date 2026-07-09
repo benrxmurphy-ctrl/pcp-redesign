@@ -41,7 +41,7 @@ export default function ContactPage({ onNavigate }: ContactPageProps) {
       <section className="py-20 px-4 bg-brand-dark-2">
         <div className="max-w-7xl mx-auto">
           <p className="section-label mb-3">Contact an Engineer</p>
-          <h1 className="text-6xl md:text-7xl lg:text-8xl font-black leading-none text-white mb-6">
+          <h1 className="text-5xl md:text-6xl font-black text-white mb-6">
             Talk to us about<br />
             <span className="text-brand-orange">your site.</span>
           </h1>

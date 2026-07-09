@@ -57,7 +57,7 @@ export default function ResourcesPage({ onNavigate }: ResourcesPageProps) {
       <section className="py-20 px-4 bg-brand-dark-2">
         <div className="max-w-7xl mx-auto">
           <p className="section-label mb-3">Resources</p>
-          <h1 className="text-6xl md:text-7xl lg:text-8xl font-black leading-none text-white mb-6">Knowledge Base</h1>
+          <h1 className="text-5xl md:text-6xl font-black text-white mb-6">Knowledge Base</h1>
           <p className="text-xl text-white/60 max-w-2xl">
             Technical guides, video walkthroughs, downloadable datasheets and case studies for site operators and EHS engineers.
           </p>
