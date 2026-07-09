@@ -12,6 +12,7 @@ import ProductsPage from './pages/ProductsPage';
 import ProductDetailPage from './pages/ProductDetailPage';
 import ResourcesPage from './pages/ResourcesPage';
 import GuidePage from './pages/GuidePage';
+import RentalPage from './pages/RentalPage';
 
 type PageKey =
   | 'home'
@@ -24,7 +25,8 @@ type PageKey =
   | 'products'
   | 'product'
   | 'resources'
-  | 'guide';
+  | 'guide'
+  | 'rental';
 
 interface PageState {
   page: PageKey;
@@ -43,6 +45,7 @@ const pageTitles: Record<PageKey, string> = {
   product: 'Product — PCP Group',
   resources: 'Resources — PCP Group',
   guide: 'Guide — PCP Group',
+  rental: 'Equipment Hire — PCP Group',
 };
 
 function App() {
@@ -81,6 +84,8 @@ function App() {
         return <ResourcesPage onNavigate={navigate} section={current.id} />;
       case 'guide':
         return <GuidePage id={current.id ?? ''} onNavigate={navigate} />;
+      case 'rental':
+        return <RentalPage onNavigate={navigate} />;
       default:
         return <Home onNavigate={navigate} />;
     }
