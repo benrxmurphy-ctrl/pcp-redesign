@@ -27,7 +27,7 @@ export default function Breadcrumb({ crumbs, onNavigate }: BreadcrumbProps) {
           <span key={i} className="flex items-center gap-1.5">
             <ChevronRight size={11} className="text-white/25 shrink-0" />
             {isLast || !crumb.page ? (
-              <span className="text-white/80 text-xs font-medium truncate max-w-[220px]">
+              <span className="text-brand-orange text-xs font-semibold truncate max-w-[220px]">
                 {crumb.label}
               </span>
             ) : (
