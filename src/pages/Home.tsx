@@ -112,7 +112,7 @@ export default function Home({ onNavigate }: HomeProps) {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-white/10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-px bg-white/10">
             {[
               {
                 icon: '🌫️',
@@ -137,6 +137,12 @@ export default function Home({ onNavigate }: HomeProps) {
                 title: 'Protect Workers',
                 body: 'Give your people a safe working environment free from harmful dust, fumes and airborne hazards.',
                 action: () => onNavigate('solution', 'extraction'),
+              },
+              {
+                icon: '⚙️',
+                title: 'Protect Equipment',
+                body: 'Prevent tramp metal and contaminants from damaging machinery, conveyors and downstream process equipment.',
+                action: () => onNavigate('solution', 'metal'),
               },
             ].map(item => (
               <button
