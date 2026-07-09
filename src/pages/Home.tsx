@@ -189,7 +189,7 @@ export default function Home({ onNavigate }: HomeProps) {
                 className="group relative overflow-hidden aspect-square"
               >
                 <img
-                  src={`${industry.heroImage}?auto=compress&cs=tinysrgb&w=400`}
+                  src={industry.heroImage.startsWith('http') ? `${industry.heroImage}?auto=compress&cs=tinysrgb&w=400` : industry.heroImage}
                   alt={industry.name}
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   loading="lazy"

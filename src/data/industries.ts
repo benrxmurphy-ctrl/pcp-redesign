@@ -29,7 +29,7 @@ export const industries: Industry[] = [
     id: 'waste-recycling',
     name: 'Waste Recycling',
     tagline: 'Control dust and odour across tipping, sorting and processing.',
-    heroImage: 'https://images.pexels.com/photos/3862132/pexels-photo-3862132.jpeg',
+    heroImage: '/images/industries/nick-fewings--2lJGRIY5P0-unsplash.jpg',
     overview: 'Recycling facilities face dust and odour challenges at every stage of the material flow — from tipping and shredding to sorting, baling and dispatch. Neighbour complaints and planning compliance require active, consistent control.',
     challenges: [
       'Tipping hall dust and odour generated during material delivery',
@@ -44,7 +44,7 @@ export const industries: Industry[] = [
     id: 'wastewater-treatment',
     name: 'Wastewater Treatment',
     tagline: 'Eliminate H2S and sewage odour from treatment works.',
-    heroImage: 'https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg',
+    heroImage: '/images/industries/bob-brewer-XS5wlyyRKq0-unsplash.jpg',
     overview: 'Water and wastewater treatment plants generate H2S and other odorous gases from biological processes. Reliable odour control is essential for maintaining community relations and meeting environmental licence conditions.',
     challenges: [
       'H2S and organic compound odour from primary and secondary treatment',
@@ -59,7 +59,7 @@ export const industries: Industry[] = [
     id: 'aggregates',
     name: 'Aggregates',
     tagline: 'Suppress dust at crushing, screening and haulage points.',
-    heroImage: 'https://images.pexels.com/photos/1108101/pexels-photo-1108101.jpeg',
+    heroImage: '/images/industries/gianluigi-marin-fobNVvDUI2A-unsplash.jpg',
     overview: 'Aggregate and quarrying operations generate dust at every stage — blasting, crushing, screening, stockpiling and haulage. Without active suppression, dust drifts beyond site boundaries creating complaints and regulatory risk.',
     challenges: [
       'Crusher and screen operations generating high volumes of fine dust',
@@ -74,7 +74,7 @@ export const industries: Industry[] = [
     id: 'construction',
     name: 'Construction',
     tagline: 'Manage site dust to protect neighbours and meet planning conditions.',
-    heroImage: 'https://images.pexels.com/photos/1117210/pexels-photo-1117210.jpeg',
+    heroImage: '/images/industries/josh-olalde-X1P1_EDNnok-unsplash.jpg',
     overview: 'Construction sites generate dust from earthworks, demolition, material handling and road works. Planning conditions and local authority requirements demand visible, documented dust control measures throughout the project.',
     challenges: [
       'Earthworks and demolition creating visible dust clouds during dry conditions',
@@ -89,7 +89,7 @@ export const industries: Industry[] = [
     id: 'manufacturing',
     name: 'Manufacturing',
     tagline: 'Protect workers and maintain air quality across production.',
-    heroImage: 'https://images.pexels.com/photos/1108101/pexels-photo-1108101.jpeg',
+    heroImage: '/images/industries/josh-beech-tXJhAFVOHVk-unsplash.jpg',
     overview: 'Manufacturing facilities generate airborne dust, fumes and odour from a wide range of processes. Worker health, environmental compliance and community relations all depend on effective extraction and suppression.',
     challenges: [
       'Process dust from cutting, grinding, mixing or handling dry materials',
@@ -104,7 +104,7 @@ export const industries: Industry[] = [
     id: 'pharmaceutical',
     name: 'Pharmaceutical',
     tagline: 'Meet strict air quality standards in cleanroom and production environments.',
-    heroImage: 'https://images.pexels.com/photos/3786126/pexels-photo-3786126.jpeg',
+    heroImage: '/images/industries/louis-reed-pwcKF7L4-no-unsplash.jpg',
     overview: 'Pharmaceutical manufacturing demands the highest standards for air quality and dust control. Fine active ingredient dust, solvent vapours and cross-contamination risks require precision extraction and filtration solutions.',
     challenges: [
       'Active pharmaceutical ingredient dust creating operator exposure risk',
@@ -119,7 +119,7 @@ export const industries: Industry[] = [
     id: 'wood-processing',
     name: 'Wood Processing',
     tagline: 'Extract fine wood dust at source and protect your workforce.',
-    heroImage: 'https://images.pexels.com/photos/1108101/pexels-photo-1108101.jpeg',
+    heroImage: '/images/industries/samuel-cruz-t1pwbnk2lm0-unsplash.jpg',
     overview: 'Wood processing operations produce fine wood dust that presents both health hazards and fire risks. From sawmills and joinery shops to panel board production, effective extraction at source is essential for compliance and safety.',
     challenges: [
       'Fine wood dust exposure exceeding WEL limits without effective extraction',
@@ -134,7 +134,7 @@ export const industries: Industry[] = [
     id: 'biomass',
     name: 'Biomass',
     tagline: 'Suppress dust from wood chip, pellet and organic fuel handling.',
-    heroImage: 'https://images.pexels.com/photos/3862132/pexels-photo-3862132.jpeg',
+    heroImage: '/images/industries/brian-wangenheim-gacX_Xzhlcs-unsplash.jpg',
     overview: 'Biomass handling operations dealing with wood chip, pellets, straw and organic matter face consistent dust challenges across delivery, storage, conveying and feeding operations.',
     challenges: [
       'Fine wood dust from chip and pellet conveying, transfer and storage',
@@ -149,7 +149,7 @@ export const industries: Industry[] = [
     id: 'ad-plants',
     name: 'AD Plants',
     tagline: 'Manage odour from feedstock intake to digestate handling.',
-    heroImage: 'https://images.pexels.com/photos/1267338/pexels-photo-1267338.jpeg',
+    heroImage: '/images/industries/1897775-728555.jpg',
     overview: 'Anaerobic digestion plants process organic waste streams that generate strong odours during intake, handling, digestion and digestate processing. Reliable odour control is critical to planning consent and community relations.',
     challenges: [
       'Feedstock intake odour from food waste, slurry and organic material',
@@ -164,7 +164,7 @@ export const industries: Industry[] = [
     id: 'composting',
     name: 'Composting',
     tagline: 'Manage boundary odour from open windrow and in-vessel operations.',
-    heroImage: 'https://images.pexels.com/photos/1267338/pexels-photo-1267338.jpeg',
+    heroImage: '/images/industries/sandie-clarke-q13Zq1Jufks-unsplash.jpg',
     overview: 'Composting operations generate complex odour from the biological breakdown of organic material across turning, active composting and maturation phases. Robust odour control is essential for planning compliance and neighbour relations.',
     challenges: [
       'Windrow turning generating intense short-term odour emissions',
@@ -179,7 +179,7 @@ export const industries: Industry[] = [
     id: 'animal-feed',
     name: 'Animal Feed',
     tagline: 'Control dust and odour from ingredient handling to finished product.',
-    heroImage: 'https://images.pexels.com/photos/2058128/pexels-photo-2058128.jpeg',
+    heroImage: '/images/industries/Which_animal_feed_flavours_work_best_in_the_cattle_industrya.webp',
     overview: 'Animal feed production involves handling dusty raw ingredients, grinding, mixing and pelleting processes that generate significant airborne dust. Odour from organic raw materials also requires active management.',
     challenges: [
       'Grain, fishmeal and ingredient dust during intake and handling',
@@ -194,7 +194,7 @@ export const industries: Industry[] = [
     id: 'meat-production',
     name: 'Meat Production',
     tagline: 'Manage odour and maintain hygiene standards across processing.',
-    heroImage: 'https://images.pexels.com/photos/2058128/pexels-photo-2058128.jpeg',
+    heroImage: '/images/industries/meat-processing-deboflex-deboning-line.jpg',
     overview: 'Meat processing facilities generate persistent odour from rendering, cooking, waste handling and effluent treatment. Managing boundary odour while maintaining strict hygiene standards requires specialist solutions.',
     challenges: [
       'Rendering and cooking process odour reaching site boundaries',
@@ -209,7 +209,7 @@ export const industries: Industry[] = [
     id: 'concrete-cement',
     name: 'Concrete & Cement',
     tagline: 'Suppress cement dust and protect plant boundaries and workers.',
-    heroImage: 'https://images.pexels.com/photos/1117210/pexels-photo-1117210.jpeg',
+    heroImage: '/images/industries/Crusher-and-Screen-Dust-Suppression.webp',
     overview: 'Cement and concrete production generates fine alkaline dust at every stage — from raw material handling and kiln operations to finish grinding and dispatch. Worker protection and environmental compliance demand reliable dust control.',
     challenges: [
       'Cement and raw meal dust from milling, transfer and storage operations',
@@ -224,7 +224,7 @@ export const industries: Industry[] = [
     id: 'utilities',
     name: 'Utilities',
     tagline: 'Control emissions and odour across energy and utility infrastructure.',
-    heroImage: 'https://images.pexels.com/photos/1367269/pexels-photo-1367269.jpeg',
+    heroImage: '/images/industries/wu-yi-dnA-z8MBJ6Y-unsplash.jpg',
     overview: 'Utility operators managing gas, electricity, water and energy infrastructure face odour and dust challenges across a wide range of assets. Environmental compliance, community relations and worker safety all require active management.',
     challenges: [
       'Odour from sewer networks, pumping stations and treatment assets',
