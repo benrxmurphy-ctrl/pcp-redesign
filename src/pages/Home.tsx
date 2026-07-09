@@ -309,26 +309,26 @@ export default function Home({ onNavigate }: HomeProps) {
             </div>
             <div className="grid grid-cols-2 gap-3">
               <img
-                src="/images/Dust-Monitoring.webp"
-                alt="Dust monitoring"
+                src="/images/0.png"
+                alt="Dust suppression on site"
                 className="w-full h-48 object-cover"
                 loading="lazy"
               />
               <img
-                src="/images/IMG_9213_(1).jpeg"
+                src="/images/two-factory-workers-walking-and-076682527_prevstill_(1).webp"
+                alt="Factory workers on site"
+                className="w-full h-48 object-cover"
+                loading="lazy"
+              />
+              <img
+                src="/images/image_(12).png"
+                alt="Dust monitoring device"
+                className="w-full h-48 object-cover"
+                loading="lazy"
+              />
+              <img
+                src="/images/IMG_9213_(1) copy.jpeg"
                 alt="PCP Group exhibition"
-                className="w-full h-48 object-cover"
-                loading="lazy"
-              />
-              <img
-                src="/images/Odour-Suppression-with-Minimal-Water.webp"
-                alt="Odour suppression equipment"
-                className="w-full h-48 object-cover"
-                loading="lazy"
-              />
-              <img
-                src="/images/sys_media_300.jpg"
-                alt="Dust suppression cannon"
                 className="w-full h-48 object-cover"
                 loading="lazy"
               />
