@@ -1,4 +1,4 @@
-import { Phone, Mail, MapPin, Linkedin, Twitter } from 'lucide-react';
+import { Phone, Mail, MapPin, Linkedin, Twitter, Facebook, Instagram } from 'lucide-react';
 import { solutions } from '../data/solutions';
 import { industries } from '../data/industries';
 
@@ -19,12 +19,22 @@ export default function Footer({ onNavigate }: FooterProps) {
             <p className="text-white/50 text-sm leading-relaxed mb-5">
               Industrial environmental solutions for dust, odour and airborne emissions. Protecting people, assets and reputation since 1967.
             </p>
-            <div className="flex gap-3">
-              <a href="https://linkedin.com/company/pcpgroup" target="_blank" rel="noopener noreferrer" className="w-8 h-8 bg-white/10 hover:bg-brand-orange transition-colors flex items-center justify-center">
-                <Linkedin size={14} className="text-white" />
+            <div className="flex gap-2.5">
+              <a href="https://twitter.com/pcpgroupie" target="_blank" rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full border border-white/20 hover:border-brand-orange flex items-center justify-center transition-colors group">
+                <Twitter size={16} className="text-brand-orange" />
               </a>
-              <a href="https://twitter.com/pcpgroupie" target="_blank" rel="noopener noreferrer" className="w-8 h-8 bg-white/10 hover:bg-brand-orange transition-colors flex items-center justify-center">
-                <Twitter size={14} className="text-white" />
+              <a href="https://facebook.com/pcpgroup" target="_blank" rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full border border-white/20 hover:border-brand-orange flex items-center justify-center transition-colors group">
+                <Facebook size={16} className="text-brand-orange" />
+              </a>
+              <a href="https://instagram.com/pcpgroup" target="_blank" rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full border border-white/20 hover:border-brand-orange flex items-center justify-center transition-colors group">
+                <Instagram size={16} className="text-brand-orange" />
+              </a>
+              <a href="https://linkedin.com/company/pcpgroup" target="_blank" rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full border border-white/20 hover:border-brand-orange flex items-center justify-center transition-colors group">
+                <Linkedin size={16} className="text-brand-orange" />
               </a>
             </div>
           </div>
