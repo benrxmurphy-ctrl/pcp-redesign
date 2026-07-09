@@ -82,10 +82,9 @@ export default function Navbar({ onNavigate, currentPage }: NavbarProps) {
             className="flex items-center group"
           >
             <img
-              src="/image copy copy.png"
+              src="/Untitled_design_(7).png"
               alt="PCP Group"
               className="h-10 lg:h-12 w-auto object-contain"
-              style={{ mixBlendMode: 'lighten' }}
             />
           </button>
 
