@@ -90,7 +90,14 @@ export default function Home({ onNavigate }: HomeProps) {
       </section>
 
       {/* ── Sections 2–5 + CTA ── */}
-      <div className="relative">
+      <div
+        className="relative"
+        style={{
+          backgroundImage: 'url(/metal-industry-worker-sprays-protective-suit-night-generated-by-ai-scaled.jpg)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      >
 
       {/* ── SECTION 2: What problem do you solve? ── */}
       <section className="py-24 px-4 relative">
