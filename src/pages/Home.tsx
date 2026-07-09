@@ -341,19 +341,13 @@ export default function Home({ onNavigate }: HomeProps) {
           <p className="text-white/80 text-lg mb-10 max-w-xl mx-auto">
             Our engineers will visit your site, assess the challenge, and recommend the right solution. No obligation.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex justify-center">
             <button
               onClick={() => onNavigate('contact')}
-              className="bg-white text-brand-orange font-bold text-sm py-4 px-8 hover:bg-white/90 transition-colors inline-flex items-center gap-2"
+              className="bg-white text-brand-orange font-bold text-sm py-4 px-16 hover:bg-white/90 transition-colors inline-flex items-center gap-2"
             >
               Request a Free Site Visit <ArrowRight size={16} />
             </button>
-            <a
-              href="tel:+35345863220"
-              className="border-2 border-white/50 text-white font-bold text-sm py-4 px-8 hover:border-white transition-colors inline-flex items-center gap-2"
-            >
-              <span>Call +353 45 863220</span>
-            </a>
           </div>
         </div>
       </section>
