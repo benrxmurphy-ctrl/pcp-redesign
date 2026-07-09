@@ -96,6 +96,7 @@ export default function Home({ onNavigate }: HomeProps) {
           backgroundImage: 'url(/metal-industry-worker-sprays-protective-suit-night-generated-by-ai-scaled.jpg)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
+          backgroundAttachment: 'fixed',
         }}
       >
 
