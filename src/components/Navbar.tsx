@@ -94,6 +94,12 @@ export default function Navbar({ onNavigate, currentPage }: NavbarProps) {
       action: () => onNavigate('rental'),
     },
     {
+      label: 'About',
+      key: 'about',
+      items: null,
+      action: () => onNavigate('about'),
+    },
+    {
       label: 'Resources',
       key: 'resources',
       items: [
