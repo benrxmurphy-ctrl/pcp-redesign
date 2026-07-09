@@ -53,10 +53,16 @@ export default function Home({ onNavigate }: HomeProps) {
 
         {/* Content */}
         <div className="relative z-10 w-full px-6 md:px-16 pb-20 pt-40 max-w-3xl">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-black leading-tight mb-8" style={{ color: '#e8621a' }}>
+          <div className="mb-3">
+            <span className="inline-block text-xs font-semibold uppercase tracking-[0.2em] text-brand-orange border border-brand-orange/40 px-3 py-1">
+              Trusted Since 1968
+            </span>
+          </div>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] mb-8 text-white">
             Providing Bespoke<br />
             Sustainable Solutions<br />
-            For Over 50 YEARS
+            For Over{' '}
+            <span className="text-brand-orange">50 Years</span>
           </h1>
           <p className="text-white font-medium text-base md:text-lg leading-relaxed mb-10 max-w-xl">
             PCP Group is here to help you solve your industrial dust, odour, and metal problems.
