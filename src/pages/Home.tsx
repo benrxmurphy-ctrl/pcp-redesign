@@ -235,7 +235,7 @@ export default function Home({ onNavigate }: HomeProps) {
             </div>
             <div className="relative">
               <img
-                src="/image copy copy copy copy copy copy copy copy copy.png"
+                src="/jahhid-fitrah-alamsyah-2Z7K3Oxig98-unsplash.jpg"
                 alt="Industrial dust control"
                 className="w-full h-[500px] object-cover"
                 loading="lazy"
