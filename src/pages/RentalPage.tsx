@@ -155,9 +155,6 @@ export default function RentalPage({ onNavigate }: RentalPageProps) {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/60 to-brand-dark" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 pb-16 w-full">
-          <div className="mb-5">
-            <Breadcrumb crumbs={[{ label: 'Rental' }]} onNavigate={onNavigate} />
-          </div>
           <p className="section-label mb-3">Equipment Hire</p>
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-white leading-none mb-5 max-w-3xl">
             The right equipment.<br />Right when you need it.
@@ -175,6 +172,13 @@ export default function RentalPage({ onNavigate }: RentalPageProps) {
           </div>
         </div>
       </section>
+
+      {/* Breadcrumb */}
+      <div className="px-4 py-3 bg-brand-dark-2 border-b border-white/5">
+        <div className="max-w-7xl mx-auto">
+          <Breadcrumb crumbs={[{ label: 'Rental' }]} onNavigate={onNavigate} />
+        </div>
+      </div>
 
       {/* Why Hire */}
       <section className="py-20 px-4 bg-brand-orange">

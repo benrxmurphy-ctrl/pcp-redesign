@@ -91,9 +91,6 @@ export default function ResourcesPage({ onNavigate }: ResourcesPageProps) {
       {/* Hero */}
       <section className="py-20 px-4 bg-brand-dark-2">
         <div className="max-w-7xl mx-auto">
-          <div className="mb-6">
-            <Breadcrumb crumbs={[{ label: 'Resources' }]} onNavigate={onNavigate} />
-          </div>
           <p className="section-label mb-3">Resources</p>
           <h1 className="text-5xl md:text-6xl font-black text-white mb-6">Knowledge Base</h1>
           <p className="text-xl text-white/60 max-w-2xl">
@@ -101,6 +98,13 @@ export default function ResourcesPage({ onNavigate }: ResourcesPageProps) {
           </p>
         </div>
       </section>
+
+      {/* Breadcrumb */}
+      <div className="px-4 py-3 bg-brand-dark-2 border-b border-white/5">
+        <div className="max-w-7xl mx-auto">
+          <Breadcrumb crumbs={[{ label: 'Resources' }]} onNavigate={onNavigate} />
+        </div>
+      </div>
 
       {/* Resource type overview */}
       <section className="py-12 px-4">

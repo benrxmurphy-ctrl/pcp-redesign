@@ -14,9 +14,6 @@ export default function ProjectsPage({ onNavigate }: ProjectsPageProps) {
       {/* Hero */}
       <section className="py-20 px-4 bg-brand-dark-2">
         <div className="max-w-7xl mx-auto">
-          <div className="mb-6">
-            <Breadcrumb crumbs={[{ label: 'Projects' }]} onNavigate={onNavigate} />
-          </div>
           <p className="section-label mb-3">Case Studies</p>
           <h1 className="text-5xl md:text-6xl font-black text-white mb-6">Projects</h1>
           <p className="text-xl text-white/60 max-w-2xl">
@@ -24,6 +21,13 @@ export default function ProjectsPage({ onNavigate }: ProjectsPageProps) {
           </p>
         </div>
       </section>
+
+      {/* Breadcrumb */}
+      <div className="px-4 py-3 bg-brand-dark-2 border-b border-white/5">
+        <div className="max-w-7xl mx-auto">
+          <Breadcrumb crumbs={[{ label: 'Projects' }]} onNavigate={onNavigate} />
+        </div>
+      </div>
 
       {/* Stats strip */}
       <section className="py-8 px-4 bg-brand-orange">

@@ -41,16 +41,6 @@ export default function ProductDetailPage({ id, onNavigate }: ProductDetailPageP
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/65 to-brand-dark" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 pb-16 w-full">
-          <div className="mb-5">
-            <Breadcrumb
-              crumbs={[
-                { label: 'Products', page: 'products' },
-                { label: product.category, page: 'products', id: product.categoryId },
-                { label: product.name },
-              ]}
-              onNavigate={onNavigate}
-            />
-          </div>
           <div className="inline-flex items-center gap-2 bg-brand-orange px-3 py-1 mb-4">
             <Package size={12} className="text-white" />
             <span className="text-white text-xs font-semibold uppercase tracking-widest">{product.category}</span>
@@ -74,6 +64,20 @@ export default function ProductDetailPage({ id, onNavigate }: ProductDetailPageP
           </div>
         </div>
       </section>
+
+      {/* Breadcrumb */}
+      <div className="px-4 py-3 bg-brand-dark-2 border-b border-white/5">
+        <div className="max-w-7xl mx-auto">
+          <Breadcrumb
+            crumbs={[
+              { label: 'Products', page: 'products' },
+              { label: product.category, page: 'products', id: product.categoryId },
+              { label: product.name },
+            ]}
+            onNavigate={onNavigate}
+          />
+        </div>
+      </div>
 
       {/* Overview + Specs */}
       <section className="py-20 px-4">

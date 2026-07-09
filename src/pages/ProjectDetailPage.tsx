@@ -40,15 +40,6 @@ export default function ProjectDetailPage({ id, onNavigate }: ProjectDetailPageP
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/65 to-brand-dark" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 pb-16 w-full">
-          <div className="mb-5">
-            <Breadcrumb
-              crumbs={[
-                { label: 'Projects', page: 'projects' },
-                { label: project.title },
-              ]}
-              onNavigate={onNavigate}
-            />
-          </div>
           <div className="flex flex-wrap gap-2 mb-4">
             <span className="bg-brand-orange text-white text-xs font-semibold px-3 py-1">{project.solution}</span>
             <span className="bg-white/10 text-white/80 text-xs px-3 py-1">{project.industry}</span>
@@ -69,6 +60,19 @@ export default function ProjectDetailPage({ id, onNavigate }: ProjectDetailPageP
           </div>
         </div>
       </section>
+
+      {/* Breadcrumb */}
+      <div className="px-4 py-3 bg-brand-dark-2 border-b border-white/5">
+        <div className="max-w-7xl mx-auto">
+          <Breadcrumb
+            crumbs={[
+              { label: 'Projects', page: 'projects' },
+              { label: project.title },
+            ]}
+            onNavigate={onNavigate}
+          />
+        </div>
+      </div>
 
       {/* Result Banner */}
       <section className="bg-brand-orange py-8 px-4">

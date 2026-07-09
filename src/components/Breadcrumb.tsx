@@ -1,4 +1,4 @@
-import { ChevronRight, Home } from 'lucide-react';
+import { ChevronRight } from 'lucide-react';
 
 export interface Crumb {
   label: string;
@@ -16,10 +16,9 @@ export default function Breadcrumb({ crumbs, onNavigate }: BreadcrumbProps) {
     <nav aria-label="Breadcrumb" className="flex items-center gap-1.5 flex-wrap">
       <button
         onClick={() => onNavigate('home')}
-        className="flex items-center text-white/40 hover:text-white transition-colors"
-        aria-label="Home"
+        className="text-white/40 text-xs hover:text-white transition-colors"
       >
-        <Home size={12} />
+        Home
       </button>
 
       {crumbs.map((crumb, i) => {

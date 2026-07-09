@@ -40,9 +40,6 @@ export default function ContactPage({ onNavigate }: ContactPageProps) {
       {/* Header */}
       <section className="py-20 px-4 bg-brand-dark-2">
         <div className="max-w-7xl mx-auto">
-          <div className="mb-6">
-            <Breadcrumb crumbs={[{ label: 'Contact' }]} onNavigate={onNavigate} />
-          </div>
           <p className="section-label mb-3">Contact an Engineer</p>
           <h1 className="text-5xl md:text-6xl font-black text-white mb-6">
             Talk to us about<br />
@@ -53,6 +50,13 @@ export default function ContactPage({ onNavigate }: ContactPageProps) {
           </p>
         </div>
       </section>
+
+      {/* Breadcrumb */}
+      <div className="px-4 py-3 bg-brand-dark-2 border-b border-white/5">
+        <div className="max-w-7xl mx-auto">
+          <Breadcrumb crumbs={[{ label: 'Contact' }]} onNavigate={onNavigate} />
+        </div>
+      </div>
 
       {/* Content */}
       <section className="py-16 px-4">
