@@ -55,12 +55,12 @@ export const products: Product[] = [
   },
   {
     id: 'fog-cannon',
-    name: 'Fog Cannon (Hennlick Range)',
+    name: 'Fog Cannon (Hennlich Range)',
     category: 'Dust Suppression',
     categoryId: 'dust-suppression',
     tagline: 'Large-area dust suppression at 30–70 metre throw distance.',
     heroImage: 'https://images.pexels.com/photos/1108101/pexels-photo-1108101.jpeg',
-    overview: 'The Hennlick range of dust cannons are designed for large open sites requiring coverage at distance. With a throw range of 30–70 metres, they are the preferred choice for stockpile management, open loading areas and quarry faces where a mobile atomiser cannot provide sufficient reach.',
+    overview: 'The Hennlich range of dust cannons are designed for large open sites requiring coverage at distance. With a throw range of 30–70 metres, they are the preferred choice for stockpile management, open loading areas and quarry faces where a mobile atomiser cannot provide sufficient reach.',
     keyBenefits: [
       '30–70 metre throw range for maximum coverage',
       'Oscillating head covers wide areas automatically',

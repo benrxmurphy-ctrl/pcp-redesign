@@ -35,7 +35,7 @@ const rentalFleet: RentalCategory[] = [
       },
       {
         id: 'fog-cannon',
-        name: 'Hennlick Fog Cannon',
+        name: 'Hennlich Fog Cannon',
         tagline: 'Long-throw cannon for large open areas — 30 to 70 metre coverage.',
         image: 'https://images.pexels.com/photos/1108101/pexels-photo-1108101.jpeg',
         badge: 'Hire Available',

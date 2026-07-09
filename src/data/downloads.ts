@@ -31,7 +31,7 @@ PRODUCT RANGE
 MINIAT Mobile Atomiser
 Rotary drum atomiser producing 10–100 micron droplets. Coverage radius up to 40 metres. Available to hire or purchase. Towable — deploys in 30 minutes. Dual-function for dust and odour.
 
-Fog Cannon (Hennlick Range)
+Fog Cannon (Hennlich Range)
 30–70 metre throw range for large open sites. Oscillating head for automatic coverage. Electric or diesel models. Fixed or trailer-mounted configurations.
 
 DUSTELIM Foam System
@@ -148,9 +148,9 @@ info@pcpgroup.ie`,
   },
   {
     id: 'fog-cannon-datasheet',
-    title: 'Fog Cannon Hennlick Range — Datasheet',
+    title: 'Fog Cannon Hennlich Range — Datasheet',
     type: 'Product Datasheet',
-    description: 'Technical datasheet for the Hennlick fog cannon range with throw distance data, models and mounting options.',
+    description: 'Technical datasheet for the Hennlich fog cannon range with throw distance data, models and mounting options.',
     pages: 4,
     fileSize: '0.9 MB',
     productId: 'fog-cannon',
@@ -159,7 +159,7 @@ info@pcpgroup.ie`,
 TECHNICAL DATASHEET
 
 DESCRIPTION
-The Hennlick range of dust cannons provide large-area coverage at 30–70 metres throw distance. Oscillating head automatically sweeps the coverage arc, eliminating the need for constant repositioning. Ideal for quarry faces, open stockpile areas and port bulk terminals.
+The Hennlich range of dust cannons provide large-area coverage at 30–70 metres throw distance. Oscillating head automatically sweeps the coverage arc, eliminating the need for constant repositioning. Ideal for quarry faces, open stockpile areas and port bulk terminals.
 
 SPECIFICATIONS
 Throw Range:           30–70 metres (model dependent)
